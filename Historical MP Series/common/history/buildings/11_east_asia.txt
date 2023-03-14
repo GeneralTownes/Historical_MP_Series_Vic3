@@ -29,7 +29,7 @@
 			}			
 			create_building={
 				building="building_logging_camp"
-				level=8
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_simple_forestry" "pm_merchant_guilds_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
 			}
@@ -41,7 +41,7 @@
 			}
 			create_building={
 				building="building_paper_mills"
-				level=8
+				level=12
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" "pm_merchant_guilds_building_paper_mills" }
 			}
@@ -57,7 +57,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=3
+				level=8
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -91,7 +91,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=4
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -143,7 +143,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=5
+				level=8
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -215,7 +215,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=7
+				level=9
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -333,7 +333,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=3
+				level=6
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -389,7 +389,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=3
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -417,7 +417,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=2
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -455,7 +455,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=2
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -493,7 +493,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=7
+				level=12
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -527,7 +527,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=8
+				level=13
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -617,7 +617,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=7
+				level=11
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -657,7 +657,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=7
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -697,7 +697,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=10
+				level=12
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -731,7 +731,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=15
+				level=17
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -799,7 +799,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=12
+				level=13
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -811,7 +811,7 @@
 			}
 			create_building={
 				building="building_paper_mills"
-				level=6
+				level=12
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" "pm_merchant_guilds_building_paper_mills" }
 			}
@@ -845,7 +845,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=11
+				level=12
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -885,7 +885,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=10
+				level=12
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -903,7 +903,7 @@
 			}
 			create_building={
 				building="building_paper_mills"
-				level=5
+				level=7
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" "pm_merchant_guilds_building_paper_mills" }
 			}
@@ -925,7 +925,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=10
+				level=11
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -953,13 +953,13 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=8
+				level=9
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
 			create_building={
 				building="building_paper_mills"
-				level=8
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" "pm_merchant_guilds_building_paper_mills" }
 			}
@@ -993,7 +993,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=9
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -1011,7 +1011,7 @@
 			}
 			create_building={
 				building="building_paper_mills"
-				level=7
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" "pm_merchant_guilds_building_paper_mills" }
 			}
@@ -1039,7 +1039,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=5
+				level=6
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -1107,7 +1107,7 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=7
+				level=9
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
@@ -1159,13 +1159,13 @@
 		region_state:CHI={
 			create_building={
 				building="building_government_administration"
-				level=15
+				level=16
 				reserves=1
 				activate_production_methods={ "pm_horizontal_drawer_cabinets" }
 			}
 			create_building={
 				building="building_paper_mills"
-				level=8
+				level=10
 				reserves=1
 				activate_production_methods={ "pm_pulp_pressing" "pm_automation_disabled" "pm_merchant_guilds_building_paper_mills" }
 			}
@@ -1612,26 +1612,8 @@
 	s:STATE_HOKKAIDO={
 		region_state:JAP={
 			create_building={
-				building="building_logging_camp"
-				level=2
-				reserves=1
-				activate_production_methods={ "pm_simple_forestry" "pm_no_hardwood" "pm_no_equipment" "pm_road_carts" "pm_merchant_guilds_building_logging_camp" }
-			}
-			create_building={
-				building="building_fishing_wharf"
-				level=2
-				reserves=1
-				activate_production_methods={ "pm_merchant_guilds_building_fishing_wharf" "pm_unrefrigerated" "pm_fishing_trawlers" }
-			}
-			create_building={
-				building="building_wheat_farm"
-				level=1
-				reserves=1
-				activate_production_methods={ "pm_simple_farming" "pm_no_secondary" "pm_tools_disabled" "pm_privately_owned" }
-			}
-			create_building={
 				building="building_barracks"
-				level=5
+				level=2
 				reserves=1
 				activate_production_methods={ "pm_irregular_infantry" "pm_wound_dressing" "pm_cavalry_scouts" "pm_no_specialists" "pm_no_artillery" }
 			}
@@ -1647,7 +1629,7 @@
 			}
 			create_building={
 				building="building_logging_camp"
-				level=3
+				level=5
 				reserves=1
 				activate_production_methods={ "pm_simple_forestry" "pm_merchant_guilds_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
 			}
@@ -1757,7 +1739,7 @@
 			}
 			create_building={
 				building="building_logging_camp"
-				level=2
+				level=4
 				reserves=1
 				activate_production_methods={ "pm_simple_forestry" "pm_merchant_guilds_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_hardwood" }
 			}
@@ -1977,7 +1959,7 @@
 			}
 			create_building={
 				building="building_logging_camp"
-				level=4
+				level=6
 				reserves=1
 				activate_production_methods={ "pm_simple_forestry" "pm_merchant_guilds_building_logging_camp" "pm_no_equipment" "pm_road_carts" "pm_no_hardwood" }
 			}
