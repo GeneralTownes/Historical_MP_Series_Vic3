@@ -14,7 +14,7 @@
 		custom_tooltip = {
 			text = DIPLO_ACTION_RELATIONS_CORDIAL_OR_GREATER_NOT
 			scope:target_country.relations:root < relations_threshold:cordial
-		}		
+		}	
 	}
 
 	on_weekly_pulse = {}
@@ -190,7 +190,6 @@ dp_take_treaty_port = {
 		scope:target_country = {
 			NOT = { is_country_type = decentralized }
 			NOT = { is_subject_of = root }
-			is_country_type = unrecognized
 		}
 		custom_tooltip = {
 			text = DIPLO_ACTION_RELATIONS_CORDIAL_OR_GREATER_NOT
