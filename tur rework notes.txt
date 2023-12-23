@@ -1,0 +1,20 @@
+
+files used:
+
+00_veiled_protectorate
+algeria_events (check interactions with tur)
+egyptian_crisis_events
+greece_events
+veiled_protectorate_events
+00_sick_man
+sick_man_events
+tanzimat_events
+
+todo:
+
+check custom tur traits (common/ideologies)
+check tur parties (common/parties)
+check custom country colors/country names/gov types
+check commander setup
+check claims/states/diplo/subjects
+
