@@ -17,4 +17,5 @@ check tur parties (common/parties)
 check custom country colors/country names/gov types
 check commander setup
 check claims/states/diplo/subjects
+fix egy mahdist (change to al_zubayr)
 
