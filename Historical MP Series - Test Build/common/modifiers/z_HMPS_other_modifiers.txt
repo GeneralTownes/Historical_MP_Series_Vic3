@@ -10,7 +10,7 @@ pm_offense_defense_readjustment_organisation = {
 }
 
 coastal_capital = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
 	country_trade_route_quantity_mult = 0.1
 	country_trade_route_competitiveness_mult = 0.1
 }
@@ -59,4 +59,9 @@ colonial_institution_exploitation = {
 	building_group_bg_mining_unincorporated_throughput_add = 0.04
 	building_unincorporated_subsistence_output_mult = -0.05
 	state_migration_pull_unincorporated_mult = -0.05
+}
+
+revolution_disbanded = {
+	political_movement_radicalism_add = -1000
+	political_movement_support_add = -1000
 }

@@ -14,7 +14,7 @@
 		OR = {
 			custom_tooltip = {
 				text = lost_opium_wars_tt
-				has_variable = lost_opium_wars
+				has_global_variable = lost_opium_wars
 			}
 			NOT = {
 				has_law = law_type:law_closed_borders
@@ -152,14 +152,8 @@ je_heavenly_kingdom_main = {
 		has_technology_researched = romanticism
 		custom_tooltip = {
 			text = missionaries_enough_time_tt
-			OR = {
-				AND = {
-					has_variable = missionary_works_counter
-					var:missionary_works_counter >= 5
-					game_date >= 1846
-				}
-				game_date >= 1856
-			}
+			has_variable = missionary_works_counter
+			var:missionary_works_counter >= 5
 		}
 		any_scope_state = {
 			any_neighbouring_state = {

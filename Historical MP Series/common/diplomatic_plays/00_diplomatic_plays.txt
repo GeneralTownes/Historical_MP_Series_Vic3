@@ -75,6 +75,7 @@ dp_conquer_state = {
 		scope:target_country = {
 			NOT = { is_country_type = decentralized }
 			#NOT = { is_subject_of = root }
+			NOT = { has_variable = china_subject_var }
 		}	
 		diplomatic_play_has_no_relations_blockers = yes		
 	}
@@ -500,9 +501,14 @@ dp_contain_threat = {
 }
 
 dp_taiping_rebellion = {
-	war_goal = annex_country
+	enable_switch_sides = yes
+	allow_negotiated_peace = no
 	mirror_war_goal = yes
+	initiator_can_add_war_goals = yes
+	target_can_add_war_goals = yes
 	add_infamy_for_starting_initiator_wargoals = no
+	
+	war_goal = annex_country
 	
 	texture = "gfx/interface/icons/war_goals/annex_country.dds"
 	
@@ -723,7 +729,7 @@ dp_unify_china = {
 			country_has_primary_culture = cu:yi
 		}
 		NOT = { country_has_primary_culture = cu:vietnamese }
-		NOT = { this = c:LAN }
+		NOT = { c:LAN ?= this }
 	}
 	
 	possible = {
@@ -737,15 +743,13 @@ dp_unify_china = {
 					OR = {
 						has_discrimination_trait = han_chinese
 						has_discrimination_trait = sinosphere
-						culture = cu:zhuang
-						culture = cu:yi
 					}
 				}
 				country_has_primary_culture = cu:zhuang
 				country_has_primary_culture = cu:yi
 			}
 			NOT = { country_has_primary_culture = cu:vietnamese }
-			NOT = { this = c:LAN }
+			NOT = { this ?= c:LAN }
 		}
 	}
 	

@@ -10,7 +10,7 @@
 	lawgroup_executive_structure = {
 		law_independent_executive = strongly_approve
 		law_dual_executive = approve
-		law_parliamentary_system = approve
+		law_parliamentary_system = neutral
 		law_council_republic = strongly_disapprove
 		law_single_party_state = strongly_disapprove
 	}
@@ -59,6 +59,7 @@
 	lawgroup_economic_system = {		
 		law_traditionalism = strongly_approve
 		law_agrarianism = approve
+		law_state_capitalism = neutral
 		law_interventionism = neutral
 		law_laissez_faire = disapprove
 		#law_industry_banned = disapprove
@@ -78,12 +79,13 @@ ideology_laissez_faire = {
 	icon = "gfx/interface/icons/ideology_icons/laissez_faire.dds"
 	
 	lawgroup_economic_system = {	
-		law_laissez_faire = approve
-		law_interventionism = strongly_approve
+		law_laissez_faire = strongly_approve
+		law_interventionism = approve
 		law_agrarianism = neutral
 		law_traditionalism = disapprove
 		#law_industry_banned = disapprove
 		law_command_economy = strongly_disapprove
+		law_state_capitalism = strongly_disapprove
 		law_cooperative_ownership = strongly_disapprove
 	}
 	
@@ -95,9 +97,9 @@ ideology_laissez_faire = {
 	}
 	
 	lawgroup_trade_policy = {		
-		law_free_trade = neutral	
+		law_free_trade = strongly_approve	
 		law_mercantilism = disapprove
-		law_protectionism = strongly_approve
+		law_protectionism = approve
 		law_isolationism = strongly_disapprove
 	}		
 		
@@ -315,6 +317,7 @@ ideology_agrarian = {
 		law_traditionalism = neutral
 		#law_industry_banned = disapprove
 		law_interventionism = neutral
+		law_state_capitalism = disapprove
 		law_laissez_faire = disapprove
 		law_command_economy = strongly_disapprove
 		law_cooperative_ownership = neutral
@@ -445,6 +448,14 @@ ideology_meritocratic = {
 		law_autocracy = disapprove
 		law_anarchy = strongly_disapprove
 		law_vanguardism = strongly_disapprove
+	}
+	
+	lawgroup_executive_structure = {
+		law_independent_executive = neutral
+		law_dual_executive = approve
+		law_parliamentary_system = strongly_approve
+		law_council_republic = strongly_disapprove
+		law_single_party_state = strongly_disapprove
 	}
 	
 	lawgroup_bureaucracy = {
@@ -621,7 +632,8 @@ ideology_liberal = {
 		#law_industry_banned = strongly_disapprove
 		law_traditionalism = strongly_disapprove		
 		law_command_economy = strongly_disapprove
-		law_cooperative_ownership = neutral
+		law_state_capitalism = disapprove
+		law_cooperative_ownership = disapprove
 	}
 	
 	lawgroup_trade_policy = {		
@@ -712,11 +724,12 @@ ideology_proletarian = {
 	lawgroup_economic_system = {	
 		law_command_economy = strongly_approve
 		law_cooperative_ownership = strongly_approve
-		law_interventionism = approve
-		law_agrarianism = neutral
-		law_traditionalism = disapprove		
+		law_state_capitalism = approve
+		law_interventionism = neutral
+		law_agrarianism = disapprove	
 		law_laissez_faire = disapprove	
-		#law_industry_banned = disapprove	
+		law_traditionalism = strongly_disapprove	
+		#law_industry_banned = strongly_disapprove	
 	}
 	
 	lawgroup_trade_policy = {		
@@ -888,14 +901,6 @@ ideology_reactionary = {
 		law_pure_proportional = strongly_disapprove
 	}
 	
-	lawgroup_executive_structure = {
-		law_independent_executive = strongly_approve
-		law_dual_executive = approve
-		law_parliamentary_system = neutral
-		law_council_republic = strongly_disapprove
-		law_single_party_state = strongly_disapprove
-	}
-	
 	lawgroup_cameralism = {
 		law_no_legislature = approve
 		law_unicameralism = strongly_disapprove
@@ -913,6 +918,7 @@ ideology_reactionary = {
 	}
 	
 	lawgroup_economic_system = {
+		law_state_capitalism = approve	
 		law_command_economy = strongly_disapprove
 		law_cooperative_ownership = strongly_disapprove
 	}
@@ -1048,6 +1054,10 @@ ideology_pro_slavery = {
 
 ideology_corporatist = {
 	icon = "gfx/interface/icons/ideology_icons/corporatist.dds"
+	
+	lawgroup_economic_system = {
+		law_state_capitalism = approve
+	}
 
 	lawgroup_health_system = {
 		law_charitable_health_system = approve

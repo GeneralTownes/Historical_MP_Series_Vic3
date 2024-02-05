@@ -19,6 +19,8 @@ All mods / mod ideas used linked below:
 - Historically Accurate Randomize Farming Yields: https://steamcommunity.com/sharedfiles/filedetails/?id=3073886807
 - Forts & Engineers: https://steamcommunity.com/sharedfiles/filedetails/?id=3005432154
 - Authority for Political Interactions: https://steamcommunity.com/sharedfiles/filedetails/?id=3045555636
+- Historically Accurate Randomize Farming Yields: https://steamcommunity.com/workshop/filedetails/?id=3073886807
+- War Is Politics: https://steamcommunity.com/sharedfiles/filedetails/?id=3124519140&searchtext=	
 ---
 <br/>
 
@@ -79,6 +81,7 @@ All mods / mod ideas used linked below:
 #### Migration
 - Currently uses vanilla migration, will likely be adjusted for 1.5 in the future
 - Trade centre and market capital modifiers removed completely
+- Seccession now only occurs if turmoil is above 70%
 #### Assimilation
 - Minimum no. assimilating increased to 1000 to help performance late-game
 
@@ -96,6 +99,8 @@ All mods / mod ideas used linked below:
 - Agriculture goods now vary in states depending on year, this applies to a small extent on mines as well (Inspired by HARF mod)
 - Gold fields don't use infrastructure
 - Added era 1 company 
+- Added new State Capitalism law
+- MAPI readjusted to be harder to get and more spread out around techs
 #### Goods
 - Hardwood made into its own resource
 - Added canals
@@ -136,7 +141,9 @@ All mods / mod ideas used linked below:
 - Infamy is more punishing, especially as you get more and more
 - Open Market is now much more punishing on the recipient to prevent cheesing
 - Removed regime change and ban slavery due to being cheese
+- Can now request grants (obligation optional)
 #### Actions & Relations
+- Added GM actions (Change infamy, change money, add university)
 - Added mod to not release homelands on nation release
 - Major powers cannot enter customs unions
 - Subjects have 0 interests
@@ -177,6 +184,7 @@ All mods / mod ideas used linked below:
 - Early game Netherlands journal entry for Belgium
 - Russia has flavor with reformist Czar as well as decisions to annex AI Chinese land
 - Scandinavia only requires Nationalism instead of Pan-Nat
+- Italy formation adjusted to prevent exploit formation and make it more fun for MP (happens a bit sooner than IRL). San Marco also happens alongside the Hungarian Revolt. 
 #### India
 - Doctrine of Lapse decision can now annex your future puppets (Sindh, Sikh, Bhutan, etc) as well as your starting puppets
 - New India breakup event
@@ -190,15 +198,14 @@ All mods / mod ideas used linked below:
 - Unify China CB has max infamy decay (prevents using other infamy CBs whilst active)
 - Complete China rework to increase difficulty and make nation possible for MP without it becoming a superpower
 - Redid China collapse event
-- Japan buff to make it more viable for MP
+- Japan buff to make it more viable for MP (basically added ~10 years worth of iron and tools buildings)
 - Afghanistan has panhandle in order for it to effectively serve as a buffer state
-#### West Africa
-#### East Africa
+#### Africa
 - Egypt has nominal subject penalty at game start so it can still join a custom union if desired
 - Added Equatoria flavor to ensure Egypt can claim entire state within a reasonable time period
 - East Africa has severe Malaria to prevent early colonization
-#### Central Africa
 - New Congo Event Chain during the Scramble that allows GPs to vote on the recipient of the Congo. This does not now but will spawn the Free State in the future when having colonial subjects is good. 
+- Ahistorical journal entry for Africans to get a big boost after researching a certain number of techs
 #### The Americas
 - Reworked Reconstruction in the US - accepting either Dixie or AA will depend on how loyal they are at end of JE
 - The US has an isolationism Journal Entry to limit US expansionism

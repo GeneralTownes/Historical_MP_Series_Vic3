@@ -78,8 +78,6 @@ congo_free_state.1 = {
 			limit = {
 				exists = c:BEL
 				c:BEL = {
-					is_subject = no
-					total_population < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					any_scope_state = {
@@ -96,12 +94,16 @@ congo_free_state.1 = {
 			limit = {
 				any_country = {
 					is_subject = no
-					total_population < 25000000
+					total_population_including_subjects < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					OR = { 
 						country_rank = rank_value:major_power
 						country_rank = rank_value:minor_power
+					}
+					AND = {
+						has_technology_researched = fractional_distillation
+						has_technology_researched = chemical_bleaching
 					}
 					any_scope_state = {
 						is_coastal = yes
@@ -111,12 +113,16 @@ congo_free_state.1 = {
 			ordered_country = {
 				limit = {
 					is_subject = no
-					total_population < 25000000
+					total_population_including_subjects < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					OR = { 
 						country_rank = rank_value:major_power
 						country_rank = rank_value:minor_power
+					}
+					AND = {
+						has_technology_researched = fractional_distillation
+						has_technology_researched = chemical_bleaching
 					}
 					any_scope_state = {
 						is_coastal = yes
@@ -140,12 +146,16 @@ congo_free_state.1 = {
 			limit = {
 				any_country = {
 					is_subject = no
-					total_population < 25000000
+					total_population_including_subjects < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					OR = { 
 						country_rank = rank_value:major_power
 						country_rank = rank_value:minor_power
+					}
+					AND = {
+						has_technology_researched = fractional_distillation
+						has_technology_researched = chemical_bleaching
 					}
 					any_scope_state = {
 						is_coastal = yes
@@ -159,12 +169,16 @@ congo_free_state.1 = {
 			ordered_country = {
 				limit = {
 					is_subject = no
-					total_population < 25000000
+					total_population_including_subjects < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					OR = { 
 						country_rank = rank_value:major_power
 						country_rank = rank_value:minor_power
+					}
+					AND = {
+						has_technology_researched = fractional_distillation
+						has_technology_researched = chemical_bleaching
 					}
 					any_scope_state = {
 						is_coastal = yes
@@ -183,12 +197,16 @@ congo_free_state.1 = {
 			limit = {
 				any_country = {
 					is_subject = no
-					total_population < 25000000
+					total_population_including_subjects < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					OR = { 
 						country_rank = rank_value:major_power
 						country_rank = rank_value:minor_power
+					}
+					AND = {
+						has_technology_researched = fractional_distillation
+						has_technology_researched = chemical_bleaching
 					}
 					any_scope_state = {
 						is_coastal = yes
@@ -203,12 +221,16 @@ congo_free_state.1 = {
 			ordered_country = {
 				limit = {
 					is_subject = no
-					total_population < 25000000
+					total_population_including_subjects < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					OR = { 
 						country_rank = rank_value:major_power
 						country_rank = rank_value:minor_power
+					}
+					AND = {
+						has_technology_researched = fractional_distillation
+						has_technology_researched = chemical_bleaching
 					}
 					any_scope_state = {
 						is_coastal = yes
@@ -228,12 +250,16 @@ congo_free_state.1 = {
 			limit = {
 				any_country = {
 					is_subject = no
-					total_population < 25000000
+					total_population_including_subjects < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					OR = { 
 						country_rank = rank_value:major_power
 						country_rank = rank_value:minor_power
+					}
+					AND = {
+						has_technology_researched = fractional_distillation
+						has_technology_researched = chemical_bleaching
 					}
 					any_scope_state = {
 						is_coastal = yes
@@ -249,12 +275,16 @@ congo_free_state.1 = {
 			ordered_country = {
 				limit = {
 					is_subject = no
-					total_population < 25000000
+					total_population_including_subjects < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					OR = { 
 						country_rank = rank_value:major_power
 						country_rank = rank_value:minor_power
+					}
+					AND = {
+						has_technology_researched = fractional_distillation
+						has_technology_researched = chemical_bleaching
 					}
 					any_scope_state = {
 						is_coastal = yes
@@ -275,12 +305,16 @@ congo_free_state.1 = {
 			limit = {
 				any_country = {
 					is_subject = no
-					total_population < 25000000
+					total_population_including_subjects < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					OR = { 
 						country_rank = rank_value:major_power
 						country_rank = rank_value:minor_power
+					}
+					AND = {
+						has_technology_researched = fractional_distillation
+						has_technology_researched = chemical_bleaching
 					}
 					any_scope_state = {
 						is_coastal = yes
@@ -297,12 +331,16 @@ congo_free_state.1 = {
 			ordered_country = {
 				limit = {
 					is_subject = no
-					total_population < 25000000
+					total_population_including_subjects < 25000000
 					is_revolutionary = no
 					has_revolution = no
 					OR = { 
 						country_rank = rank_value:major_power
 						country_rank = rank_value:minor_power
+					}
+					AND = {
+						has_technology_researched = fractional_distillation
+						has_technology_researched = chemical_bleaching
 					}
 					any_scope_state = {
 						is_coastal = yes
@@ -426,7 +464,9 @@ congo_free_state.2 = {
 			popup = yes
 		}
 		change_infamy = -10
-		
+		ai_chance = {
+			base = 100
+		}
 	}
 	
 	#option for if you have bas-congo
@@ -445,6 +485,7 @@ congo_free_state.2 = {
 			name = resisted_congo_state
 			months = 120
 		}	
+		change_infamy = 40
 		
 		custom_tooltip = {
 			text = congo_free_state.2.c.tt
@@ -644,6 +685,9 @@ congo_free_state.3 = {
 			name = congo_0_vote
 			add = 1
 		}
+		ai_chance = {
+			base = 10
+		}
 	}
 	option = {
 		name = congo_free_state.3.b
@@ -657,6 +701,9 @@ congo_free_state.3 = {
 		change_global_variable = {
 			name = congo_bel_vote
 			add = 1
+		}
+		ai_chance = {
+			base = 35
 		}
 	}
 	option = {
@@ -672,6 +719,9 @@ congo_free_state.3 = {
 			name = congo_1_vote
 			add = 1
 		}
+		ai_chance = {
+			base = 10
+		}
 	}
 	option = {
 		name = congo_free_state.3.e
@@ -684,6 +734,9 @@ congo_free_state.3 = {
 		change_global_variable = {
 			name = congo_2_vote
 			add = 1
+		}
+		ai_chance = {
+			base = 20
 		}
 	}
 	option = {
@@ -698,6 +751,9 @@ congo_free_state.3 = {
 			name = congo_3_vote
 			add = 1
 		}
+		ai_chance = {
+			base = 10
+		}
 	}
 	option = {
 		name = congo_free_state.3.h
@@ -710,6 +766,9 @@ congo_free_state.3 = {
 		change_global_variable = {
 			name = congo_4_vote
 			add = 1
+		}
+		ai_chance = {
+			base = 5
 		}
 	}
 	option = {
@@ -724,11 +783,17 @@ congo_free_state.3 = {
 			name = congo_5_vote
 			add = 1
 		}
+		ai_chance = {
+			base = 5
+		}
 	}
 	option = {
 		name = congo_free_state.3.j
 		trigger = {
 			has_global_variable = bas_congo_held
+		}
+		ai_chance = {
+			base = 5
 		}
 	}
 }
@@ -762,6 +827,9 @@ congo_free_state.4 = {
 		default_option = yes
 		custom_tooltip = {
 			text = congo_free_state.4.a.t
+		}
+		ai_chance = {
+			base = 100
 		}
 	}
 	
@@ -1126,7 +1194,7 @@ congo_free_state.6 = {
 		}
 		add_modifier = {
 			name = received_congo
-			months = 60
+			months = 181
 		}
 	}
 
@@ -1255,12 +1323,14 @@ congo_free_state.7 = {
 				has_variable = congo_winner
 			}
 		}
+		default_option = yes
 	}
 	option = {
 		name = congo_free_state.7.b
 		trigger = {
 			has_global_variable = no_congo
 		}
+		default_option = yes
 	}
 	
 }
