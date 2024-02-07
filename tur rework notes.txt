@@ -19,3 +19,49 @@ check commander setup
 check claims/states/diplo/subjects
 fix egy mahdist (change to al_zubayr)
 
+rework veiled protectorate to give je to all european gps, make sure veiled protectorate isnt OP
+
+make new oriental crisis - conditions for tur/egy to get stronger buffs/weaken each other?
+
+--add new je with explanation for tur and egy
+	--new flavor: 
+		conditions for tur/egy to get minor buffs (and weaken each other? undecided on this)
+		ability for gps to send support to either side without directly intervening
+			--cost of temporary -1 interest while buildup is active, if chosen to support
+		possibility of diplomatic solution, preferable for egypt, hurts tur
+			--egypt will get a great boost for peaceful independence
+			--tur will have outbreak of nationalist protests in jingoist states/cultures, worsens decline
+		gps that heavily support egy/tur get increased influence in country (will add when foreign influence exists)
+		
+		
+		
+
+--order of new events
+ 1. --on builup start
+		-tensions in the orient - warns relevant gps they should be prepared for crisis/explains flavor
+		-during buildup: one or two events per relevant gp to influence/support either side
+	
+ 2. --on buildup end
+		-tur event 
+			-option to start diplo play for take puppet, large infamy, most difficult option, best reward (will annex levant states)
+			OR
+			-option to start diplo play for take states in levant, medium infamy, medium diiculty
+			OR
+			-option to not start a war, easiest option, bad for tur (short term)
+ 3. --if diplo play starts
+		-event that auto declares interest in relevant region for involved gps
+	--if diplo play goes to war
+		-if play war for puppet: egy gets minor buff to help them not get owned
+		-possible bad event for egy and tur, if they are heavily pushed back or lose capital
+		
+ 4. --when crisis ends (whether war happened or not)
+		-possible endings
+			-if egy has lost nothing and is independent, tur gets bad event
+			-if egy has lost levant, egy gets bad event (add later flavor for egy to reconcile/war with tur)
+			-if egy is puppet of tur, tur will receive option to annex levant (cannot annex entirety of egypt)
+		-gps will receive an event if their side won, giving influence (when it exists) and prestige
+	
+
+
+random idea - look into expanding the global gdp/state gdp overview screens, moving button, reworking ui to show i.e
+most productive state industry, highest gdp contributor, per state per capita for each class? after tur rework
