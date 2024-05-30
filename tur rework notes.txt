@@ -9,6 +9,7 @@ veiled_protectorate_events
 00_sick_man
 sick_man_events
 tanzimat_events
+HMPS_sublime_porte
 
 todo:
 
@@ -21,7 +22,17 @@ fix egy mahdist (change to al_zubayr)
 
 rework veiled protectorate to give je to all european gps, make sure veiled protectorate isnt OP
 
-make new oriental crisis - conditions for tur/egy to get stronger buffs/weaken each other?
+*new egyptian earlyy modernization je
+
+--rule of muhammed ali
+
+*tur changes
+
+--start on free trade - unique law
+	--je to reform trade practices
+
+
+*make new oriental crisis
 
 --add new je with explanation for tur and egy
 	--new flavor: 

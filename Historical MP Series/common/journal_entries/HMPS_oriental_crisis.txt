@@ -1,0 +1,137 @@
+
+#Oriental Crisis JEs - for TUR and EGY
+
+je_oriental_crisis_TUR = {
+
+	should_be_pinned_by_default = yes
+	
+	immediate = {
+		s:STATE_ADANA = { save_scope_as = adana }
+		s:STATE_TRANSJORDAN = { save_scope_as = transjordan }
+		s:STATE_GREATER_SYRIA = { save_scope_as = syria }
+		c:EGY = { save_scope_as = egypt }
+	}
+
+	complete = {
+		hidden_trigger = {
+			exists = c:TUR
+			exists = c:EGY
+			has_global_variable = oriental_crisis_triggered
+		}
+		OR = {
+			custom_tooltip = {
+				text = oc_reclaim_levant_TUR_tt
+				AND = {
+					owns_entire_state_region = STATE_GREATER_SYRIA
+					owns_entire_state_region = STATE_TRANSJORDAN
+					owns_entire_state_region = STATE_ADANA
+				}
+			}
+			custom_tooltip = {
+				text = oc_puppet_egy_TUR_tt
+				c:EGY = {
+					is_subject_of = root
+					NOT = { is_subject_type = subject_type_customs_union }
+				}
+			}
+		}
+	}
+	
+	on_complete = {
+		custom_tooltip = {
+			text = je_sick_man_advance
+			change_variable = {
+				name = sick_man_var
+				add = 1
+			}
+			set_variable = completed_syria_je
+			s:STATE_SINAI = {
+				add_claim = ROOT
+			}
+			s:STATE_UPPER_EGYPT = {
+				add_claim = ROOT
+			}
+			s:STATE_MIDDLE_EGYPT = {
+				add_claim = ROOT
+			}
+			s:STATE_LOWER_EGYPT = {
+				add_claim = ROOT
+			}
+			s:STATE_MATRUH = {
+				add_claim = ROOT
+			}
+			s:STATE_EGYPTIAN_DESERT = {
+				add_claim = ROOT
+			}
+		}
+	}
+	
+	fail = {
+		custom_tooltip = {
+			text = oc_fail_TUR_tt
+			NOR = {
+				AND = {
+					owns_entire_state_region = STATE_GREATER_SYRIA
+					owns_entire_state_region = STATE_TRANSJORDAN
+					owns_entire_state_region = STATE_ADANA
+				}
+				c:EGY = { is_subject_of = root }
+			}
+			NOT = { has_war_with = c:EGY }
+			has_truce_with = c:EGY
+			has_global_variable = oriental_crisis_triggered
+		}
+	}
+	
+	on_fail = {
+		trigger_event = 
+	}
+	
+}
+
+je_oriental_crisis_EGY = {
+
+	should_be_pinned_by_default = yes
+	
+	complete = {
+		custom_tooltip = {
+			text = oc_success_EGY_tt
+			exists = c:EGY
+			c:EGY = {
+				owns_entire_state_region = STATE_GREATER_SYRIA
+				owns_entire_state_region = STATE_TRANSJORDAN
+				owns_entire_state_region = STATE_ADANA
+				OR = {
+					NOT = { is_subject_of = c:TUR }
+					is_subject_type = subject_type_customs_union
+				}
+			}
+			has_global_variable = oriental_crisis_triggered
+		}
+	}
+	
+	on_complete = {
+		trigger_event = 
+	}
+	
+	fail = {
+		custom_tooltip = {
+			text = oc_fail_EGY_tt
+			OR = {
+				NOT = {
+					owns_entire_state_region = STATE_GREATER_SYRIA
+					owns_entire_state_region = STATE_TRANSJORDAN
+					owns_entire_state_region = STATE_ADANA
+				}
+				AND = {
+					is_subject_of = c:TUR
+					NOT = { is_subject_type = subject_type_customs_union }
+				}
+			}
+		}
+	}
+	
+	on_fail = {
+		trigger_event = 
+	}
+}

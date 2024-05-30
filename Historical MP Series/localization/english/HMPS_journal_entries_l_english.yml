@@ -125,3 +125,8 @@
  je_africa_funny:0 "An African Colonial Powerhouse"
  je_africa_funny_reason:0 "HMPS developers have graced us with a mercy. Should we sit here and techmaxx for 15-30 years, we might be able to eventually have fun. There is no possible historical justification for this whatsoever, so I'm extremely grateful. Praise be to HMPS!"
  cust_chi_tp_tt:0 "Any [concept_great_power] has acquired a [concept_treaty_port] in [SCOPE.GetRootScope.GetCountry.GetName]"
+ oc_reclaim_levant_TUR_tt:0 "We have reclaimed [SCOPE.sState('adana').GetStateRegion.GetName], [SCOPE.sState('syria').GetStateRegion.GetName], and [SCOPE.sState('transjordan').GetStateRegion.GetName]"
+ oc_puppet_egy_TUR_tt:0 "We have made [SCOPE.sCountry('egypt).GetName] our subject"
+ oc_fail_TUR_tt:0 "#RED We have failed to complete either of our objectives#"
+ oc_success_EGY_tt:0 "We have lost nothing or avoided war"
+ oc_fail_EGY_tt:0 "#RED The Ottomans have puppeted us or taken land in the Levant#"
