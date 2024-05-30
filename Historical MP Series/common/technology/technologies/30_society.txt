@@ -24,7 +24,7 @@ urbanization = {
 		state_infrastructure_from_population_max_add = 40	
 		state_building_construction_sector_max_level_add = 10
 		country_max_weekly_construction_progress_add = 10
-		market_land_trade_capacity_add = 50
+		market_land_trade_capacity_add = 1000
 	}
 	
 	ai_weight = {
@@ -42,7 +42,7 @@ urban_planning = {
 		state_infrastructure_from_population_max_add = 20
 		state_building_construction_sector_max_level_add = 5
 		country_max_weekly_construction_progress_add = 5
-		market_land_trade_capacity_add = 10
+		market_land_trade_capacity_add = 300
 	}
 	
 	unlocking_technologies = {
@@ -252,6 +252,7 @@ colonization = {
 
 	modifier = {
 		country_institution_colonial_affairs_max_investment_add = 2
+		country_max_declared_interests_add = 1
 		country_diplomatic_play_maneuvers_add = 10
 	}	
 	
@@ -449,7 +450,7 @@ modern_sewerage = {
 		state_infrastructure_from_population_max_add = 20
 		state_building_construction_sector_max_level_add = 5
 		country_max_weekly_construction_progress_add = 5
-		market_land_trade_capacity_add = 10
+		market_land_trade_capacity_add = 300
 		state_pollution_reduction_health_mult = -0.1
 	}
 	
@@ -559,7 +560,7 @@ central_banking = {
 }
 
 joint_stock_companies = {
-	era = era_2
+	era = era_3
 	texture = "gfx/interface/icons/invention_icons/joint_stock_companies.dds"
 	category = society
 	
@@ -646,6 +647,7 @@ nationalism = {
 	modifier = {
 		country_authority_mult = 0.1
 		country_diplomatic_play_maneuvers_add = 20
+		country_infamy_decay_mult = 0.10
 	}
 	
 	unlocking_technologies = {
@@ -865,7 +867,7 @@ steel_frame_buildings = {
 		state_infrastructure_from_population_max_add = 20
 		state_building_construction_sector_max_level_add = 5
 		country_max_weekly_construction_progress_add = 5
-		market_land_trade_capacity_add = 10
+		market_land_trade_capacity_add = 300
 	}
 	
 	unlocking_technologies = {
@@ -887,7 +889,9 @@ civilizing_mission = {
 
 	modifier = {
 		country_institution_colonial_affairs_max_investment_add = 1
+		country_max_declared_interests_add = 1
 		country_diplomatic_play_maneuvers_add = 30
+		country_infamy_decay_mult = 0.10
 	}
 	
 	unlocking_technologies = {
@@ -1060,6 +1064,7 @@ pan-nationalism = {
 	modifier = {
 		country_authority_mult = 0.1
 		country_infamy_generation_mult = -0.15
+		country_infamy_decay_mult = 0.20
 	}
 	
 	unlocking_technologies = {
@@ -1218,7 +1223,6 @@ elevator = {
 		state_infrastructure_from_population_max_add = 20
 		state_building_construction_sector_max_level_add = 5
 		country_max_weekly_construction_progress_add = 5
-		market_land_trade_capacity_add = 10
 	}	
 	
 	unlocking_technologies = {
@@ -1231,7 +1235,6 @@ elevator = {
 }
 
 #zeppelins = {
-#	# #todo#! Does nothing at the moment
 #	era = era_4
 #	texture = "gfx/interface/icons/invention_icons/zeppelins.dds"
 #	category = society
@@ -1258,6 +1261,7 @@ malaria_prevention = {
 	modifier = {
 		country_institution_colonial_affairs_max_investment_add = 1
 		country_institution_health_system_max_investment_add = 1
+		country_infamy_decay_mult = 0.20
 	}
 	
 	unlocking_technologies = {
@@ -1326,7 +1330,6 @@ political_agitation = {
 }
 
 international_exchange_standards = {
-	# #todo#! Does nothing at the moment
 	# Should increase trade power maybe
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/international_exchange_standards.dds"
@@ -1367,7 +1370,6 @@ corporate_management = {
 }
 
 psychoanalysis = {
-	# #todo#! Does nothing at the moment
 	# Should provide additional methods for dealing with negative psychological character traits
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/psychoanalysis.dds"
@@ -1415,6 +1417,7 @@ multilateral_alliances = {
 		country_diplomatic_play_maneuvers_add = 40
 		country_allow_multiple_alliances = yes
 		country_infamy_generation_mult = -0.30
+		country_infamy_decay_mult = 0.40
 	}
 	
 	unlocking_technologies = {	
@@ -1432,7 +1435,6 @@ multilateral_alliances = {
 }
 
 analytical_philosophy = {
-	# #todo#! Does nothing at the moment
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/analytical_philosophy.dds"
 	category = society
@@ -1471,7 +1473,6 @@ mass_surveillance = {
 
 
 antibiotics = {
-	# #todo#! Reduces state mortality by -10% (same as Vitamins)
 	era = era_5
 	texture = "gfx/interface/icons/invention_icons/antibiotics.dds"
 	category = society
@@ -1488,21 +1489,6 @@ antibiotics = {
 		value = 1
 	}
 }
-
-#vitamins = {
-#	# #todo#! Reduces state mortality by -10% (same as Antibiotics)
-#	era = era_5
-#	texture = "gfx/interface/icons/invention_icons/vitamins.dds"
-#	category = society
-#	
-#	modifier = {
-#		state_mortality_mult = -0.10
-#	}
-#	
-#	unlocking_technologies = {
-#		malaria_prevention
-#	}
-#}
 
 mass_propaganda = {
 	# Unlocks Better Radios PM in Electrics Industries
@@ -1566,7 +1552,6 @@ macroeconomics = {
 }
 
 behaviorism = {
-	# #todo#! Does nothing at the moment
 	era = era_5
 	texture = "gfx/interface/icons/invention_icons/behaviorism.dds"
 	category = society
@@ -1591,10 +1576,8 @@ paved_roads = {
 	category = society
 	
 	modifier = {
-		state_infrastructure_from_population_add = 1.5
-		state_infrastructure_from_population_max_add = 30
-		country_max_weekly_construction_progress_add = 10
-		market_land_trade_capacity_add = 20
+		state_infrastructure_from_automobiles_consumption_add = 0.25
+		market_land_trade_capacity_add = 300
 	}
 	
 	unlocking_technologies = {	
@@ -1615,7 +1598,7 @@ civil_rights = {
 	}
 	
 	unlocking_technologies = {
-		political_agitation
+		human_rights
 	}
 	
 	ai_weight = {
@@ -1626,7 +1609,7 @@ civil_rights = {
 ### ERA 6
 
 multiculturalism = {
-	era = era_6
+	era = era_5
 	texture = "gfx/interface/icons/invention_icons/civil_rights_2.dds"
 	category = society
 	
@@ -1634,8 +1617,8 @@ multiculturalism = {
 	}
 	
 	unlocking_technologies = {
-		civil_rights
-		mass_propaganda
+		human_rights
+		anarchism
 	}
 	
 	ai_weight = {

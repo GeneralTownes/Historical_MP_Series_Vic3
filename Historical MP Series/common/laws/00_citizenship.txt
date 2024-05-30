@@ -190,7 +190,10 @@ law_cultural_exclusion = {
 	progressiveness = 50
 	
 	can_enact = {
-		has_law = law_type:law_no_colonial_affairs
+		OR = {
+			has_law = law_type:law_frontier_colonization
+			has_law = law_type:law_no_colonial_affairs
+		}
 	}
 	
 	unlocking_technologies = {
@@ -279,11 +282,14 @@ law_multicultural = {
 	}
 
 	cultural_acceptance_rule = {
-		always = yes
+		#always = yes
+		
+		shares_trait_with_any_primary_culture = scope:country
 	}
 	
 	modifier = {
 		state_migration_pull_mult = 0.1
+		state_radicals_from_discrimination_mult = -1
 	}
 	
 	possible_political_movements = {

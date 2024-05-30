@@ -47,6 +47,9 @@
  mexico_natives:0 "Mesoamerican Emancipation"
  mexico_natives_desc:0 "Long have we neglected our Mesoamerican citizens, no more. Henceforth, all legal restrictions on their successes shall be removed."
  
+ grant_agri_tech:0 "Request Agricultural Technology"
+ grant_agri_tech_desc:0 "To improve our agricultural output of our empire, we will request our overlords superior agricultural technology be transferred to us, so we may more greatly benefit both our peoples."
+ 
  egy_declare_independence:0 "Declare Independence"
  egy_declare_independence_desc:0 "The Ottoman Empire has failed to seize control of our country directly. We can now formally declare independence and be recognized on the world stage."
  
@@ -56,3 +59,14 @@
  gm_player_desc:0 "If you pick this and are not a GM, your skull will be crushed."
  GM_Self_Action:0 "GM Self-Action"
  GM_Self_Action_desc:0 "Use GM Powers on yourself."
+ 
+ afro_latino_emancipation:0 "Afro-Latino Emancipation"
+ afro_latino_emancipation_desc:0 "Long have we neglected our Afro-Latino citizens, no more. Henceforth, all legal restrictions on their successes shall be removed."
+ 
+ repudiate_manifest_destiny:0 "Repudiate Manifest Destiny"
+ repudiate_manifest_destiny_desc:0 "The Yanqui Imperialists have failed to expel us from their 'destined land' on the pacific coast. We and the world along with us laugh at their petty claims on rightful Mexican land and can finally repudiate the notion of 'Manifest Destiny'."
+ america_win:0 "The United States has successfully pressed it's claims over Mexico"
+ mexico_win:0 "The United States has failed to press it's claims over Mexico by 1860"
+ 
+ boost_war_support:0 "Boost War Support"
+ boost_war_support_desc:0 "Wars do not typically end because people simply get tired, wars end because of a lack of resources or strategic defeat."

@@ -1,4 +1,11 @@
-﻿AUS = { # Austria
+﻿@coa_width = 768
+@coa_height = 512
+@canton_scale_cross_x = @[ ( 333 / coa_width ) + 0.001 ]
+@canton_scale_cross_y = @[ ( 205 / coa_height ) + 0.001 ]
+
+
+
+AUS = { # Austria
 	flag_definition = {
 		coa = AUS
 		subject_canton = AUS		
@@ -45,7 +52,7 @@
 		subject_canton = KUK
 		priority = 100
 		trigger = { 
-			scope:actor = { country_has_primary_culture = cu:hungarian NOT = { has_law = law_type:law_monarchy } }
+			scope:actor ?= { country_has_primary_culture = cu:hungarian NOT = { has_law = law_type:law_monarchy } }
 		}
 	}
 	flag_definition = {
@@ -53,7 +60,7 @@
 		subject_canton = KUK_monarchy
 		priority = 100
 		trigger = { 
-			scope:actor = { country_has_primary_culture = cu:hungarian has_law = law_type:law_monarchy }
+			scope:actor ?= { country_has_primary_culture = cu:hungarian has_law = law_type:law_monarchy }
 		}
 	}
 	flag_definition = {
@@ -202,7 +209,7 @@ GBR = {
 		priority = 22
 		trigger = { 
 			exists = scope:actor
-			scope:actor = { capital = { state_region = s:STATE_LANCASHIRE } }
+			scope:actor ?= { capital = { state_region = s:STATE_LANCASHIRE } }
 		}
 	}
 	flag_definition = {
@@ -210,7 +217,7 @@ GBR = {
 		priority = 23
 		trigger = {
 			coa_def_communist_flag_trigger = yes
-			scope:actor = { capital = { state_region = s:STATE_LANCASHIRE } }
+			scope:actor ?= { capital = { state_region = s:STATE_LANCASHIRE } }
 		}
 	}
 	flag_definition = {
@@ -218,7 +225,7 @@ GBR = {
 		priority = 1500
 		trigger = { 
 			coa_def_communist_flag_trigger = yes
-			scope:actor = { NOT = { capital = { state_region = s:STATE_LANCASHIRE } } }
+			scope:actor ?= { NOT = { capital = { state_region = s:STATE_LANCASHIRE } } }
 		}
 	}	
 	flag_definition = {
@@ -246,7 +253,7 @@ CHI = { # China
 		coa_with_overlord_canton = CHI_han_empire
 		priority = 5
 		trigger = { 
-			scope:actor = {
+			scope:actor ?= {
 				NOT = { country_has_primary_culture = cu:manchu }
 				has_law = law_type:law_monarchy
 			}
@@ -266,7 +273,7 @@ CHI = { # China
 		allow_overlord_canton = yes				
 		priority = 20
 		trigger = { 
-			scope:actor = {
+			scope:actor ?= {
 				country_has_primary_culture = cu:manchu
 				has_law = law_type:law_monarchy
 			}
@@ -322,7 +329,7 @@ POL = { # Poland
 		subject_canton = POL
 		priority = 1
 		trigger = { 
-			scope:actor = { NOT = { has_variable = pol_plc_ambition } }
+			scope:actor ?= { NOT = { has_variable = pol_plc_ambition } }
 		}
 	}
 	flag_definition = {
@@ -330,7 +337,7 @@ POL = { # Poland
 		subject_canton = POL_new
 		priority = 1
 		trigger = { 
-			scope:actor = { has_variable = pol_plc_ambition }
+			scope:actor ?= { has_variable = pol_plc_ambition }
 		}
 	}
 	flag_definition = {
@@ -338,7 +345,7 @@ POL = { # Poland
 		subject_canton = POL_republic_new
 		priority = 1
 		trigger = { 
-			scope:actor = { has_variable = pol_plc_ambition }
+			scope:actor ?= { has_variable = pol_plc_ambition }
 			coa_def_republic_flag_trigger = yes
 		}
 	}
@@ -357,7 +364,7 @@ POL = { # Poland
 		subject_canton = POL
 		priority = 51
 		trigger = { 
-			scope:actor = { has_variable = pol_uprising }
+			scope:actor ?= { has_variable = pol_uprising }
 		}
 	}
 	flag_definition = {
@@ -563,7 +570,7 @@ GER = { # Germany
 		priority = 100
 		trigger = {
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				has_law = law_type:law_monarchy
 				was_formed_from = BAV
 			}
@@ -574,7 +581,7 @@ GER = { # Germany
 		priority = 100
 		trigger = {
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				has_law = law_type:law_monarchy
 				was_formed_from = AUS
 			}
@@ -586,7 +593,7 @@ GER = { # Germany
 		priority = 100
 		trigger = {
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				has_law = law_type:law_monarchy
 				was_formed_from = SAX
 			}
@@ -599,7 +606,7 @@ GER = { # Germany
 		trigger = {
 			coa_def_absolute_monarchy_flag_trigger = yes
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				was_formed_from = SAX
 			}
 		}
@@ -610,7 +617,7 @@ GER = { # Germany
 		priority = 100
 		trigger = {
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				has_law = law_type:law_monarchy
 				was_formed_from = HAN
 			}
@@ -622,7 +629,7 @@ GER = { # Germany
 		priority = 100
 		trigger = {
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				has_law = law_type:law_monarchy
 				was_formed_from = WUR
 			}
@@ -635,7 +642,7 @@ GER = { # Germany
 		priority = 100
 		trigger = {
 			exists = scope:actor
-			scope:actor = {
+			scope:actor ?= {
 				has_law = law_type:law_monarchy
 			}
 		}

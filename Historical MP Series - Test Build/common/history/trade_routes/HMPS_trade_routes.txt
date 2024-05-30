@@ -1,5 +1,5 @@
 ﻿TRADE_ROUTES = {
-	c:GBR = {
+	c:GBR ?= {
 		create_trade_route = {
 			goods = hardwood
 			level = 15
@@ -7,7 +7,7 @@
 			target = c:SWE.market
 		}
 	}
-	c:FRA = {
+	c:FRA ?= {
 		create_trade_route = {
 			goods = hardwood
 			level = 10
@@ -27,7 +27,7 @@
 			target = c:PRU.market
 		}
 	}
-	c:TUR = {
+	c:TUR ?= {
 		create_trade_route = {
 			goods = hardwood
 			level = 12
@@ -35,7 +35,7 @@
 			target = c:RUS.market
 		}
 	}
-	c:BEL = {
+	c:BEL ?= {
 		create_trade_route = {
 			goods = hardwood
 			level = 5
@@ -43,7 +43,29 @@
 			target = c:NET.market
 		}
 	}
-	c:SAR = {
+	c:RUS ?= {
+		create_trade_route = {
+			goods = tools
+			level = 25
+			direction = import
+			target = c:GBR.market
+		}
+	}
+	c:RUS ?= {
+		create_trade_route = {
+			goods = tools
+			level = 25
+			direction = import
+			target = c:GBR.market
+		}
+		create_trade_route = {
+			goods = tools
+			level = 8
+			direction = import
+			target = c:PRU.market
+		}
+	}
+	c:SAR ?= {
 		create_trade_route = {
 			goods = hardwood
 			level = 4
@@ -69,7 +91,16 @@
 			target = c:FRA.market
 		}
 	}
-	c:USA = {
+	# Sweden 	
+	c:SWE ?= {	
+		create_trade_route = {
+			goods = tools
+			level = 12
+			direction = import
+			target = c:PRU.market
+		}
+	}
+	c:USA ?= {
 		create_trade_route = {
 			goods = engines
 			level = 2

@@ -123,22 +123,54 @@ bg_rubber = {
 	economy_of_scale_ai_factor = 1.5
 }
 
+bg_guano_mining = {
+	parent_group = bg_mining
+	
+	default_building = building_guano_mine
+
+	can_use_slaves = yes
+}
+
 # Logging
-bg_hardwood = {
+
+bg_logging = {
 
 	category = rural
 
-	capped_by_resources = yes
+	land_usage = rural
 	
 	economy_of_scale = yes
 	
-	parent_group = bg_logging
+	lens = forestry
 	
 	can_use_slaves = yes
+	cash_reserves_max = 25000
 	
-	default_building = building_hardwood_forestry
+	urbanization = 5
+	infrastructure_usage_per_level = 1
 	
-	lens = forestry	
+	should_auto_expand = { 
+		default_auto_expand_rule = yes
+	}
+	
+	economy_of_scale_ai_factor = 1.5
+	
+	default_building = building_logging_camp
+	
+	cash_reserves_max = 25000
+	
+	always_possible = yes
+
+}
+
+bg_hardwood = {
+	category = rural
+
+	economy_of_scale = yes
+	
+	capped_by_resources = yes
+	
+	lens = forestry
 	
 	cash_reserves_max = 25000
 	
@@ -150,6 +182,12 @@ bg_hardwood = {
 	}
 	
 	economy_of_scale_ai_factor = 1.5
+	
+	default_building = building_hardwood_forestry
+
+	can_use_slaves = yes
+	
+	always_possible = no
 }
 
 # Canals

@@ -2,6 +2,10 @@
 	icon = "gfx/interface/icons/event_icons/event_fire.dds"
 	
 	group = je_group_historical_content
+	
+	modifiers_while_active = {
+		modifier_inward_china
+	}
 
 	immediate = {
 		random_law = {
@@ -15,9 +19,24 @@
 			text = china_recognized_tt
 			has_global_variable = china_warlord_explosion_recognized
 		}
-		custom_tooltip = {
-			text = china_abolished_monarchy_tt
-			has_variable = china_warlord_abolished_monarchy
+		OR = {
+			custom_tooltip = {
+				text = china_abolished_monarchy_tt
+				has_variable = china_warlord_abolished_monarchy
+			}
+			AND = {
+				OR = {
+					has_law = law_type:law_monarchy
+					has_law = law_type:law_theocracy
+				}
+				has_technology_researched = pan-nationalism
+				radical_fraction = {
+					value <= 0.2
+				}
+				any_civil_war = {
+					civil_war_progress < 0.5
+				}
+			}
 		}
 	}
 
@@ -42,15 +61,11 @@
 
 	on_complete = {
 		trigger_event = { id = warlord_china_events.200 }
-		custom_tooltip = {
-			text = china_no_warlords_tt
-			remove_modifier = chinese_political_instability
-			add_modifier = {
-				name = chinese_political_instability
-				multiplier = 1
-				is_decaying = yes
-				years = 20
+		if = {
+			limit = {
+				has_modifier = han_power_increase
 			}
+			remove_modifier = han_power_increase
 		}
 		if = {
 			limit = {
@@ -72,12 +87,30 @@
 				remove_cultural_obsession = opium
 			}
 		}
+		every_state = {
+			limit = {
+                has_modifier = eight_banners
+            }
+			remove_modifier = eight_banners
+		}
+		if = {
+			limit = {
+				has_modifier = modifier_agricultural_econ_mining_debuff
+			}
+			remove_modifier = modifier_agricultural_econ_mining_debuff
+		}
 	}
 	
 	on_fail = {
 		set_global_variable = {
 			name = china_warlord_explosion
 			value = 0
+		}
+		every_state = {
+			limit = {
+                has_modifier = eight_banners
+            }
+			remove_modifier = eight_banners
 		}
 		trigger_event = { id = warlord_china_events.100 }
 	}
@@ -113,6 +146,7 @@
 				limit = {
 					NOT = { has_global_variable = china_warlord_explosion_default }
 					in_default = yes
+					is_player = yes
 				}
 				chi_add_1_fracture = yes
 				set_global_variable = china_warlord_explosion_default
@@ -144,16 +178,26 @@
 			if = {
 				limit = {
 					NOT = { has_variable = china_abolished_monarchy }
-					NOT = { has_law = law_type:law_monarchy }
-					AND = {
-						exists = c:CHI
-						c:CHI = ROOT
+					OR = {
+						AND = {
+							exists = c:CHI
+							c:CHI = ROOT
+							NOT = { has_law = law_type:law_monarchy }
+						}
+						AND = {
+							exists = c:TPG
+							c:TPG = ROOT
+							has_law = law_type:law_republic
+						}
 					}
 				}
 				set_variable = china_abolished_monarchy
+				chi_add_1_fracture = yes
 				if = {
 					limit = {
 						NOT = { has_variable = china_han_empire }
+						exists = c:CHI
+						c:CHI = ROOT
 					}
 					trigger_event = { id = boxer_rebellion_events.4 days = 0 popup = yes }
 				}
@@ -199,7 +243,7 @@
 			}
 			if = {
 				limit = {
-					NOT = { has_law = law_type:law_serfdom }
+					NOT = { has_law = law_type:law_outlawed_dissent }
 				}
 				change_global_variable = {
 					name = china_warlord_explosion
@@ -217,7 +261,7 @@
 			}			
 			if = {
 				limit = {
-					NOT = { has_law = law_type:law_traditionalism }
+					NOT = { has_law = law_type:law_state_religion }
 				}
 				change_global_variable = {
 					name = china_warlord_explosion

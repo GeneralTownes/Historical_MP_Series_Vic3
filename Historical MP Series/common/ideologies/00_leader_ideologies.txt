@@ -72,8 +72,9 @@ ideology_traditionalist = {
 			}
 		}
 		NOT = {
-			exists = c:FRA
-			c:FRA = this
+			owner = {
+				c:FRA ?= this
+			}
 		}
 		scope:interest_group = {
 			OR = {
@@ -158,6 +159,13 @@ ideology_atheist = {
 		law_freedom_of_conscience = disapprove
 		law_total_separation = approve
 		law_state_atheism = approve
+	}
+	
+	lawgroup_education_system = {
+		law_public_schools = approve
+		law_private_schools = approve
+		law_no_schools = neutral
+		law_religious_schools = disapprove		
 	}
 	
 	possible = {
@@ -666,6 +674,13 @@ ideology_reformer = {
 		law_child_labor_allowed = disapprove
 		law_restricted_child_labor = neutral
 		law_compulsory_primary_school = approve
+	}
+	
+	lawgroup_education_system = {
+		law_public_schools = approve
+		law_private_schools = approve
+		law_no_schools = disapprove
+		law_religious_schools = neutral		
 	}
 	
 	lawgroup_poll_tax = {
@@ -1919,6 +1934,14 @@ ideology_vanguardist = {
 		law_technocracy = disapprove
 	}
 	
+	lawgroup_executive_structure = {
+		law_independent_executive = disapprove
+		law_dual_executive = disapprove
+		law_parliamentary_system = disapprove
+		law_council_republic = approve
+		law_single_party_state = strongly_approve
+	}
+	
 	lawgroup_voting_system = {
 		law_no_voting = strongly_approve
 		law_plurality = strongly_disapprove
@@ -1932,6 +1955,13 @@ ideology_vanguardist = {
 		law_unicameralism = neutral
 		law_asymmetric_bicameralism = neutral
 		law_symmetric_bicameralism = neutral
+	}
+
+	lawgroup_church_and_state = {
+		law_state_religion = strongly_disapprove
+		law_freedom_of_conscience = neutral
+		law_total_separation = approve
+		law_state_atheism = strongly_approve
 	}
 	
 	lawgroup_free_speech = {
@@ -2299,8 +2329,10 @@ ideology_fascist = {
 		if = {
 			limit = {
 				scope:interest_group = {
-					is_interest_group_type = ig_petty_bourgeoisie
-					is_interest_group_type = ig_armed_forces
+					OR = {
+						is_interest_group_type = ig_petty_bourgeoisie
+						is_interest_group_type = ig_armed_forces
+					}
 				}
 			}
 			add = 50
@@ -2309,8 +2341,10 @@ ideology_fascist = {
 		if = {
 			limit = {
 				scope:interest_group = {
-					is_interest_group_type = ig_trade_unions
-					is_interest_group_type = ig_intelligentsia
+					OR = {
+						is_interest_group_type = ig_trade_unions
+						is_interest_group_type = ig_intelligentsia
+					}
 				}
 			}
 			add = -25
@@ -2409,6 +2443,27 @@ ideology_anarchist = {
 		law_asymmetric_bicameralism = approve
 		law_symmetric_bicameralism = neutral
 	}
+
+	lawgroup_free_speech = {
+		law_protected_speech = strongly_approve
+		law_right_of_assembly = approve
+		law_censorship = disapprove
+		law_outlawed_dissent = strongly_disapprove
+	}
+	
+	lawgroup_citizenship = {
+		law_ethnostate = strongly_disapprove
+		law_national_supremacy = strongly_disapprove
+		law_racial_segregation = disapprove
+		law_cultural_exclusion = approve
+		law_multicultural = strongly_approve	
+	}	
+	
+	lawgroup_migration = {
+		law_migration_controls = neutral
+		law_closed_borders = disapprove
+		law_no_migration_controls = strongly_approve	
+	}
 	
 	lawgroup_economic_system = {	
 		law_cooperative_ownership = strongly_approve
@@ -2419,13 +2474,6 @@ ideology_anarchist = {
 		law_laissez_faire = strongly_disapprove
 		law_command_economy = strongly_disapprove
 		#law_industry_banned = disapprove
-	}
-
-	lawgroup_free_speech = {
-		law_protected_speech = strongly_approve
-		law_right_of_assembly = approve
-		law_censorship = disapprove
-		law_outlawed_dissent = strongly_disapprove
 	}
 
 	lawgroup_army_model = {
@@ -2440,6 +2488,13 @@ ideology_anarchist = {
 		law_local_police = disapprove
 		law_dedicated_police = disapprove
 		law_militarized_police = strongly_disapprove
+	}
+	
+	lawgroup_colonization = {
+		law_colonial_resettlement = disapprove
+		law_colonial_exploitation = strongly_disapprove
+		law_frontier_colonization = disapprove
+		law_no_colonial_affairs = approve
 	}
 	
 	possible = {
@@ -2844,7 +2899,14 @@ ideology_market_liberal = {
 		law_child_labor_allowed = approve
 		law_restricted_child_labor = disapprove
 		law_compulsory_primary_school = strongly_disapprove
-	}	
+	}
+	
+	lawgroup_education_system = {
+		law_public_schools = neutral
+		law_private_schools = approve
+		law_no_schools = disapprove
+		law_religious_schools = neutral		
+	}
 	
 	lawgroup_trade_policy = {
 		law_free_trade = strongly_approve
@@ -4074,7 +4136,6 @@ ideology_integralist = {
 
 	lawgroup_distribution_of_power = {
 		law_autocracy = strongly_approve
-		law_single_party_state = approve
 		law_oligarchy = approve
 		law_landed_voting = neutral
 		law_wealth_voting = disapprove
@@ -4193,9 +4254,11 @@ ideology_integralist = {
 		if = {
 			limit = {
 				scope:interest_group = {
-					is_interest_group_type = ig_petty_bourgeoisie
-					is_interest_group_type = ig_devout
-					is_interest_group_type = ig_armed_forces
+					OR = {
+						is_interest_group_type = ig_petty_bourgeoisie
+						is_interest_group_type = ig_devout
+						is_interest_group_type = ig_armed_forces
+					}
 				}
 			}
 			add = 50
@@ -4204,8 +4267,10 @@ ideology_integralist = {
 		if = {
 			limit = {
 				scope:interest_group = {
-					is_interest_group_type = ig_trade_unions
-					is_interest_group_type = ig_intelligentsia
+					OR = {
+						is_interest_group_type = ig_trade_unions
+						is_interest_group_type = ig_intelligentsia
+					}
 				}
 			}
 			add = -25
@@ -4241,11 +4306,12 @@ ideology_liberal_leader = {
 		law_census_voting = approve
 		law_wealth_voting = approve
 		law_landed_voting = approve
-		law_single_party_state = disapprove
 		law_technocracy = disapprove
 		law_oligarchy = disapprove
 		law_autocracy = strongly_disapprove
 		law_anarchy = strongly_disapprove
+		law_vanguardism = strongly_disapprove
+		law_clerical_voting = disapprove
 	}
 
 	lawgroup_bureaucracy = {

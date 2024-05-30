@@ -3,13 +3,23 @@
 # Root = Country
 on_monthly_pulse_country = {
 	on_actions = {
-		small_nation_inno_fix
-		check_for_gm
-		ai_modifiers
+		HMPS_small_nation_inno_fix
+		HMPS_Check_for_GM
+		HMPS_ai_modifiers
 		HMPS_China_Puppet
-		france_pop_growth
+		cleanup_chi_sub_flag
+		HMPS_France_Pop_Growth
+		HMPS_China_Ports_Fracture
+		HMPS_Subject_Penalty
+		HMPS_Coastal_Capital
+		HMPS_Remove_Political_Movements
+		HMPS_Institution_Modifier
+		HMPS_China
+		HMPS_Recognition
+		HMPS_rev_handling
 	}
 	events = {
+		hmps_diplo.2
 		communism.8 # Red Army
 		peoples_springtime.1
 		opium_wars.1
@@ -29,7 +39,6 @@ on_monthly_pulse_country = {
 		paraguay.11 # Paraguay War
 		acw_events.9 # CSA victory event
 		#mahdists_uprising.1 commented out until further africa flava is made
-		rus_flavor_evt.1
 		wine_blight_evt.4
 		potato_blight.8
 		gutter_crown.1
@@ -38,8 +47,7 @@ on_monthly_pulse_country = {
 		gutter_crown.8
 		gutter_crown.9
 		hmps_diplo.1
-		railroad_bubble.3
-		railroad_bubble.4
+		#railroad_bubble.4 not implemented
 		egyptian_subject.1
 		chem_weapons_infamy.1
 		aus_flavor_evt.2
@@ -47,14 +55,14 @@ on_monthly_pulse_country = {
 		dp_modifiers.1
 		#dp_modifiers.2
 		#dp_modifiers.3
-		decentralized_sol_evt.1
 		grants.3
+		Britain_India_Transfer.1
 		
 		# Exile Agitators Events
 		yeet_agitator_events.1
 		yeet_agitator_events.2
 		yeet_agitator_events.3
-		
+
 		# Comte
 		positivism.1
 	}
@@ -145,513 +153,6 @@ on_monthly_pulse_country = {
 				}
 			}
 			trigger_event = { id = peru_bolivia_events.8 days = 0 popup = yes }
-		}
-		if = {
-			limit = {
-				is_subject_type = subject_type_protectorate
-				NOT = { has_modifier = subject_political_penalty }
-			}
-			add_modifier = {
-				name = subject_political_penalty
-				months = -1
-			}
-		}
-		if = {
-			limit = {
-				NOT = { is_subject_type = subject_type_protectorate }
-			}
-			remove_modifier = subject_political_penalty
-		}
-		if = {
-			limit = {
-				NOT = { has_modifier = coastal_capital }
-				any_scope_state = {
-					is_capital = yes
-					is_coastal = yes
-				}
-			}
-			add_modifier = {
-				name = coastal_capital
-				months = -1
-			}
-		}
-		if = {
-			limit = {
-				has_modifier = coastal_capital
-				any_scope_state = {
-					is_capital = yes
-					is_coastal = no
-				}
-			}
-			remove_modifier = coastal_capital
-		}
-		if = {
-			limit = {
-				NOT = { has_modifier = near_coastal_capital }
-				any_scope_state = {
-					is_capital = yes
-					OR = {
-						state_region = s:STATE_NANJING
-						state_region = s:STATE_ILE_DE_FRANCE
-						state_region = s:STATE_BRANDENBURG
-						state_region = s:STATE_AUSTRIA
-						state_region = s:STATE_TRANSDANUBIA
-					}
-				}
-			}
-			add_modifier = {
-				name = near_coastal_capital
-				months = -1
-			}
-		}
-		if = {
-			limit = {
-				has_modifier = near_coastal_capital
-				any_scope_state = {
-					is_capital = yes
-					NOT = { state_region = s:STATE_NANJING }
-					NOT = { state_region = s:STATE_ILE_DE_FRANCE }
-					NOT = { state_region = s:STATE_BRANDENBURG }
-					NOT = { state_region = s:STATE_AUSTRIA }
-					NOT = { state_region = s:STATE_TRANSDANUBIA }
-				}
-			}
-			remove_modifier = near_coastal_capital
-		}
-		every_country = {
-			limit = {
-				is_country_type = decentralized
-			}
-			every_scope_state = {
-				limit = {
-					NOT = {
-						has_modifier = decentralized_sol
-					}
-				}
-				add_modifier = {
-					name = decentralized_sol
-				}
-			}
-		}
-		every_country = {
-			every_scope_state = {
-				limit = {
-					is_slave_state = yes
-					NOT = {
-						has_modifier = slave_state_migration_debuff
-					}
-				}
-				add_modifier = {
-					name = slave_state_migration_debuff
-				}
-			}
-		}
-		every_country = {
-			every_scope_state = {
-				limit = {
-					is_slave_state = no
-				}
-				remove_modifier = slave_state_migration_debuff
-			}
-		}
-		every_political_movement = {
-			limit = {
-				OR = {
-					political_movement_support > 5
-					political_movement_radicalism > 0
-				}
-				NOT = { is_political_movement_type = movement_to_preserve }
-				OR = {
-					desired_law = law_type:law_peasant_levies
-					desired_law = law_type:law_national_militia
-					desired_law = law_type:law_professional_army
-					desired_law = law_type:law_mass_conscription
-					
-					desired_law = law_type:law_traditionalism
-					
-					desired_law = law_type:law_no_poll_taxes
-					desired_law = law_type:law_land_based_taxation
-					desired_law = law_type:law_per_capita_based_taxation
-							
-					desired_law = law_type:law_no_income_taxes
-					desired_law = law_type:law_low_income_tax
-					desired_law = law_type:law_moderate_income_tax
-					desired_law = law_type:law_high_income_tax
-					
-					desired_law = law_type:law_no_corporation_taxes
-					desired_law = law_type:law_low_corporation_tax
-					desired_law = law_type:law_moderate_corporation_tax
-					desired_law = law_type:law_high_corporation_tax
-					
-					desired_law = law_type:law_no_consumption_taxes
-					desired_law = law_type:law_low_consumption_tax
-					desired_law = law_type:law_moderate_consumption_tax
-					desired_law = law_type:law_high_consumption_tax
-				}
-			}
-			add_modifier = {
-				name = revolution_disbanded
-				months = normal_modifier_time
-			}
-		}
-		#disable ai subject revolts
-		if = {
-			limit = {
-				is_subject = yes
-				is_player = no
-				is_immune_to_revolutions = no
-			}
-			set_immune_to_revolutions = yes
-		}
-		#disable player subjects/non subjects from being immune to revs
-		if = {
-			limit = {
-				OR = {
-					AND = {
-						is_subject = yes
-						is_player = yes
-					}
-					is_subject = no
-				}
-				is_immune_to_revolutions = yes
-			}
-			set_immune_to_revolutions = no
-		}
-		every_country = {
-			every_scope_state = {
-				remove_modifier = colonial_institution_resettlement
-				remove_modifier = colonial_institution_exploitation
-			}
-		}
-		every_country = {
-			limit = {
-				institution:institution_colonial_affairs.investment = 1
-				has_law = law_type:law_colonial_resettlement
-			}
-			every_scope_state = {
-				limit = {
-					is_incorporated = no
-				}
-				add_modifier = {
-					name = colonial_institution_resettlement
-				}
-			}
-		}
-		every_country = {
-			limit = {
-				institution:institution_colonial_affairs.investment = 2
-				has_law = law_type:law_colonial_resettlement
-			}
-			every_scope_state = {
-				limit = {
-					is_incorporated = no
-				}
-				add_modifier = {
-					name = colonial_institution_resettlement
-					multiplier = 2
-				}
-			}
-		}
-		every_country = {
-			limit = {
-				institution:institution_colonial_affairs.investment = 3
-				has_law = law_type:law_colonial_resettlement
-			}
-			every_scope_state = {
-				limit = {
-					is_incorporated = no
-				}
-				add_modifier = {
-					name = colonial_institution_resettlement
-					multiplier = 3
-				}
-			}
-		}
-		every_country = {
-			limit = {
-				institution:institution_colonial_affairs.investment = 4
-				has_law = law_type:law_colonial_resettlement
-			}
-			every_scope_state = {
-				limit = {
-					is_incorporated = no
-				}
-				add_modifier = {
-					name = colonial_institution_resettlement
-					multiplier = 4
-				}
-			}
-		}
-		every_country = {
-			limit = {
-				institution:institution_colonial_affairs.investment = 5
-				has_law = law_type:law_colonial_resettlement
-			}
-			every_scope_state = {
-				limit = {
-					is_incorporated = no
-				}
-				add_modifier = {
-					name = colonial_institution_resettlement
-					multiplier = 5
-				}
-			}
-		}
-		every_country = {
-			limit = {
-				institution:institution_colonial_affairs.investment = 1
-				has_law = law_type:law_colonial_exploitation
-			}
-			every_scope_state = {
-				limit = {
-					is_incorporated = no
-				}
-				add_modifier = {
-					name = colonial_institution_exploitation
-				}
-			}
-		}
-		every_country = {
-			limit = {
-				institution:institution_colonial_affairs.investment = 2
-				has_law = law_type:law_colonial_exploitation
-			}
-			every_scope_state = {
-				limit = {
-					is_incorporated = no
-				}
-				add_modifier = {
-					name = colonial_institution_exploitation
-					multiplier = 2
-				}
-			}
-		}
-		every_country = {
-			limit = {
-				institution:institution_colonial_affairs.investment = 3
-				has_law = law_type:law_colonial_exploitation
-			}
-			every_scope_state = {
-				limit = {
-					is_incorporated = no
-				}
-				add_modifier = {
-					name = colonial_institution_exploitation
-					multiplier = 3
-				}
-			}
-		}
-		every_country = {
-			limit = {
-				institution:institution_colonial_affairs.investment = 4
-				has_law = law_type:law_colonial_exploitation
-			}
-			every_scope_state = {
-				limit = {
-					is_incorporated = no
-				}
-				add_modifier = {
-					name = colonial_institution_exploitation
-					multiplier = 4
-				}
-			}
-		}
-		every_country = {
-			limit = {
-				institution:institution_colonial_affairs.investment = 5
-				has_law = law_type:law_colonial_exploitation
-			}
-			every_scope_state = {
-				limit = {
-					is_incorporated = no
-				}
-				add_modifier = {
-					name = colonial_institution_exploitation
-					multiplier = 5
-				}
-			}
-		}
-		every_country = {
-			limit = {
-				is_subject = no
-				has_law = law_type:law_industry_banned
-			}
-			activate_law = law_type:law_traditionalism
-		}
-		if = {
-			limit = {
-				NOT = { has_modifier = chinese_political_instability }
-				exists = c:CHI
-				THIS = c:CHI
-				has_journal_entry = je_warlord_china
-			}
-			c:CHI = {
-				add_modifier = {
-					name = chinese_political_instability
-					is_decaying = no
-					years = -1
-				}
-			}
-		}
-		if = {
-			limit = {
-				NOT = { has_modifier = chinese_political_instability }
-				exists = c:TPG
-				this = c:TPG
-				has_journal_entry = je_warlord_china
-			}
-			c:TPG = {
-				add_modifier = {
-					name = chinese_political_instability
-					is_decaying = no
-					years = -1
-				}
-			}
-		}
-		
-		if = {
-			limit = {
-				exists = c:CHI
-				THIS = c:CHI
-				has_global_variable = lost_opium_wars
-				NOT = { has_modifier = chinese_opium_addiction }
-				game_date <= 1846.01.01
-			}
-			c:CHI = {
-				add_modifier = {
-					name = chinese_opium_addiction
-					months = 480
-					is_decaying = yes
-				}
-			}
-		}
-		if = {
-			limit = {
-				exists = c:CHI
-				THIS = c:CHI
-				has_global_variable = lost_opium_wars
-				NOT = { has_modifier = chinese_opium_addiction }
-				game_date > 1846.01.01
-				game_date <= 1856.01.01
-			}
-			c:CHI = {
-				add_modifier = {
-					name = chinese_opium_addiction
-					months = 360
-					is_decaying = yes
-					multiplier = 0.75
-				}
-			}
-		}
-		if = {
-			limit = {
-				exists = c:CHI
-				THIS = c:CHI
-				has_global_variable = lost_opium_wars
-				NOT = { has_modifier = chinese_opium_addiction }
-				game_date > 1856.01.01
-				game_date <= 1866.01.01
-			}
-			c:CHI = {
-				add_modifier = {
-					name = chinese_opium_addiction
-					months = 240
-					is_decaying = yes
-					multiplier = 0.5
-				}
-			}
-		}
-		if = {
-			limit = {
-				exists = c:CHI
-				THIS = c:CHI
-				has_global_variable = lost_opium_wars
-				NOT = { has_modifier = chinese_opium_addiction }
-				game_date > 1866.01.01
-				game_date <= 1876.01.01
-			}
-			c:CHI = {
-				add_modifier = {
-					name = chinese_opium_addiction
-					months = 120
-					is_decaying = yes
-					multiplier = 0.25
-				}
-			}
-		}
-		
-		if = {
-			limit = {
-				NOT = { has_modifier = china_ai_help }
-				exists = c:CHI
-				THIS = c:CHI
-				is_player = no
-			}
-			c:CHI = {
-				add_modifier = {
-					name = china_ai_help
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_modifier = china_ai_help
-				exists = c:CHI
-				THIS = c:CHI
-				is_player = yes
-			}
-			c:CHI = { remove_modifier = china_ai_help }
-		}
-		if = {
-			limit = {
-				NOT = { has_global_variable = russia_ottoman_border_fix }
-			}
-			s:STATE_DOBRUDJA.region_state:RUS = {
-				set_state_owner = c:TUR
-			}
-			s:STATE_KARS.region_state:RUS = {
-				set_state_owner = c:TUR
-			}
-			set_global_variable = russia_ottoman_border_fix
-		}
-		if = {
-			limit = {
-				NOT = { has_global_variable = cuba_annexed }
-			}
-			s:STATE_CUBA.region_state:CUB = {
-				set_state_owner = c:SPA
-			}
-			set_global_variable = cuba_annexed
-		}
-		if = {
-			limit = {
-				any_country = {
-					has_variable = recognition_initiator
-					is_country_type = recognized
-				}
-				any_country = {
-					has_variable = recognition_target
-					is_diplomatic_play_committed_participant = no
-				}
-			}
-			every_country = {
-				limit = {
-					has_variable = recognition_target
-					is_diplomatic_play_committed_participant = no
-				}
-				add_modifier = {
-					name = forced_recognisation_modifier
-					months = long_modifier_time
-					is_decaying = yes
-				}
-				remove_variable = recognition_target
-			}
-			every_country = {
-				limit = {
-					has_variable = recognition_initiator
-				}
-				remove_variable = recognition_initiator
-			}
 		}
 	}
 	# Election Events
@@ -780,6 +281,12 @@ on_monthly_pulse_country = {
 		11 = 0
 		1 = potato_blight.1
 	}
+	
+	# Railroad Bubble
+	random_events = {
+		11 = 0
+		1 = railroad_bubble.3
+	}
 }
 
 on_yearly_pulse_country = { #Krakatoa special pulse
@@ -796,6 +303,8 @@ on_yearly_pulse_country = { #Krakatoa special pulse
 on_yearly_pulse_country = {
 	events = {
 		railroad_bubble.2
+		prussia_monarchy.5
+		prussia_monarchy.6
 	}
 	effect = {
 		# IG leader death
@@ -827,7 +336,7 @@ on_yearly_pulse_country = {
 				random_list = {
 					1 = { 
 						set_variable = { name = gov_petition_fired months = 3 }
-						trigger_event = { id = government_petition_events.100 }
+						trigger_event = { id = government_petition_events.1 }
 					}
 					1 = {
 	
@@ -839,7 +348,7 @@ on_yearly_pulse_country = {
 				random_list = {
 					1 = { 
 						set_variable = { name = gov_petition_fired months = 3 }
-						trigger_event = { id = government_petition_events.100 }
+						trigger_event = { id = government_petition_events.1 }
 					}
 					9 = {
 	
@@ -1013,7 +522,7 @@ on_yearly_pulse_country = {
 		10 = opium_wars.8
 		
 		20 = communism.9
-		20 = communism.7
+		10 = communism.7
 		
 		#psychology
 		20 = psychology_events.1
@@ -1039,7 +548,6 @@ on_yearly_pulse_country = {
 
 		# rivalry events
 		10 = diplomatic_friction.1
-		10 = diplomatic_friction.2
 		10 = diplomatic_friction.20
 		
 		# Titanic
@@ -1265,6 +773,10 @@ on_decade_pulse_character = {
 
 # Root = State
 on_monthly_pulse_state = {
+	on_actions = {
+		HMPS_Slave_State_Migration
+		HMPS_remove_bad_unis
+	}
 	random_events = {
 		10 = goldrush.5
 	}
@@ -1291,10 +803,9 @@ on_decade_pulse_state = {}
 # scope:defender = defending commander
 # scope:state = location state
 on_battle_started = {
-	random_events = {
-		80 = 0
-		20 = culture_brazil.1
-	}
+    on_actions = {
+        FAE_on_battle_started
+    }
 }
 
 # Root = attacker or defender country
@@ -1304,7 +815,9 @@ on_battle_started = {
 # scope:defender = defending commander
 # scope:state = location state
 on_battle_ended = {
-
+    on_actions = {
+        FAE_on_battle_ended
+    }
 }
 
 # Root = attacker or defender country
@@ -1316,6 +829,10 @@ on_battle_ended = {
 on_battle_won = {
 	events = {
 		texan_war_of_independence.3
+	}
+	random_events = {
+		80 = 0
+		20 = culture_brazil.1
 	}
 }
 
@@ -1338,21 +855,8 @@ on_start_expanding_building = {
 
 # Root = Building
 on_building_expanded = {
-	effect = {
-		# when a railroad finishes expanding, increase railroad variable
-		if = {
-			limit = {
-				OR = {
-					is_building_type = building_railway
-					is_building_type = building_port
-				}
-			}
-			this.owner = {
-				trigger_event = {
-					id = "railroad_bubble.1"
-				}
-			}
-		}
+	on_actions = {
+		HMPS_rr_counting
 	}
 }
 
@@ -1396,6 +900,16 @@ on_acquired_technology = {
 	effect = {
 		if = {
 			limit = {
+				NOT = {
+					has_global_variable = war_propaganda_researched
+				}
+				has_technology_researched = war_propaganda
+			}
+			set_global_variable = war_propaganda_researched
+		}
+		
+		if = {
+			limit = {
 				has_variable = grand_exhibition_points_change
 			}
 			change_variable = {
@@ -1409,16 +923,6 @@ on_acquired_technology = {
 			}
 			post_notification = acquired_technology_notification
 		}
-		#if = {
-		#	limit = {
-		#		has_technology_researched = socialism
-		#		NOT = { has_variable = socialism_researched }
-		#	}
-		#	set_variable = socialism_researched
-		#	ig:ig_trade_unions = {
-		#		add_ideology = ideology_socialist
-		#	}
-		#}
 		if = {
 			limit = {
 				is_player = yes
@@ -1719,6 +1223,64 @@ on_new_ruler = {
 				}
 				owner = {
 					trigger_event = { id = russia_monarchy.11 popup = yes }
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = austria_monarchy
+					has_law = law_type:law_monarchy
+				}
+				is_ruler = yes
+			}
+			if = {
+				limit = {
+					has_template = aus_franz_josef_I_habsburg_template
+				}
+				owner = {
+					trigger_event = { id = austria_monarchy.2 popup = yes }
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_variable = prussia_monarchy
+					has_law = law_type:law_monarchy
+				}
+				is_ruler = yes
+			}
+			if = {
+				limit = {
+					has_template = pru_wilhelm_IV_hohenzollern_template
+				}
+				owner = {
+					trigger_event = { id = prussia_monarchy.1 popup = yes }
+				}
+			}
+			else_if = {
+				limit = {
+					has_template = PRU_wilhelm_I
+				}
+				owner = {
+					trigger_event = { id = prussia_monarchy.2 popup = yes }
+				}
+			}
+			else_if = {
+				limit = {
+					has_template = PRU_friedrich_III
+				}
+				owner = {
+					trigger_event = { id = prussia_monarchy.3 popup = yes }
+				}
+			}
+			else_if = {
+				limit = {
+					has_template = PRU_wilhelm_II
+				}
+				owner = {
+					trigger_event = { id = prussia_monarchy.4 popup = yes }
 				}
 			}
 		}
@@ -2375,6 +1937,12 @@ on_country_formed = {
 		}
 		else_if = {
 			limit = {
+				c:CLI ?= ROOT
+			}
+			trigger_event = { id = formation.21 popup = yes }
+		}
+		else_if = {
+			limit = {
 				c:GER ?= ROOT
 			}
 			trigger_event = { id = german_unification.4 popup = yes }
@@ -2395,6 +1963,14 @@ on_country_formed = {
 on_migration_target_created = {
 	effect = {
 		post_notification = migration_target_created
+		
+		owner = {
+			add_modifier = {
+				name = mass_migration_debuff
+				months = normal_modifier_time
+				is_decaying = yes			
+			}
+		}
 	}
 }
 
@@ -3148,6 +2724,24 @@ on_law_enactment_pass = {
 				}
 				remove_variable = var_slave_trade_suppression_var
 			}
+			if = {
+				limit = {
+					c:CHI = {
+						has_modifier = opium_ban_authority
+						is_enacting_law = law_type:law_free_trade
+					}
+				}
+				remove_modifier = opium_ban_authority
+			}
+		}
+		if = {
+			limit = {
+				c:CHI = {
+					has_modifier = opium_ban_authority
+					is_enacting_law = law_type:law_free_trade
+				}
+			}
+			remove_modifier = opium_ban_authority
 		}
 		every_interest_group = {
 			limit = {
@@ -3304,13 +2898,19 @@ on_revolution_start = {
 		HMPS_revolution_boost
 	}
 	effect = {
-		scope:target = {
+		scope:target ?= {
 			enact_preferred_governance_principle = yes
+			if = {
+				limit = {
+					has_law = law_type:law_single_party_state
+				}
+				handle_revolutionary_sps = yes
+			}
 		}
 		if = {
 			limit = {
 				has_law = law_type:law_monarchy
-				scope:target = {
+				scope:target ?= {
 					NOT = {
 						has_law = law_type:law_monarchy
 					}
@@ -3528,28 +3128,28 @@ on_secession_start = {
 			chi_add_1_fracture = yes
 			set_global_variable = china_warlord_explosion_secession
 		}
-		if = {
-			limit = {
-				scope:target = {
-					OR = {
-						country_has_primary_culture = cu:north_italian
-						country_has_primary_culture = cu:south_italian
-					}
-				}
-				ROOT = {
-					NOR = {
-						country_has_primary_culture = cu:north_italian
-						country_has_primary_culture = cu:south_italian
-					}
-				}
-				any_country = {
-					has_journal_entry = je_risorgimento
-				}
-			}
-			root = {
-				trigger_event = { id = italian_unification.7 days = 3 }
-			}
-		}
+		#if = {
+		#	limit = {
+		#		scope:target = {
+		#			OR = {
+		#				country_has_primary_culture = cu:north_italian
+		#				country_has_primary_culture = cu:south_italian
+		#			}
+		#		}
+		#		ROOT = {
+		#			NOR = {
+		#				country_has_primary_culture = cu:north_italian
+		#				country_has_primary_culture = cu:south_italian
+		#			}
+		#		}
+		#		any_country = {
+		#			has_journal_entry = je_risorgimento
+		#		}
+		#	}
+		#	root = {
+		#		trigger_event = { id = italian_unification.7 days = 3 }
+		#	}
+		#}
 		if = {
 			limit = {
 				NOR = {
@@ -4217,6 +3817,22 @@ on_ig_resigned_government = {
 				set_variable = resigned_from_gov_coup
 			}
 		}
+		if = {
+			limit = {
+				owner = {
+					has_law = law_type:law_single_party_state
+					any_active_party = {
+						any_member = {
+							is_in_government = no
+							is_insurrectionary = yes
+						}
+					}
+				}
+			}
+			owner = {
+				trigger_event = { id = government_collapse.1 popup = yes }
+			}
+		}
 	}
 }
 
@@ -4349,6 +3965,9 @@ on_wargoal_removed = {
 # scope:actor = Initiator country
 # scope:target = Target country
 on_war_end = {
+	on_actions = {
+        FAE_oa_on_war_end
+    }
 	effect = {
 		scope:actor = {
 			set_variable = {
@@ -4673,9 +4292,9 @@ on_character_recruitment = {
 on_impose_law = {
 	effect = {
 		start_enactment = scope:law.type
+		post_notification = on_impose_law
 	}
 }
-
 
 # Root = invaded country
 # scope:actor = invading country
@@ -4739,3 +4358,4 @@ on_military_formation_created = {
 		}
 	}
 }
+

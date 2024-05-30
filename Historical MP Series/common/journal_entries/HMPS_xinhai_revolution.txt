@@ -17,9 +17,7 @@
 		hidden_trigger = {
 			NOT = { has_global_variable = xinhai_je_happened }
 		}
-		cu:han = {
-			culture_is_discriminated_in = ROOT
-		}
+		NOT = { has_law = law_type:law_republic }
     }
     possible = {
         has_technology_researched = pan-nationalism
@@ -33,9 +31,7 @@
         trigger_event = { id = xinhai_revolution_events.1 } # Anti-Manchu Sentiment
     }
     complete = {
-        cu:han = {
-			NOT = { culture_is_discriminated_in = ROOT }
-		}
+        has_law = law_type:law_republic
     }
     on_complete = {
     }

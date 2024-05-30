@@ -13,20 +13,24 @@
 	
     possible = {
 		ruler = {
-			has_ideology = ideology:ideology_market_liberal
+			has_ideology = ideology:ideology_land_reformer
 		}
     }
 	
 	immediate = {
 		set_variable = alexander_reforms_var
+		set_variable = {
+			name = je_fix_bear_is_awake
+			days = 1
+		}	
 		if = {
 			limit = {
 				game_date >= 1855.01.01
 				ruler = {
-					NOT = { has_ideology = ideology:ideology_market_liberal }
+					NOT = { has_ideology = ideology:ideology_land_reformer }
 				}
 				heir = {
-					has_ideology = ideology:ideology_market_liberal
+					has_ideology = ideology:ideology_land_reformer
 				}
 			}
 			ruler = {
@@ -46,16 +50,20 @@
 
 	complete = {
 		NOT = { has_law = law_type:law_traditionalism }
-		NOT = { has_law = law_type:law_serfdom }
-		NOT = { has_law = law_type:law_hereditary_bureaucrats }
-		literacy_rate > 0.40
+		#NOT = { has_law = law_type:law_serfdom }
+		#NOT = { has_law = law_type:law_hereditary_bureaucrats }
+		#literacy_rate > 0.40
+		hidden_trigger = {
+			NOT = { has_variable = je_fix_bear_is_awake }
+		}
 	}
 
 	on_complete = {
 		#Alexandergames?
 		add_modifier = {
 			name = the_bear_wakes
-			months = long_modifier_time
+			months = very_long_modifier_time
+			is_decaying = yes
 		}
 	}
 
@@ -78,144 +86,146 @@
 	can_revolution_inherit = no
 }
 
-je_bulgaria_liberated = {
-	icon = "gfx/interface/icons/event_icons/event_military.dds"
+#je_bulgaria_liberated = {
+#	icon = "gfx/interface/icons/event_icons/event_military.dds"
+#
+#	complete = {
+#		custom_tooltip = {
+#            text = bulgaria_liberated.tt.a
+#			exists = c:BUL
+#			c:BUL = {
+#				OR = {
+#					owns_entire_state_region = STATE_BULGARIA
+#					owns_entire_state_region = STATE_NORTHERN_THRACE
+#				}
+#				OR = {
+#					is_subject_of = ROOT
+#					has_diplomatic_pact = { who = c:RUS type = defensive_pact }
+#					has_diplomatic_pact = { who = c:RUS type = alliance }
+#					has_diplomatic_pact = { who = c:RUS type = customs_union }
+#				}
+#			}
+#		}
+#	}
+#
+#	on_complete = {
+#		custom_tooltip = {
+#			text = je_russia_reform_advance
+#			change_variable = {
+#				name = russia_shithole_var
+#				add = 1
+#			}
+#			set_variable = completed_bulgaria_je
+#			#custom_tooltip = sickman_bulgaria_rus
+#		}
+#	}
+#
+#	fail = {
+#		custom_tooltip = {
+#			text = finished_russia_reform_complete
+#			has_variable = russia_reform_complete
+#		}
+#	}
+#
+#	can_revolution_inherit = yes
+#
+#	weight = 5000
+#}
+#
+#je_serbia_liberated = {
+#	icon = "gfx/interface/icons/event_icons/event_military.dds"
+#
+#	complete = {
+#		custom_tooltip = {
+#            text = serbia_liberated.tt.a
+#			c:SER = {
+#				owns_entire_state_region = STATE_NORTHERN_SERBIA
+#				owns_entire_state_region = STATE_SOUTHERN_SERBIA
+#				OR = {
+#					is_subject_of = ROOT
+#					has_diplomatic_pact = { who = c:RUS type = defensive_pact }
+#					has_diplomatic_pact = { who = c:RUS type = alliance }
+#					has_diplomatic_pact = { who = c:RUS type = customs_union }
+#				}
+#			}
+#		}
+#	}
+#
+#	on_complete = {
+#		custom_tooltip = {
+#			text = je_russia_reform_advance
+#			change_variable = {
+#				name = russia_shithole_var
+#				add = 1
+#			}
+#			set_variable = completed_serbia_je
+#			#custom_tooltip = sickman_serbia_rus
+#		}
+#	}
+#
+#	fail = {
+#		custom_tooltip = {
+#			text = finished_russia_reform_complete
+#			has_variable = russia_reform_complete
+#		}
+#	}
+#
+#	can_revolution_inherit = yes
+#
+#	weight = 5000
+#}
+#
+#je_albania_liberated = {
+#	icon = "gfx/interface/icons/event_icons/event_military.dds"
+#
+#	complete = {
+#		custom_tooltip = {
+#            text = albania_liberated.tt.a
+#			exists = c:ALB
+#			c:ALB = {
+#				owns_entire_state_region = STATE_ALBANIA
+#				OR = {
+#					is_subject_of = ROOT
+#					has_diplomatic_pact = { who = c:RUS type = defensive_pact }
+#					has_diplomatic_pact = { who = c:RUS type = alliance }
+#					has_diplomatic_pact = { who = c:RUS type = customs_union }
+#				}
+#			}
+#		}
+#	}
+#
+#	on_complete = {
+#		custom_tooltip = {
+#			text = je_russia_reform_advance
+#			change_variable = {
+#				name = russia_shithole_var
+#				add = 1
+#			}
+#			set_variable = completed_albania_je
+#		}
+#		#custom_tooltip = sickman_albania_rus
+#	}
+#
+#	fail = {
+#		custom_tooltip = {
+#			text = finished_russia_reform_complete
+#			has_variable = russia_reform_complete
+#		}
+#	}
+#
+#	can_revolution_inherit = yes
+#
+#	weight = 5000
+#}
 
-	complete = {
-		custom_tooltip = {
-            text = bulgaria_liberated.tt.a
-			exists = c:BUL
-			c:BUL = {
-				OR = {
-					owns_entire_state_region = STATE_BULGARIA
-					owns_entire_state_region = STATE_NORTHERN_THRACE
-				}
-				OR = {
-					is_subject_of = ROOT
-					has_diplomatic_pact = { who = c:RUS type = defensive_pact }
-					has_diplomatic_pact = { who = c:RUS type = alliance }
-					has_diplomatic_pact = { who = c:RUS type = customs_union }
-				}
-			}
-		}
-	}
-
-	on_complete = {
-		custom_tooltip = {
-			text = je_russia_reform_advance
-			change_variable = {
-				name = russia_shithole_var
-				add = 1
-			}
-			set_variable = completed_bulgaria_je
-			#custom_tooltip = sickman_bulgaria_rus
-		}
-	}
-
-	fail = {
-		custom_tooltip = {
-			text = finished_russia_reform_complete
-			has_variable = russia_reform_complete
-		}
-	}
-
-	can_revolution_inherit = yes
-
-	weight = 5000
-}
-
-je_serbia_liberated = {
-	icon = "gfx/interface/icons/event_icons/event_military.dds"
-
-	complete = {
-		custom_tooltip = {
-            text = serbia_liberated.tt.a
-			c:SER = {
-				owns_entire_state_region = STATE_NORTHERN_SERBIA
-				owns_entire_state_region = STATE_SOUTHERN_SERBIA
-				OR = {
-					is_subject_of = ROOT
-					has_diplomatic_pact = { who = c:RUS type = defensive_pact }
-					has_diplomatic_pact = { who = c:RUS type = alliance }
-					has_diplomatic_pact = { who = c:RUS type = customs_union }
-				}
-			}
-		}
-	}
-
-	on_complete = {
-		custom_tooltip = {
-			text = je_russia_reform_advance
-			change_variable = {
-				name = russia_shithole_var
-				add = 1
-			}
-			set_variable = completed_serbia_je
-			#custom_tooltip = sickman_serbia_rus
-		}
-	}
-
-	fail = {
-		custom_tooltip = {
-			text = finished_russia_reform_complete
-			has_variable = russia_reform_complete
-		}
-	}
-
-	can_revolution_inherit = yes
-
-	weight = 5000
-}
-
-je_albania_liberated = {
-	icon = "gfx/interface/icons/event_icons/event_military.dds"
-
-	complete = {
-		custom_tooltip = {
-            text = albania_liberated.tt.a
-			exists = c:ALB
-			c:ALB = {
-				owns_entire_state_region = STATE_ALBANIA
-				OR = {
-					is_subject_of = ROOT
-					has_diplomatic_pact = { who = c:RUS type = defensive_pact }
-					has_diplomatic_pact = { who = c:RUS type = alliance }
-					has_diplomatic_pact = { who = c:RUS type = customs_union }
-				}
-			}
-		}
-	}
-
-	on_complete = {
-		custom_tooltip = {
-			text = je_russia_reform_advance
-			change_variable = {
-				name = russia_shithole_var
-				add = 1
-			}
-			set_variable = completed_albania_je
-		}
-		#custom_tooltip = sickman_albania_rus
-	}
-
-	fail = {
-		custom_tooltip = {
-			text = finished_russia_reform_complete
-			has_variable = russia_reform_complete
-		}
-	}
-
-	can_revolution_inherit = yes
-
-	weight = 5000
-}
-
-je_decambrist_sympathizers = {
+je_decembrist_sympathizers = {
 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+	
+	group = je_group_historical_content
 	
 	immediate = {
 		set_variable = {
-			name = decambrist_elimination
+			name = decembrist_elimination
 			value = 0
 		}
 	}
@@ -226,7 +236,10 @@ je_decambrist_sympathizers = {
 		}
 		has_law = law_type:law_secret_police
 		has_law = law_type:law_militarized_police
-		has_law = law_type:law_outlawed_dissent
+		OR = {
+			has_law = law_type:law_censorship
+			has_law = law_type:law_outlawed_dissent
+		}
 		NOT = {
 			any_interest_group = {
 				NOT = { has_ideology = ideology:ideology_liberal }
@@ -234,8 +247,8 @@ je_decambrist_sympathizers = {
 				leader = {
 					OR = {
 						has_ideology = ideology:ideology_radical
+						has_ideology = ideology:ideology_republican_leader
 						has_ideology = ideology:ideology_reformer
-						has_ideology = ideology:ideology_republican
 					}
 				}
 			}
@@ -249,8 +262,8 @@ je_decambrist_sympathizers = {
 				}
 				OR = {
 					has_ideology = ideology:ideology_radical
+					has_ideology = ideology:ideology_republican_leader
 					has_ideology = ideology:ideology_reformer
-					has_ideology = ideology:ideology_republican
 				}
 			}
 		}
@@ -262,7 +275,7 @@ je_decambrist_sympathizers = {
 		}
 		add_modifier = {
 			name = decembrist_suppression_success
-			months = long_modifier_time
+			months = very_long_modifier_time
 			is_decaying = yes
 		}
 	}
@@ -275,13 +288,9 @@ je_decambrist_sympathizers = {
 	}
 	
 	on_fail = {
-		add_radicals = {
-			value = very_large_radicals
-			culture = cu:russian
-		}
 		add_modifier = {
 			name = decembrist_suppression_failure
-			months = long_modifier_time
+			months = very_long_modifier_time
 			is_decaying = yes
 		}
 	}
@@ -292,10 +301,13 @@ je_decambrist_sympathizers = {
 				limit = {
 					has_law = law_type:law_secret_police
 					has_law = law_type:law_militarized_police
-					has_law = law_type:law_outlawed_dissent
+					OR = {
+						has_law = law_type:law_censorship
+						has_law = law_type:law_outlawed_dissent
+					}
 				}
 				change_variable = {
-					name = decambrist_elimination
+					name = decembrist_elimination
 					add = 1
 				}
 			}
@@ -305,19 +317,15 @@ je_decambrist_sympathizers = {
 	timeout = 5475
 	
 	on_timeout = {
-		add_radicals = {
-			value = very_large_radicals
-			culture = cu:russian
-		}
 		add_modifier = {
 			name = decembrist_suppression_failure
-			months = long_modifier_time
+			months = very_long_modifier_time
 			is_decaying = yes
 		}
 	}
 	
 	current_value = {
-		value = root.var:decambrist_elimination
+		value = root.var:decembrist_elimination
 	}
 
 	goal_add_value = {

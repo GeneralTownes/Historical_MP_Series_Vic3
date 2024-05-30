@@ -11,11 +11,15 @@ the_bear_wakes = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 	interest_group_approval_add = 5
 	interest_group_ig_industrialists_pol_str_mult = 0.25
+	state_capitalists_investment_pool_efficiency_mult = 0.25
 }
 the_bear_coma = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	interest_group_ig_landowners_pol_str_mult = 0.50
 	interest_group_ig_devout_pol_str_mult = 0.50
+	state_birth_rate_mult = 0.05
+	state_capitalists_investment_pool_efficiency_mult = -0.5
+	state_aristocrats_investment_pool_efficiency_mult = -0.25
 }
 decembrist_suppression_failure = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
@@ -45,12 +49,12 @@ party_exploit_fixer = {
 
 france_baby_bust = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	state_birth_rate_mult  = -0.30
+	state_birth_rate_mult  = -0.25
 }
 
 france_early_game_birth_fix = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	state_birth_rate_mult  = 0.15
+	state_birth_rate_mult  = 0.10
 }
 
 southern_planter_victory = {
@@ -85,45 +89,68 @@ chinese_opium_addiction = {
 	state_radicals_from_sol_change_mult = 0.33
 	country_prestige_mult = -0.25
 }
-chinese_political_instability = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
-	country_legitimacy_base_add = -10
-	country_law_enactment_time_mult = 0.33
-	country_loan_interest_rate_add = 0.5
-	state_radicals_from_discrimination_mult = 0.25
-	state_turmoil_effects_mult = 0.25
-	country_authority_mult = -0.2
-}
 chinese_economic_stagnation = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
 	building_coal_mine_throughput_add = -1
 	building_iron_mine_throughput_add = -0.25
 	building_lead_mine_throughput_add = -0.5
 	building_sulfur_mine_throughput_add = -0.5
+	state_market_access_price_impact = -0.15
 }
-agrictultural_investment = {
+eight_banners = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
+	building_training_rate_mult = -0.9
+	state_loyalists_from_sol_change_mult = 0.25
+}
+modifier_agricultural_econ_mining_debuff = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	building_subsistence_farms_throughput_add = -0.05
-	building_subsistence_rice_paddies_throughput_add = -0.05
+	state_market_access_price_impact = -0.15
 }
-agrictultural_investment_2 = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-	country_expenses_add = 10000
-}
-agrictultural_investment_3 = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-}
-agrictultural_investment_4 = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
+modifier_inward_china = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	state_aristocrats_investment_pool_contribution_add = -0.09
+	country_production_tech_research_speed_mult = -0.15
+	interest_group_ig_devout_approval_add = 2
 }
 taiping_tech = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
 	country_tech_spread_mult = -0.75
 }
-taiping_conscription = {
+modifier_taiping_occupation = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
-	unit_offense_mult = -0.2
-	unit_defense_mult = -0.2
+	unit_provinces_captured_mult = -0.75
+}
+han_power_increase = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	country_authority_mult = -1
+	country_legitimacy_base_add = -25
+	country_law_enactment_time_mult = 0.33
+}
+qing_delegate_levies = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
+	building_training_rate_mult = 0.2
+}
+qing_provincial_political_power_increase = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	interest_group_pol_str_mult = 0.10
+}
+modifier_taiping_reconstruction = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
+	state_turmoil_effects_mult = 0.25
+	state_tax_waste_add = 0.1
+}
+anti_bandit_edict = {
+	icon = gfx\interface\icons\timed_modifier_icons\modifier_fist_positive.dds
+	state_mortality_turmoil_mult = 0.02
+	state_radicals_from_sol_change_mult = -0.25
+	country_authority_mult = -0.1
+}
+state_anti_bandit_edict = {
+	icon = gfx\interface\icons\timed_modifier_icons\modifier_fist_positive.dds
+	state_mortality_turmoil_mult = 0.02
+	state_radicals_from_sol_change_mult = -0.5
+	state_loyalists_from_sol_change_mult = 0.5
+	state_tax_waste_add = 0.05
 }
 warlords_westernisation = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
@@ -143,6 +170,7 @@ british_lost_opium_wars = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
 	country_prestige_mult = -0.25
 	interest_group_in_government_attraction_mult = -0.1
+	country_legitimacy_ideological_incoherence_mult = 0.5
 	interest_group_ig_armed_forces_approval_add = -10
 	interest_group_ig_landowners_approval_add = -10
 	interest_group_ig_industrialists_approval_add = -10
@@ -150,6 +178,10 @@ british_lost_opium_wars = {
 	state_turmoil_effects_mult = 0.2
 	country_trade_route_competitiveness_mult = -0.33
 	country_loan_interest_rate_mult = 0.4
+}
+chinese_treaty_port = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	state_radicals_from_sol_change_mult = 0.05
 }
 
 wine_blight = {
@@ -233,6 +265,11 @@ divine_monarchy = {
 distraught_liberals = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
 	state_migration_pull_mult = -0.5
+}
+
+rejected_gutter_crown = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	character_popularity_add = -35
 }
 
 german_confederation_leader = {
@@ -324,7 +361,7 @@ mahdist_happy_igs = {
 
 german_baby_boom = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-	state_birth_rate_mult = 0.25
+	state_birth_rate_mult = 0.2
 }
 
 carlists_defeated = {
@@ -403,4 +440,40 @@ modifier_nicholas_ii = {
 	country_capitalists_pol_str_mult = 0.10
 	country_influence_mult = 0.10
 	character_popularity_add = -50
+}
+#German Kaisers
+modifier_friedrich_wilhelm_iv = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_clergymen_pol_str_mult = 0.15
+	country_officers_pol_str_mult = 0.10
+	state_radicals_from_sol_change_mult = -0.05
+}
+modifier_wilhelm_i = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_aristocrats_pol_str_mult = 0.15
+	country_officers_pol_str_mult = 0.10
+	state_loyalists_from_sol_change_accepted_culture_mult = 0.05
+}
+modifier_friedrich_iii = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_bureaucrats_pol_str_mult = 0.25
+	country_academics_pol_str_mult = 0.20
+	country_influence_mult = 0.05
+}
+modifier_wilhelm_ii = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_officers_pol_str_mult = 0.50
+	country_prestige_from_navy_power_projection_mult = 0.15
+}
+#Austrian Kaisers
+modifier_franz_joesph = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+	country_officers_pol_str_mult = 0.25
+	country_aristocrats_pol_str_mult = 0.1
+}
+
+shinto_syncretism = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_positive.dds
+	interest_group_approval_add = 10
+	interest_group_pop_attraction_mult = 0.40
 }

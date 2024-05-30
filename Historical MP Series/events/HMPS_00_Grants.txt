@@ -1,4 +1,4 @@
-namespace = grants
+﻿namespace = grants
 
 #millions
 grants.1 = {
@@ -40,7 +40,7 @@ grants.1 = {
 		remove_global_variable = grant_being_given
 		set_global_variable = {
 			name = grant_being_given
-			days = 31
+			days = 93
 		}
 	}
 	
@@ -55,182 +55,256 @@ grants.1 = {
 		name = grants.1.a
 		default_option = yes
 		trigger_event = {
-			id = grants.4
+			id = grants.6
 			days = 0
 			popup = yes
 		}
+		set_variable = small_grant
 	}
 	
 	option = {
 		name = grants.1.b
-		add_treasury = -1000000
-		trigger = {
-			var:remaining_credit > 1000000
-		}
-		trigger_event = {
-			id = grants.4
-			days = 0
-			popup = yes
-		}
-		scope:grantee_scope = {
-			set_variable = grant_1000
-		}
-	}
-	
-	option = {
-		name = grants.1.c
-		add_treasury = -2000000
-		trigger = {
-			var:remaining_credit > 2000000
-		}
-		trigger_event = {
-			id = grants.4
-			days = 0
-			popup = yes
-		}
-		scope:grantee_scope = {
-			set_variable = grant_2000
-		}
-	}
-	
-	option = {
-		name = grants.1.e
-		add_treasury = -3000000
-		trigger = {
-			var:remaining_credit > 3000000
-		}
-		trigger_event = {
-			id = grants.4
-			days = 0
-			popup = yes
-		}
-		scope:grantee_scope = {
-			set_variable = grant_3000
-		}
-	}
-	
-	option = {
-		name = grants.1.g
-		add_treasury = -4000000
-		trigger = {
-			var:remaining_credit > 4000000
-		}
-		trigger_event = {
-			id = grants.4
-			days = 0
-			popup = yes
-		}
-		scope:grantee_scope = {
-			set_variable = grant_4000
-		}
-	}
-	
-	option = {
-		name = grants.1.h
-		add_treasury = -5000000
-		trigger = {
-			var:remaining_credit > 5000000
-		}
-		trigger_event = {
-			id = grants.4
-			days = 0
-			popup = yes
-		}
-		scope:grantee_scope = {
-			set_variable = grant_5000
-		}
-	}
-	
-	option = {
-		name = grants.1.i
-		add_treasury = -6000000
-		trigger = {
-			var:remaining_credit > 6000000
-		}
-		trigger_event = {
-			id = grants.4
-			days = 0
-			popup = yes
-		}
-		scope:grantee_scope = {
-			set_variable = grant_6000
-		}
-	}
-	
-	option = {
-		name = grants.1.j
-		add_treasury = -7000000
-		trigger = {
-			var:remaining_credit > 7000000
-		}
-		trigger_event = {
-			id = grants.4
-			days = 0
-			popup = yes
-		}
-		scope:grantee_scope = {
-			set_variable = grant_7000
-		}
-	}
-	
-	option = {
-		name = grants.1.k
-		add_treasury = -8000000
-		trigger = {
-			var:remaining_credit > 8000000
-		}
-		trigger_event = {
-			id = grants.4
-			days = 0
-			popup = yes
-		}
-		scope:grantee_scope = {
-			set_variable = grant_8000
-		}
-	}
-	
-	option = {
-		name = grants.1.l
-		add_treasury = -9000000
-		trigger = {
-			var:remaining_credit > 9000000
-		}
-		trigger_event = {
-			id = grants.4
-			days = 0
-			popup = yes
-		}
-		scope:grantee_scope = {
-			set_variable = grant_9000
-		}
-	}
-	
-	option = {
-		name = grants.1.m
 		add_treasury = -10000000
 		trigger = {
 			var:remaining_credit > 10000000
+			scope:grantee_scope = {
+				var:max_money > 10000000
+			}
 		}
 		trigger_event = {
-			id = grants.4
+			id = grants.6
 			days = 0
 			popup = yes
 		}
 		scope:grantee_scope = {
 			set_variable = grant_10000
+			change_variable = {
+				name = max_money
+				subtract = 10000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.1.c
+		add_treasury = -20000000
+		trigger = {
+			var:remaining_credit > 20000000
+			scope:grantee_scope = {
+				var:max_money > 20000000
+			}
+		}
+		trigger_event = {
+			id = grants.6
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_20000
+			change_variable = {
+				name = max_money
+				subtract = 20000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.1.e
+		add_treasury = -30000000
+		trigger = {
+			var:remaining_credit > 30000000
+			scope:grantee_scope = {
+				var:max_money > 30000000
+			}
+		}
+		trigger_event = {
+			id = grants.6
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_30000
+			change_variable = {
+				name = max_money
+				subtract = 30000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.1.g
+		add_treasury = -40000000
+		trigger = {
+			var:remaining_credit > 40000000
+			scope:grantee_scope = {
+				var:max_money > 40000000
+			}
+		}
+		trigger_event = {
+			id = grants.6
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_40000
+			change_variable = {
+				name = max_money
+				subtract = 40000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.1.h
+		add_treasury = -50000000
+		trigger = {
+			var:remaining_credit > 50000000
+			scope:grantee_scope = {
+				var:max_money > 50000000
+			}
+		}
+		trigger_event = {
+			id = grants.6
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_50000
+			change_variable = {
+				name = max_money
+				subtract = 50000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.1.i
+		add_treasury = -60000000
+		trigger = {
+			var:remaining_credit > 60000000
+			scope:grantee_scope = {
+				var:max_money > 60000000
+			}
+		}
+		trigger_event = {
+			id = grants.6
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_60000
+			change_variable = {
+				name = max_money
+				subtract = 60000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.1.j
+		add_treasury = -70000000
+		trigger = {
+			var:remaining_credit > 70000000
+			scope:grantee_scope = {
+				var:max_money > 70000000
+			}
+		}
+		trigger_event = {
+			id = grants.6
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_70000
+			change_variable = {
+				name = max_money
+				subtract = 70000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.1.k
+		add_treasury = -80000000
+		trigger = {
+			var:remaining_credit > 80000000
+			scope:grantee_scope = {
+				var:max_money > 80000000
+			}
+		}
+		trigger_event = {
+			id = grants.6
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_80000
+			change_variable = {
+				name = max_money
+				subtract = 80000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.1.l
+		add_treasury = -90000000
+		trigger = {
+			var:remaining_credit > 90000000
+			scope:grantee_scope = {
+				var:max_money > 90000000
+			}
+		}
+		trigger_event = {
+			id = grants.6
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_90000
+			change_variable = {
+				name = max_money
+				subtract = 90000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.1.m
+		add_treasury = -100000000
+		trigger = {
+			var:remaining_credit > 100000000
+			scope:grantee_scope = {
+				var:max_money > 100000000
+			}
+		}
+		trigger_event = {
+			id = grants.6
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_100000
+			change_variable = {
+				name = max_money
+				subtract = 100000000
+			}
 		}
 	}
 	
 	#more than 10 mil
 	option = {
 		name = grants.1.n
-		add_treasury = -10000000
+		add_treasury = -100000000
 		custom_tooltip = {
 			text = grants.1.n.t
 			set_variable = big_gift
 		}
 		trigger = {
-			var:remaining_credit > 10000000
+			var:remaining_credit > 100000000
+			scope:grantee_scope = {
+				var:max_money > 100000000
+			}
 			NOT = { has_variable = big_gift }
 		}
 		trigger_event = {
@@ -239,9 +313,28 @@ grants.1 = {
 			popup = yes
 		}
 		scope:grantee_scope = {
-			set_variable = more_than_ten
+			set_variable = more_than_hundred
+			change_variable = {
+				name = max_money
+				subtract = 100000000
+			}
 		}
 	}
+	
+	##cancel
+	#option = {
+	#	name = grants.1.o
+	#	trigger = {
+	#		NOT = { has_variable = more_than_ten }
+	#	}
+	#	remove_modifier = gave_grant
+	#	remove_variable = granter
+	#	remove_global_variable = grant_being_given
+	#	scope:grantee_scope = {
+	#		remove_variable = grant_recipient
+	#		remove_modifier = received_grant
+	#	}
+	#}
 	
 }
 
@@ -264,11 +357,13 @@ grants.2 = {
 	
 	option = {
 		name = grants.2.a
+		default_option = yes
 		if = {
 			limit = {
 				has_variable = grant_10
 			}
 			add_treasury = 10000
+			add_treasury = -500
 			remove_variable = grant_10
 		}
 		if = {
@@ -276,6 +371,7 @@ grants.2 = {
 				has_variable = grant_20
 			}
 			add_treasury = 20000
+			add_treasury = -1000
 			remove_variable = grant_20
 		}
 		if = {
@@ -283,6 +379,7 @@ grants.2 = {
 				has_variable = grant_30
 			}
 			add_treasury = 30000
+			add_treasury = -1500
 			remove_variable = grant_30
 		}
 		if = {
@@ -290,6 +387,7 @@ grants.2 = {
 				has_variable = grant_40
 			}
 			add_treasury = 40000
+			add_treasury = -2000
 			remove_variable = grant_40
 		}
 		if = {
@@ -297,6 +395,7 @@ grants.2 = {
 				has_variable = grant_50
 			}
 			add_treasury = 50000
+			add_treasury = -2500
 			remove_variable = grant_50
 		}
 		if = {
@@ -304,6 +403,7 @@ grants.2 = {
 				has_variable = grant_60
 			}
 			add_treasury = 60000
+			add_treasury = -3000
 			remove_variable = grant_60
 		}
 		if = {
@@ -311,6 +411,7 @@ grants.2 = {
 				has_variable = grant_70
 			}
 			add_treasury = 70000
+			add_treasury = -3500
 			remove_variable = grant_70
 		}
 		if = {
@@ -318,6 +419,7 @@ grants.2 = {
 				has_variable = grant_80
 			}
 			add_treasury = 80000
+			add_treasury = -4000
 			remove_variable = grant_80
 		}
 		if = {
@@ -325,6 +427,7 @@ grants.2 = {
 				has_variable = grant_90
 			}
 			add_treasury = 90000
+			add_treasury = -4500
 			remove_variable = grant_90
 		}
 		if = {
@@ -332,6 +435,7 @@ grants.2 = {
 				has_variable = grant_100
 			}
 			add_treasury = 100000
+			add_treasury = -5000
 			remove_variable = grant_100
 		}
 		if = {
@@ -339,6 +443,7 @@ grants.2 = {
 				has_variable = grant_200
 			}
 			add_treasury = 200000
+			add_treasury = -10000
 			remove_variable = grant_200
 		}
 		if = {
@@ -346,6 +451,7 @@ grants.2 = {
 				has_variable = grant_300
 			}
 			add_treasury = 300000
+			add_treasury = -15000
 			remove_variable = grant_300
 		}
 		if = {
@@ -353,6 +459,7 @@ grants.2 = {
 				has_variable = grant_400
 			}
 			add_treasury = 400000
+			add_treasury = -20000
 			remove_variable = grant_400
 		}
 		if = {
@@ -360,6 +467,7 @@ grants.2 = {
 				has_variable = grant_500
 			}
 			add_treasury = 500000
+			add_treasury = -25000
 			remove_variable = grant_500
 		}
 		if = {
@@ -367,6 +475,7 @@ grants.2 = {
 				has_variable = grant_600
 			}
 			add_treasury = 600000
+			add_treasury = -30000
 			remove_variable = grant_600
 		}
 		if = {
@@ -374,6 +483,7 @@ grants.2 = {
 				has_variable = grant_700
 			}
 			add_treasury = 700000
+			add_treasury = -35000
 			remove_variable = grant_700
 		}
 		if = {
@@ -381,6 +491,7 @@ grants.2 = {
 				has_variable = grant_800
 			}
 			add_treasury = 800000
+			add_treasury = -40000
 			remove_variable = grant_800
 		}
 		if = {
@@ -388,6 +499,7 @@ grants.2 = {
 				has_variable = grant_900
 			}
 			add_treasury = 900000
+			add_treasury = -45000
 			remove_variable = grant_900
 		}
 		if = {
@@ -395,6 +507,7 @@ grants.2 = {
 				has_variable = grant_1000
 			}
 			add_treasury = 1000000
+			add_treasury = -50000
 			remove_variable = grant_1000
 		}
 		if = {
@@ -402,6 +515,7 @@ grants.2 = {
 				has_variable = grant_2000
 			}
 			add_treasury = 2000000
+			add_treasury = -100000
 			remove_variable = grant_2000
 		}
 		if = {
@@ -409,6 +523,7 @@ grants.2 = {
 				has_variable = grant_3000
 			}
 			add_treasury = 3000000
+			add_treasury = -150000
 			remove_variable = grant_3000
 		}
 		if = {
@@ -416,6 +531,7 @@ grants.2 = {
 				has_variable = grant_4000
 			}
 			add_treasury = 4000000
+			add_treasury = -200000
 			remove_variable = grant_4000
 		}
 		if = {
@@ -423,6 +539,7 @@ grants.2 = {
 				has_variable = grant_5000
 			}
 			add_treasury = 5000000
+			add_treasury = -250000
 			remove_variable = grant_5000
 		}
 		if = {
@@ -430,6 +547,7 @@ grants.2 = {
 				has_variable = grant_6000
 			}
 			add_treasury = 6000000
+			add_treasury = -300000
 			remove_variable = grant_6000
 		}
 		if = {
@@ -437,6 +555,7 @@ grants.2 = {
 				has_variable = grant_7000
 			}
 			add_treasury = 7000000
+			add_treasury = -350000
 			remove_variable = grant_7000
 		}
 		if = {
@@ -444,6 +563,7 @@ grants.2 = {
 				has_variable = grant_8000
 			}
 			add_treasury = 8000000
+			add_treasury = -400000
 			remove_variable = grant_8000
 		}
 		if = {
@@ -451,6 +571,7 @@ grants.2 = {
 				has_variable = grant_9000
 			}
 			add_treasury = 9000000
+			add_treasury = -450000
 			remove_variable = grant_9000
 		}
 		if = {
@@ -458,14 +579,96 @@ grants.2 = {
 				has_variable = grant_10000
 			}
 			add_treasury = 10000000
+			add_treasury = -500000
 			remove_variable = grant_10000
 		}
 		if = {
 			limit = {
-				has_variable = more_than_ten
+				has_variable = grant_10000
 			}
 			add_treasury = 10000000
-			remove_variable = more_than_ten
+			add_treasury = -500000
+			remove_variable = grant_10000
+		}
+		if = {
+			limit = {
+				has_variable = grant_20000
+			}
+			add_treasury = 20000000
+			add_treasury = -1000000
+			remove_variable = grant_20000
+		}
+		if = {
+			limit = {
+				has_variable = grant_30000
+			}
+			add_treasury = 30000000
+			add_treasury = -1500000
+			remove_variable = grant_30000
+		}
+		if = {
+			limit = {
+				has_variable = grant_40000
+			}
+			add_treasury = 40000000
+			add_treasury = -2000000
+			remove_variable = grant_40000
+		}
+		if = {
+			limit = {
+				has_variable = grant_50000
+			}
+			add_treasury = 50000000
+			add_treasury = -2500000
+			remove_variable = grant_50000
+		}
+		if = {
+			limit = {
+				has_variable = grant_60000
+			}
+			add_treasury = 60000000
+			add_treasury = -3000000
+			remove_variable = grant_60000
+		}
+		if = {
+			limit = {
+				has_variable = grant_70000
+			}
+			add_treasury = 70000000
+			add_treasury = -3500000
+			remove_variable = grant_70000
+		}
+		if = {
+			limit = {
+				has_variable = grant_80000
+			}
+			add_treasury = 80000000
+			add_treasury = -4000000
+			remove_variable = grant_80000
+		}
+		if = {
+			limit = {
+				has_variable = grant_90000
+			}
+			add_treasury = 90000000
+			add_treasury = -4500000
+			remove_variable = grant_90000
+		}
+		if = {
+			limit = {
+				has_variable = grant_100000
+			}
+			add_treasury = 100000000
+			add_treasury = -5000000
+			remove_variable = grant_100000
+		}
+		if = {
+			limit = {
+				has_variable = more_than_hundred
+			}
+			add_treasury = 100000000
+			add_treasury = -5000000
+			remove_variable = more_than_hundred
 		}
 	}
 }
@@ -476,6 +679,7 @@ grants.3 = {
 	
 	# gold_reserves + debt_limit*(1-scaled_debt)
 	immediate = {
+		### remaining_credit (money left to give)
 		set_variable = {
 			name = gold_reserves 
 			value = ROOT.gold_reserves
@@ -485,28 +689,52 @@ grants.3 = {
 			value = ROOT.credit
 		}
 		set_variable = {
-			name = scaled_debt_var
-			value = ROOT.scaled_debt
-		}
-		set_variable = {
 			name = scaled_debt_percent
 			value = 1
 		}
 		change_variable = {
 			name = scaled_debt_percent
-			subtract = var:scaled_debt_var
+			subtract = ROOT.scaled_debt
 		}
 		change_variable = {
 			name = remaining_credit
 			multiply = var:scaled_debt_percent
 		}
-		set_variable = {
-			name = debt
-			value = var:remaining_credit
-		}
 		change_variable = {
 			name = remaining_credit
 			add = var:gold_reserves
+		}
+		###Max_money (money able to be received)
+		set_variable = {
+			name = max_money
+			value = ROOT.gold_reserves_limit
+		}
+		#Calculate remaining reserves
+		set_variable = {
+			name = inverse_scaled_reserves
+			value = 1
+		}
+		change_variable = {
+			name = inverse_scaled_reserves
+			subtract = ROOT.scaled_gold_reserves
+		}
+		change_variable = {
+			name = max_money
+			multiply = var:inverse_scaled_reserves
+		}
+		#Calculate debt
+		set_variable = {
+			name = debt
+			value = ROOT.credit
+		}
+		change_variable = {
+			name = debt
+			multiply = ROOT.scaled_debt
+		}
+		#add above
+		change_variable = {
+			name = max_money
+			add = var:debt
 		}
 	}
 }
@@ -541,9 +769,11 @@ grants.4 = {
 			}
 			remove_variable = big_gift
 		}
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		random_country = {
 			limit = {
@@ -560,6 +790,9 @@ grants.4 = {
 	
 	option = {
 		name = grants.4.a
+		trigger = {
+			NOT = { has_variable = small_grant }
+		}
 		default_option = yes
 		trigger_event = {
 			id = grants.5
@@ -581,6 +814,10 @@ grants.4 = {
 		}
 		scope:grantee_scope = {
 			set_variable = grant_100
+			change_variable = {
+				name = max_money
+				subtract = 100000
+			}
 		}
 	}
 	
@@ -589,6 +826,9 @@ grants.4 = {
 		add_treasury = -200000
 		trigger = {
 			var:remaining_credit > 200000
+			scope:grantee_scope = {
+				var:max_money > 200000
+			}
 		}
 		trigger_event = {
 			id = grants.5
@@ -597,6 +837,10 @@ grants.4 = {
 		}
 		scope:grantee_scope = {
 			set_variable = grant_200
+			change_variable = {
+				name = max_money
+				subtract = 200000
+			}
 		}
 	}
 	
@@ -605,6 +849,9 @@ grants.4 = {
 		add_treasury = -300000
 		trigger = {
 			var:remaining_credit > 300000
+			scope:grantee_scope = {
+				var:max_money > 300000
+			}
 		}
 		trigger_event = {
 			id = grants.5
@@ -613,6 +860,10 @@ grants.4 = {
 		}
 		scope:grantee_scope = {
 			set_variable = grant_300
+			change_variable = {
+				name = max_money
+				subtract = 300000
+			}
 		}
 	}
 	
@@ -621,6 +872,9 @@ grants.4 = {
 		add_treasury = -400000
 		trigger = {
 			var:remaining_credit > 400000
+			scope:grantee_scope = {
+				var:max_money > 400000
+			}
 		}
 		trigger_event = {
 			id = grants.5
@@ -629,6 +883,10 @@ grants.4 = {
 		}
 		scope:grantee_scope = {
 			set_variable = grant_400
+			change_variable = {
+				name = max_money
+				subtract = 400000
+			}
 		}
 	}
 	
@@ -637,6 +895,9 @@ grants.4 = {
 		add_treasury = -500000
 		trigger = {
 			var:remaining_credit > 500000
+			scope:grantee_scope = {
+				var:max_money > 500000
+			}
 		}
 		trigger_event = {
 			id = grants.5
@@ -645,6 +906,10 @@ grants.4 = {
 		}
 		scope:grantee_scope = {
 			set_variable = grant_500
+			change_variable = {
+				name = max_money
+				subtract = 500000
+			}
 		}
 	}
 	
@@ -653,6 +918,9 @@ grants.4 = {
 		add_treasury = -600000
 		trigger = {
 			var:remaining_credit > 600000
+			scope:grantee_scope = {
+				var:max_money > 600000
+			}
 		}
 		trigger_event = {
 			id = grants.5
@@ -661,6 +929,10 @@ grants.4 = {
 		}
 		scope:grantee_scope = {
 			set_variable = grant_600
+			change_variable = {
+				name = max_money
+				subtract = 600000
+			}
 		}
 	}
 	
@@ -669,6 +941,9 @@ grants.4 = {
 		add_treasury = -700000
 		trigger = {
 			var:remaining_credit > 700000
+			scope:grantee_scope = {
+				var:max_money > 700000
+			}
 		}
 		trigger_event = {
 			id = grants.5
@@ -677,6 +952,10 @@ grants.4 = {
 		}
 		scope:grantee_scope = {
 			set_variable = grant_700
+			change_variable = {
+				name = max_money
+				subtract = 700000
+			}
 		}
 	}
 	
@@ -685,6 +964,9 @@ grants.4 = {
 		add_treasury = -800000
 		trigger = {
 			var:remaining_credit > 800000
+			scope:grantee_scope = {
+				var:max_money > 800000
+			}
 		}
 		trigger_event = {
 			id = grants.5
@@ -693,6 +975,10 @@ grants.4 = {
 		}
 		scope:grantee_scope = {
 			set_variable = grant_800
+			change_variable = {
+				name = max_money
+				subtract = 800000
+			}
 		}
 	}
 	
@@ -701,6 +987,9 @@ grants.4 = {
 		add_treasury = -900000
 		trigger = {
 			var:remaining_credit > 900000
+			scope:grantee_scope = {
+				var:max_money > 900000
+			}
 		}
 		trigger_event = {
 			id = grants.5
@@ -709,6 +998,10 @@ grants.4 = {
 		}
 		scope:grantee_scope = {
 			set_variable = grant_900
+			change_variable = {
+				name = max_money
+				subtract = 900000
+			}
 		}
 	}
 }
@@ -737,9 +1030,11 @@ grants.5 = {
 	}
 	
 	immediate = {
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		random_country = {
 			limit = {
@@ -773,16 +1068,25 @@ grants.5 = {
 		name = grants.5.b
 		trigger = {
 			var:remaining_credit > 10000
+			scope:grantee_scope = {
+				var:max_money > 10000
+			}
 		}
 		add_treasury = -10000
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		remove_variable = granter
 		remove_global_variable = grant_being_given
 		scope:grantee_scope = {
 			set_variable = grant_10
+			change_variable = {
+				name = max_money
+				subtract = 10000
+			}
 			remove_variable = grant_recipient
 			trigger_event = {
 				id = grants.2
@@ -796,16 +1100,25 @@ grants.5 = {
 		name = grants.5.c
 		trigger = {
 			var:remaining_credit > 20000
+			scope:grantee_scope = {
+				var:max_money > 20000
+			}
 		}
 		add_treasury = -20000
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		remove_variable = granter
 		remove_global_variable = grant_being_given
 		scope:grantee_scope = {
 			set_variable = grant_20
+			change_variable = {
+				name = max_money
+				subtract = 20000
+			}
 			remove_variable = grant_recipient
 			trigger_event = {
 				id = grants.2
@@ -819,16 +1132,25 @@ grants.5 = {
 		name = grants.5.e
 		trigger = {
 			var:remaining_credit > 30000
+			scope:grantee_scope = {
+				var:max_money > 30000
+			}
 		}
 		add_treasury = -30000
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		remove_variable = granter
 		remove_global_variable = grant_being_given
 		scope:grantee_scope = {
 			set_variable = grant_30
+			change_variable = {
+				name = max_money
+				subtract = 30000
+			}
 			remove_variable = grant_recipient
 			trigger_event = {
 				id = grants.2
@@ -842,16 +1164,25 @@ grants.5 = {
 		name = grants.5.g
 		trigger = {
 			var:remaining_credit > 40000
+			scope:grantee_scope = {
+				var:max_money > 40000
+			}
 		}
 		add_treasury = -40000
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		remove_variable = granter
 		remove_global_variable = grant_being_given
 		scope:grantee_scope = {
 			set_variable = grant_40
+			change_variable = {
+				name = max_money
+				subtract = 40000
+			}
 			remove_variable = grant_recipient
 			trigger_event = {
 				id = grants.2
@@ -865,16 +1196,25 @@ grants.5 = {
 		name = grants.5.h
 		trigger = {
 			var:remaining_credit > 50000
+			scope:grantee_scope = {
+				var:max_money > 50000
+			}
 		}
 		add_treasury = -50000
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		remove_variable = granter
 		remove_global_variable = grant_being_given
 		scope:grantee_scope = {
 			set_variable = grant_50
+			change_variable = {
+				name = max_money
+				subtract = 50000
+			}
 			remove_variable = grant_recipient
 			trigger_event = {
 				id = grants.2
@@ -888,16 +1228,25 @@ grants.5 = {
 		name = grants.5.i
 		trigger = {
 			var:remaining_credit > 60000
+			scope:grantee_scope = {
+				var:max_money > 60000
+			}
 		}
 		add_treasury = -60000
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		remove_variable = granter
 		remove_global_variable = grant_being_given
 		scope:grantee_scope = {
 			set_variable = grant_60
+			change_variable = {
+				name = max_money
+				subtract = 60000
+			}
 			remove_variable = grant_recipient
 			trigger_event = {
 				id = grants.2
@@ -911,16 +1260,25 @@ grants.5 = {
 		name = grants.5.j
 		trigger = {
 			var:remaining_credit > 70000
+			scope:grantee_scope = {
+				var:max_money > 70000
+			}
 		}
 		add_treasury = -70000
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		remove_variable = granter
 		remove_global_variable = grant_being_given
 		scope:grantee_scope = {
 			set_variable = grant_70
+			change_variable = {
+				name = max_money
+				subtract = 70000
+			}
 			remove_variable = grant_recipient
 			trigger_event = {
 				id = grants.2
@@ -934,16 +1292,25 @@ grants.5 = {
 		name = grants.5.k
 		trigger = {
 			var:remaining_credit > 80000
+			scope:grantee_scope = {
+				var:max_money > 80000
+			}
 		}
 		add_treasury = -80000
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		remove_variable = granter
 		remove_global_variable = grant_being_given
 		scope:grantee_scope = {
 			set_variable = grant_80
+			change_variable = {
+				name = max_money
+				subtract = 80000
+			}
 			remove_variable = grant_recipient
 			trigger_event = {
 				id = grants.2
@@ -957,16 +1324,25 @@ grants.5 = {
 		name = grants.5.l
 		trigger = {
 			var:remaining_credit > 90000
+			scope:grantee_scope = {
+				var:max_money > 90000
+			}
 		}
 		add_treasury = -90000
-		trigger_event = {
-			id = grants.3
-			days = 0
+		hidden_effect = {
+			trigger_event = {
+				id = grants.3
+				days = 0
+			}
 		}
 		remove_variable = granter
 		remove_global_variable = grant_being_given
 		scope:grantee_scope = {
 			set_variable = grant_90
+			change_variable = {
+				name = max_money
+				subtract = 90000
+			}
 			remove_variable = grant_recipient
 			trigger_event = {
 				id = grants.2
@@ -977,47 +1353,289 @@ grants.5 = {
 	}
 }
 
-##calculate max amount for recipient - mostly to prevent game ruining, don't really care right now
-#
-#grants.6 = {
-#	type = country_event
-#	hidden = yes
-#	
-#	#basically the same as formula for debt but in reverse, 
-#	# max_receivable_amount = remaining_reserves + debt (one will be 0)
-#	# remaining_reserves = max_gold_reserves - gold_reserves
-#	# debt = remainig_credit - gold_reserves
-#	# remainig_credit = debt +  gold_reserves
-#	# max_gold_reserves = gold_reserves / scaled_gold_reserves
-#	# max_receivable_amount = remaining_reserves + debt = (max_gold_reserves - gold_reserves) + (remaining_credit - gold_reserves)
-#	# max_receivable_amount = remaining_reserves + debt = max_gold_reserves - gold_reserves + debt + gold_reserves - gold_reserves (this is the same as above, explains why gold reserves is present twice
-#	
-#	immediate = {
-#		set_variable = {
-#			name = gold_reserves_var
-#			value = ROOT.gold_reserves
-#		}
-#		set_variable = {
-#			name = max_receivable_amount
-#			value = ROOT.gold_reserves
-#		}
-#		set_variable = {
-#			name = max_gold_reserves_ratio
-#			value = ROOT.scaled_gold_reserves
-#		}
-#		change_variable = {
-#			name = max_receivable_amount
-#			divide = var:max_gold_reserves_ratio
-#		}
-#		change_variable = {
-#			name = max_receivable_amount
-#			subtract = var:gold_reserves_var
-#		}
-#		change_variable = {
-#			name = max_receivable_amount
-#			add = var:debt
-#		}
-#		
-#	}
-#
-#}
+
+grants.6 = {
+	type = country_event
+	placement = ROOT
+	title = grants.6.t
+	desc = grants.6.d
+	flavor = grants.6.f
+
+	event_image = {
+		video = "unspecific_signed_contract"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	duration = 1
+	
+	trigger = {
+		#triggered by diplo action
+	}
+	
+	immediate = {
+		trigger_event = {
+			id = grants.3
+			days = 0
+		}
+		set_variable = {
+			name = granter
+			days = 93
+		}
+		random_country = {
+			limit = {
+				has_variable = grant_recipient
+			}
+			save_scope_as = grantee_scope
+		}
+		remove_global_variable = grant_being_given
+		set_global_variable = {
+			name = grant_being_given
+			days = 93
+		}
+	}
+	
+	cancellation_trigger = {
+		any_country = {
+			NOT = { this = ROOT }
+			has_variable = granter
+		}
+	}
+	
+	option = {
+		name = grants.6.a
+		default_option = yes
+		trigger_event = {
+			id = grants.4
+			days = 0
+			popup = yes
+		}
+		set_variable = small_grant
+	}
+	
+	option = {
+		name = grants.6.b
+		add_treasury = -1000000
+		trigger = {
+			var:remaining_credit > 1000000
+			scope:grantee_scope = {
+				var:max_money > 1000000
+			}
+		}
+		trigger_event = {
+			id = grants.4
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_1000
+			change_variable = {
+				name = max_money
+				subtract = 1000000
+			}
+
+		}
+	}
+	
+	option = {
+		name = grants.6.c
+		add_treasury = -2000000
+		trigger = {
+			var:remaining_credit > 2000000
+			scope:grantee_scope = {
+				var:max_money > 2000000
+			}
+		}
+		trigger_event = {
+			id = grants.4
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_2000
+			change_variable = {
+				name = max_money
+				subtract = 2000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.6.e
+		add_treasury = -3000000
+		trigger = {
+			var:remaining_credit > 3000000
+			scope:grantee_scope = {
+				var:max_money > 3000000
+			}
+		}
+		trigger_event = {
+			id = grants.4
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_3000
+			change_variable = {
+				name = max_money
+				subtract = 3000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.6.g
+		add_treasury = -4000000
+		trigger = {
+			var:remaining_credit > 4000000
+			scope:grantee_scope = {
+				var:max_money > 4000000
+			}
+		}
+		trigger_event = {
+			id = grants.4
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_4000
+			change_variable = {
+				name = max_money
+				subtract = 4000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.6.h
+		add_treasury = -5000000
+		trigger = {
+			var:remaining_credit > 5000000
+			scope:grantee_scope = {
+				var:max_money > 5000000
+			}
+		}
+		trigger_event = {
+			id = grants.4
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_5000
+			change_variable = {
+				name = max_money
+				subtract = 5000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.6.i
+		add_treasury = -6000000
+		trigger = {
+			var:remaining_credit > 6000000
+			scope:grantee_scope = {
+				var:max_money > 6000000
+			}
+		}
+		trigger_event = {
+			id = grants.4
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_6000
+			change_variable = {
+				name = max_money
+				subtract = 6000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.6.j
+		add_treasury = -7000000
+		trigger = {
+			var:remaining_credit > 7000000
+			scope:grantee_scope = {
+				var:max_money > 7000000
+			}
+		}
+		trigger_event = {
+			id = grants.4
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_7000
+			change_variable = {
+				name = max_money
+				subtract = 7000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.6.k
+		add_treasury = -8000000
+		trigger = {
+			var:remaining_credit > 8000000
+			scope:grantee_scope = {
+				var:max_money > 8000000
+			}
+		}
+		trigger_event = {
+			id = grants.4
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_8000
+			change_variable = {
+				name = max_money
+				subtract = 8000000
+			}
+		}
+	}
+	
+	option = {
+		name = grants.6.l
+		add_treasury = -9000000
+		trigger = {
+			var:remaining_credit > 9000000
+			scope:grantee_scope = {
+				var:max_money > 9000000
+			}
+		}
+		trigger_event = {
+			id = grants.4
+			days = 0
+			popup = yes
+		}
+		scope:grantee_scope = {
+			set_variable = grant_9000
+			change_variable = {
+				name = max_money
+				subtract = 9000000
+			}
+		}
+	}
+	
+	##cancel
+	#option = {
+	#	name = grants.6.o
+	#	trigger = {
+	#		NOT = { has_variable = more_than_ten }
+	#	}
+	#	remove_modifier = gave_grant
+	#	remove_variable = granter
+	#	remove_global_variable = grant_being_given
+	#	scope:grantee_scope = {
+	#		remove_variable = grant_recipient
+	#		remove_modifier = received_grant
+	#	}
+	#}
+	
+}

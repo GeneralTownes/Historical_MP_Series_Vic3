@@ -295,6 +295,7 @@ railways = {
 	
 	modifier = {
 		state_market_access_price_impact = 0.05
+		market_land_trade_capacity_add = 500
 	}
 	
 	ai_weight = {
@@ -714,7 +715,11 @@ steel_railway_cars = {
 	# Increases Railway max level by 1
 	era = era_3
 	texture = "gfx/interface/icons/invention_icons/steel_railway_cars.dds"
-	category = production	
+	category = production
+
+	modifier = {
+		market_land_trade_capacity_add = 100
+	}
 	
 	unlocking_technologies = {	
 		railways
@@ -850,7 +855,6 @@ conveyors = {
 }
 
 pasteurization = {
-	# #todo! Does nothing at the moment, should probably do something at Livestock Ranches or Food Industries
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/pasteurization.dds"
 	category = production
@@ -872,7 +876,11 @@ electric_railway = {
 	# Increases Railway max level by 1
 	era = era_4
 	texture = "gfx/interface/icons/invention_icons/electric_railway.dds"
-	category = production		
+	category = production	
+
+	modifier = {
+		market_land_trade_capacity_add = 100
+	}
 	
 	unlocking_technologies = {
 		electrical_capacitors
@@ -1044,6 +1052,10 @@ radio = {
 		telephone
 	}
 	
+	modifier = {
+		country_max_declared_interests_add = 1
+	}
+	
 	ai_weight = {
 		value = 1
 	}
@@ -1058,6 +1070,11 @@ telephone = {
 	unlocking_technologies = {
 		shift_work
 		electrical_generation
+	}
+	
+	
+	modifier = {
+		country_max_declared_interests_add = 1
 	}
 	
 	ai_weight = {
@@ -1137,6 +1154,10 @@ compression_ignition = {
 	era = era_5
 	texture = "gfx/interface/icons/invention_icons/compression_ignition.dds"
 	category = production
+	
+	modifier = {
+		market_land_trade_capacity_add = 100
+	}
 	
 	unlocking_technologies = {
 		combustion_engine

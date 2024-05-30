@@ -28,7 +28,7 @@ company_misr = {
 			is_incorporated = yes
 			any_scope_building = {
 				is_building_type = building_textile_mills
-				level >= 10
+				level >= 3
 			}
 		}
 		has_technology_researched = corporate_charters
@@ -70,7 +70,7 @@ company_egyptian_rail = {
 	
 	prosperity_modifier = {
 		state_infrastructure_from_population_max_add = 20
-		market_land_trade_capacity_add = 10
+		market_land_trade_capacity_add = 400
 	}	
 	
 	ai_weight = {

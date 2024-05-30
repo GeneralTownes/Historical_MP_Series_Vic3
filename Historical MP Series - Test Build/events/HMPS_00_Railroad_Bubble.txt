@@ -28,6 +28,17 @@ railroad_bubble.1 = {
 				add = 1
 			}
 		}
+		
+		### Chinese Mining JE
+		if = {
+			limit = {
+				has_journal_entry = je_chinese_industry
+			}
+			change_global_variable = {
+				name = chinese_rail_expansion
+				add = 1
+			}
+		}
 	}
 }
 
@@ -57,7 +68,6 @@ railroad_bubble.2 = {
 railroad_bubble.3 = {
 	type = country_event
 	placement = ROOT
-	popup = yes
 
 	title = railroad_bubble.3.t
 	desc = railroad_bubble.3.d
@@ -78,6 +88,7 @@ railroad_bubble.3 = {
 		is_subject = no
 		has_variable = rr_built
 		root.var:rr_built >= 9
+		NOT = { has_technology_researched = international_exchange_standards }
 		NOT = { has_variable = railroad_bust }
 		OR = {
 			NOT = { has_global_variable = num_rr_busts }
@@ -181,7 +192,6 @@ railroad_bubble.3 = {
 railroad_bubble.5 = {
 	type = country_event
 	placement = ROOT
-	popup = yes
 
 	title = railroad_bubble.5.t
 	desc = railroad_bubble.5.d

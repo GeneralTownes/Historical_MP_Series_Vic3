@@ -85,7 +85,7 @@ ideology_laissez_faire = {
 		law_traditionalism = disapprove
 		#law_industry_banned = disapprove
 		law_command_economy = strongly_disapprove
-		law_state_capitalism = strongly_disapprove
+		law_state_capitalism = neutral
 		law_cooperative_ownership = strongly_disapprove
 	}
 	
@@ -261,13 +261,13 @@ ideology_oligarchic = {
 		law_collectivized_agriculture = strongly_disapprove
 	}
 
-	lawgroup_taxation = {
-		law_consumption_based_taxation = approve
-		law_land_based_taxation = approve
-		law_per_capita_based_taxation = neutral
-		law_proportional_taxation = disapprove
-		law_graduated_taxation = strongly_disapprove
-	}
+	#lawgroup_taxation = {
+	#	law_consumption_based_taxation = approve
+	#	law_land_based_taxation = approve
+	#	law_per_capita_based_taxation = neutral
+	#	law_proportional_taxation = disapprove
+	#	law_graduated_taxation = strongly_disapprove
+	#}
 
 	lawgroup_welfare = {
 		law_no_social_security = approve
@@ -397,6 +397,15 @@ ideology_isolationist = {
 		law_colonial_exploitation = disapprove
 	}
 	
+	lawgroup_citizenship = {
+		law_ethnostate = disapprove
+		law_national_supremacy = approve
+		law_racial_segregation = approve
+		law_language_discrimination = neutral
+		law_cultural_exclusion = neutral
+		law_multicultural = strongly_disapprove
+	}
+	
 	lawgroup_migration = {
 		law_closed_borders = strongly_approve
 		law_migration_controls = approve
@@ -515,12 +524,12 @@ ideology_patriotic = {
 		law_guaranteed_liberties = strongly_disapprove
 	}	
 	
-	lawgroup_free_speech = {
-		law_outlawed_dissent = strongly_approve
-		law_censorship = approve
-		law_right_of_assembly = neutral
-		law_protected_speech = disapprove
-	}	
+	#lawgroup_free_speech = {	# potentially look to make dynamic in the future, i.e add when socialism/political agitation unlocked?
+	#	law_outlawed_dissent = strongly_approve
+	#	law_censorship = approve
+	#	law_right_of_assembly = neutral
+	#	law_protected_speech = disapprove
+	#}	
 }
 
 ideology_loyalist = {
@@ -645,6 +654,7 @@ ideology_liberal = {
 	
 	lawgroup_migration = {
 		law_closed_borders = disapprove
+		law_no_migration_controls = approve
 	}
 }
 
@@ -954,8 +964,8 @@ ideology_plutocratic = {
 		law_census_voting = neutral
 		law_technocracy = strongly_approve
 		law_autocracy = disapprove
-		law_clerical_voting = disapprove
-		law_universal_suffrage = strongly_disapprove
+		law_clerical_voting = strongly_disapprove
+		law_universal_suffrage = disapprove
 		law_anarchy = strongly_disapprove
 		law_vanguardism = strongly_disapprove
 	}
@@ -1054,6 +1064,10 @@ ideology_pro_slavery = {
 
 ideology_corporatist = {
 	icon = "gfx/interface/icons/ideology_icons/corporatist.dds"
+	
+	lawgroup_economic_system = {
+		law_state_capitalism = approve
+	}
 
 	lawgroup_health_system = {
 		law_charitable_health_system = approve

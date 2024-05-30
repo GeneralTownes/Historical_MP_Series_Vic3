@@ -5,20 +5,20 @@ pm_default_building_eiffel_tower = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			country_prestige_add = 100
 		}
 	}
 
 	state_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			state_loyalists_from_sol_change_mult = 0.05
 			state_radicals_from_sol_change_mult = -0.05
 		}
 	}
 
 	building_modifiers = {
-		#workforce_scaled = {
+		#throughput_scaled = {
 		#}
 
 		level_scaled = {
@@ -33,20 +33,20 @@ pm_default_building_cristo_redentor = {
 	unlocking_religions = { catholic }
 
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			interest_group_ig_devout_pol_str_mult = 0.05
 			country_prestige_add = 50
 		}
 	}
 	
 	state_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			state_migration_pull_mult = 0.15
 		}
 	}
 	
 	building_modifiers = {
-		#workforce_scaled = {
+		#throughput_scaled = {
 		#}
 
 		level_scaled = {
@@ -70,10 +70,10 @@ pm_monument_prestige_only_cristo_redentor = {
 pm_default_building_angkor_wat = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 	
-	unlocking_religions = { therevada }
+	unlocking_religions = { theravada }
 
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			interest_group_ig_devout_pol_str_mult = 0.25
 			interest_group_ig_devout_approval_add = 5
 			country_prestige_add = 25
@@ -81,8 +81,8 @@ pm_default_building_angkor_wat = {
 	}
 
 	building_modifiers = {
-#		workforce_scaled = {
-#		}
+		#throughput_scaled = {
+		#}
 
 		level_scaled = {
 			building_employment_clergymen_add = 500
@@ -93,7 +93,7 @@ pm_default_building_angkor_wat = {
 pm_monument_prestige_only_angkor_wat = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 	
-	disallowing_religions = { therevada }
+	disallowing_religions = { theravada }
 
 	country_modifiers = {
 		throughput_scaled = {
@@ -106,19 +106,19 @@ pm_default_building_big_ben = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 	
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			country_prestige_add = 50
 		}
 	}
 
 	state_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			building_throughput_add = 0.01
 		}
 	}
 	
 	building_modifiers = {
-		#workforce_scaled = {
+		#throughput_scaled = {
 		#}
 
 		level_scaled = {
@@ -133,7 +133,7 @@ pm_default_building_forbidden_city = {
 	unlocking_religions = { mahayana }
 
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			country_legitimacy_headofstate_add = 20
 			country_authority_add = 50
 			country_prestige_add = 25
@@ -141,7 +141,7 @@ pm_default_building_forbidden_city = {
 	}
 
 	building_modifiers = {
-		#workforce_scaled = {
+		#throughput_scaled = {
 		#}
 
 		level_scaled = {
@@ -169,7 +169,7 @@ pm_default_building_hagia_sophia = {
 	unlocking_religions = { orthodox sunni }
 
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			interest_group_ig_devout_pop_attraction_mult = 0.1
 			interest_group_ig_devout_approval_add = 2
 			country_prestige_add = 25
@@ -177,7 +177,7 @@ pm_default_building_hagia_sophia = {
 	}
 
 	building_modifiers = {
-		#workforce_scaled = {
+		#throughput_scaled = {
 		#}
 
 		level_scaled = {
@@ -186,7 +186,7 @@ pm_default_building_hagia_sophia = {
 	}
 }
 
-pm_monument_prestige_hagia_sophia = {
+pm_monument_prestige_only_hagia_sophia = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 	
 	disallowing_religions = { orthodox sunni }
@@ -204,20 +204,20 @@ pm_default_building_mosque_of_djenne = {
 	unlocking_religions = { sunni }
 
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			interest_group_ig_devout_pol_str_mult = 0.1
 			interest_group_ig_devout_approval_add = 2
 		}
 	}
 
 	state_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			state_education_access_add = 0.2
 		}
 	}
 
 	building_modifiers = {
-		#workforce_scaled = {
+		#throughput_scaled = {
 		#}
 
 		level_scaled = {
@@ -226,7 +226,7 @@ pm_default_building_mosque_of_djenne = {
 	}
 }
 
-pm_monument_prestige_mosque_of_djenne = {
+pm_monument_prestige_only_mosque_of_djenne = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 	
 	disallowing_religions = { sunni }
@@ -244,7 +244,7 @@ pm_default_building_saint_basils_cathedral = {
 	unlocking_religions = { orthodox }
 
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			interest_group_ig_devout_pol_str_mult = 0.1
 			interest_group_ig_devout_approval_add = 2
 			country_prestige_add = 25
@@ -252,7 +252,7 @@ pm_default_building_saint_basils_cathedral = {
 	}
 
 	building_modifiers = {
-		#workforce_scaled = {
+		#throughput_scaled = {
 		#}
 
 		level_scaled = {
@@ -261,7 +261,7 @@ pm_default_building_saint_basils_cathedral = {
 	}
 }
 
-pm_monument_prestige_saint_basils_cathedral = {
+pm_monument_prestige_only_saint_basils_cathedral = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 	
 	disallowing_religions = { orthodox }
@@ -277,20 +277,20 @@ pm_default_building_statue_of_liberty = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			country_prestige_add = 75
 			country_legitimacy_ideological_incoherence_mult = 0.10
 		}
 	}
 	
 	state_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			state_migration_pull_mult = 0.25
 		}
 	}
 
 	building_modifiers = {
-		#workforce_scaled = {
+		#throughput_scaled = {
 		#}
 
 		level_scaled = {
@@ -301,19 +301,58 @@ pm_default_building_statue_of_liberty = {
 
 pm_default_building_taj_mahal = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+	
+	unlocking_religions = { sunni }
 
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
+			interest_group_ig_devout_pol_str_mult = 0.25
+			interest_group_ig_devout_approval_add = 5
 			country_prestige_add = 25
 		}
 	}
 
 	building_modifiers = {
-		#workforce_scaled = {
+		#throughput_scaled = {
 		#}
 
 		level_scaled = {
-			building_employment_bureaucrats_add = 100
+			building_employment_bureaucrats_add = 400
+		}
+	}
+}
+
+pm_default_building_taj_mahal_2 = {
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+	
+	unlocking_religions = { hindu }
+
+	country_modifiers = {
+		throughput_scaled = {
+			country_influence_add = 100
+			country_prestige_add = 25
+		}
+	}
+
+	building_modifiers = {
+		#throughput_scaled = {
+		#}
+
+		level_scaled = {
+			building_employment_bureaucrats_add = 200
+			building_employment_clergymen_add = 200
+		}
+	}
+}
+
+pm_monument_prestige_only_taj_mahal = {
+	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
+	
+	disallowing_religions = { sunni hindu }
+
+	country_modifiers = {
+		throughput_scaled = {
+			country_prestige_add = 25
 		}
 	}
 }
@@ -324,7 +363,7 @@ pm_default_building_vatican_city = {
 	unlocking_religions = { catholic }
 
 	country_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			interest_group_ig_devout_pol_str_mult = 0.25
 			interest_group_ig_devout_approval_add = 5
 			country_influence_add = 100
@@ -333,7 +372,7 @@ pm_default_building_vatican_city = {
 	}
 
 	building_modifiers = {
-		#workforce_scaled = {
+		#throughput_scaled = {
 		#}
 
 		level_scaled = {
@@ -358,7 +397,7 @@ pm_default_building_white_house = {
 	texture = "gfx/interface/icons/production_method_icons/wonders.dds"
 
 	state_modifiers = {
-		workforce_scaled = {
+		throughput_scaled = {
 			building_government_administration_throughput_add = 0.2
 		}
 	}

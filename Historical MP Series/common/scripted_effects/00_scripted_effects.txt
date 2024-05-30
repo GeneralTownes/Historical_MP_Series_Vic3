@@ -152,26 +152,12 @@ save_industrialized_pm_building_and_state = {
 
 warlord_setup_effect = {
 	set_country_type = recognized
-	set_variable = {
-        name  = WCR_westernized_nation
-        value = yes
-    }
 	
 	add_modifier = {
         name = warlords_westernisation
         months = 180
 		is_decaying = yes
     }
-	add_modifier = {
-		name = chinese_political_instability			
-		is_decaying = yes
-		years = 20
-	}
-	add_modifier = {
-		name = chinese_economic_stagnation
-		is_decaying = yes
-		years = 20
-	}
 	activate_law = law_type:law_republic
 	activate_law = law_type:law_autocracy
 	
@@ -233,14 +219,6 @@ warlord_breakaway_setup_effect = {
 	ig:ig_landowners = { 
 		remove_ideology = ideology_paternalistic
 		add_ideology = ideology_republican_paternalistic
-	}
-	
-	add_modifier = {
-        name = snori_kor_clothes_modifier
-        months = -1
-    }
-	set_variable = {
-		name = snori_clothes_decision_taken
 	}
 }
 

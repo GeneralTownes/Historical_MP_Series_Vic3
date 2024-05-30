@@ -1,5 +1,5 @@
 ﻿COUNTRIES = {
-	c:AUS = {
+	c:AUS ?= {
 		effect_starting_technology_tier_2_tech = yes
 		effect_starting_politics_conservative = yes
 		effect_starting_land_tax = yes
@@ -39,6 +39,9 @@
 
 		add_journal_entry = {
 			type = je_dual_monarchy
+		}
+		set_variable = {
+			name = austria_monarchy
 		}
 	}
 }

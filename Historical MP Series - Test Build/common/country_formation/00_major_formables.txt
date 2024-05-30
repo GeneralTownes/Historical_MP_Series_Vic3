@@ -65,7 +65,7 @@ SCA = {
 	unification_play = dp_unify_scandinavia
 	leadership_play = dp_leadership_scandinavia
 
-	required_states_fraction = 0.7
+	required_states_fraction = 0.65
 	
 	ai_will_do = { always = yes }
 
@@ -75,6 +75,7 @@ SCA = {
 			country_has_primary_culture = cu:danish
 			country_has_primary_culture = cu:norwegian
 			country_has_primary_culture = cu:icelandic
+			country_has_primary_culture = cu:finnish
 		}	
 		any_country = {
 			OR = {
@@ -82,6 +83,7 @@ SCA = {
 				country_has_primary_culture = cu:danish
 				country_has_primary_culture = cu:norwegian
 				country_has_primary_culture = cu:icelandic
+				country_has_primary_culture = cu:finnish
 			}		
 			has_technology_researched = nationalism
 		}
@@ -153,5 +155,36 @@ FND = {
 			}	
 			has_technology_researched = pan-nationalism	
 		}
+	}
+}
+ARA = {
+	states = {
+		STATE_YEMEN
+		STATE_OMAN
+		STATE_ABU_DHABI
+		STATE_NEJD
+		STATE_HEDJAZ
+		STATE_HAIL
+		STATE_BAGHDAD
+		STATE_GREATER_SYRIA
+		STATE_TRANSJORDAN
+		#STATE_SYRIA
+		STATE_MOSUL
+		STATE_DEIR_EZ_ZOR
+		STATE_BASRA
+		STATE_SINAI
+		STATE_LOWER_EGYPT
+		STATE_MIDDLE_EGYPT
+		STATE_MATRUH
+		STATE_EGYPTIAN_DESERT
+		STATE_UPPER_EGYPT
+	}
+
+	required_states_fraction = 0.75	
+
+	ai_will_do = { always = yes }
+
+	possible = {
+		has_technology_researched = pan-nationalism
 	}
 }
