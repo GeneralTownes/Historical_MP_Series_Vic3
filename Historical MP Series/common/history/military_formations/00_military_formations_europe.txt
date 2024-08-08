@@ -448,6 +448,89 @@
 			transfer_to_formation = scope:i_korps
 		}
 
+		create_character = { # General
+			is_general = yes
+			first_name = Julius
+			last_name = von_Haynau
+			historical = yes
+			birth_date = 1786.10.14
+			hq = region_poland
+			commander_rank = commander_rank_1
+			traits = {
+				wrathful
+				cruel
+			}
+			save_scope_as = haynau_gen
+		}
+
+		scope:haynau_gen = {
+			transfer_to_formation = scope:ii_korps
+		}
+
+		create_military_formation = {
+			type = army
+			hq_region = sr:region_italy
+			name = III_Korpskommando
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_line_infantry
+				state_region = s:STATE_LOMBARDY
+				count = 15
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_lancers
+				state_region = s:STATE_VENETIA
+				count = 5
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_mobile_artillery
+				state_region = s:STATE_VENETIA
+				count = 5
+			}
+			save_scope_as = iii_korps
+		}
+
+		create_character = { # General
+			is_general = yes
+			first_name = Heinrich
+			last_name = von_Hess
+			historical = yes
+			birth_date = 1788.3.17
+			hq = region_danubia
+			traits = {
+				meticulous
+				resupply_commander
+			}
+			save_scope_as = heinr_gen
+		}
+
+		scope:heinr_gen = {
+			transfer_to_formation = scope:iii_korps
+		}
+
+		create_military_formation = {
+			type = fleet
+			hq_region = sr:region_italy
+			name = K_K_Kriegsmarine
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_frigate
+				state_region = s:STATE_VENETIA
+				count = 4
+			}
+
+			combat_unit = {
+				type = unit_type:combat_unit_type_frigate
+				state_region = s:STATE_ISTRIA
+				count = 1
+			}
+		}
+	}
+	
+	c:HUN ?= {
+
 		create_military_formation = {
 			type = army
 			hq_region = sr:region_danubia
@@ -521,70 +604,8 @@
 			save_scope_as = karl_gen
 		}
 
-		create_character = { # General
-			is_general = yes
-			first_name = Julius
-			last_name = von_Haynau
-			historical = yes
-			birth_date = 1786.10.14
-			hq = region_poland
-			commander_rank = commander_rank_1
-			traits = {
-				wrathful
-				cruel
-			}
-			save_scope_as = haynau_gen
-		}
-
 		scope:karl_gen = {
 			transfer_to_formation = scope:ii_korps
-		}
-
-		scope:haynau_gen = {
-			transfer_to_formation = scope:ii_korps
-		}
-
-		create_military_formation = {
-			type = army
-			hq_region = sr:region_italy
-			name = III_Korpskommando
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_line_infantry
-				state_region = s:STATE_LOMBARDY
-				count = 15
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_lancers
-				state_region = s:STATE_VENETIA
-				count = 5
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_mobile_artillery
-				state_region = s:STATE_VENETIA
-				count = 5
-			}
-			save_scope_as = iii_korps
-		}
-
-		create_character = { # General
-			is_general = yes
-			first_name = Heinrich
-			last_name = von_Hess
-			historical = yes
-			birth_date = 1788.3.17
-			hq = region_danubia
-			traits = {
-				meticulous
-				resupply_commander
-			}
-			save_scope_as = heinr_gen
-		}
-
-		scope:heinr_gen = {
-			transfer_to_formation = scope:iii_korps
 		}
 
 		create_military_formation = {
@@ -638,24 +659,7 @@
 		scope:laval_gen = {
 			transfer_to_formation = scope:iiii_korps
 		}
-
-		create_military_formation = {
-			type = fleet
-			hq_region = sr:region_italy
-			name = K_K_Kriegsmarine
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_frigate
-				state_region = s:STATE_VENETIA
-				count = 4
-			}
-
-			combat_unit = {
-				type = unit_type:combat_unit_type_frigate
-				state_region = s:STATE_ISTRIA
-				count = 1
-			}
-		}
+	
 	}
 
 	c:FRA ?= {

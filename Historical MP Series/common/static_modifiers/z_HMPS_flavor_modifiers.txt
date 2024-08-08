@@ -529,3 +529,8 @@ egypt_prestige_fix = {
 	icon = gfx\interface\icons\timed_modifier_icons\modifier_fist_negative.dds
 	country_prestige_mult = -0.5
 }
+
+modifier_pragmatic_sanction = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_liberty_desire_add = -1
+}
