@@ -3248,7 +3248,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:HUN"
+						country="c:AUS"
 						levels=1
 						region="STATE_AUSTRIA"
 					}
@@ -3280,7 +3280,7 @@
 					}
 					building={
 						type="building_financial_district"
-						country="c:HUN"
+						country="c:AUS"
 						levels=2
 						region="STATE_AUSTRIA"
 					}
@@ -3332,7 +3332,7 @@
 				add_ownership={
 					building={
 						type="building_manor_house"
-						country="c:HUN"
+						country="c:AUS"
 						levels=1
 						region="STATE_AUSTRIA"
 					}
