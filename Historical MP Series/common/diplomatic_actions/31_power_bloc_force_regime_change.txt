@@ -57,6 +57,15 @@
 				multiplier = 0.2
 			}
 		}
+		if = {
+			limit = {
+				has_journal_entry = je_napoleons_legacy
+			}
+			change_global_variable = {
+				name = global_1848_progress
+				add = -3
+			}
+		}
 		
 		power_bloc = {
 			add_cohesion_percent = scaled_cohesion_cost

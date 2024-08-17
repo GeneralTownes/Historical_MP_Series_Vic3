@@ -71,6 +71,19 @@ law_dual_executive = {
 		}
 	}
 	
+	on_activate = {
+		if = {
+			limit = {
+				country_rank >= rank_value:major_power
+				has_global_variable = global_1848_progress
+			}
+			change_global_variable = {
+				name = global_1848_progress
+				add = 5
+			}
+		}
+	}
+	
 }
 
 law_parliamentary_system = {
@@ -103,6 +116,19 @@ law_parliamentary_system = {
 		if = {
 			limit = { ai_has_enact_weight_modifier_journal_entries = yes }
 			add = 750
+		}
+	}
+	
+	on_activate = {
+		if = {
+			limit = {
+				country_rank >= rank_value:major_power
+				has_global_variable = global_1848_progress
+			}
+			change_global_variable = {
+				name = global_1848_progress
+				add = 5
+			}
 		}
 	}
 	

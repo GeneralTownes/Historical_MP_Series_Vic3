@@ -78,6 +78,11 @@
  modifier_inward_china:0 "Inward Perfection"
  modifier_eic_currency_shortage:0 "Silver Shortage" 
  modifier_pragmatic_sanction:0 "Pragmatic Sanction"
+ modifier_napoleons_legacy:0 "The Political Question"
+ modifier_1848_victory:0 "Status Quo Reestablished"
+ modifier_1848_loss:0 "Political Question Unanswered"
+ modifier_napoleon_announce:0 "Legacy of Napoleon"
+ modifier_springtime_je:0 "People's Springtime"
  
  pm_offense_defense_readjustment_tiny:0 "Tertiary Equipment Adjustment"
  pm_offense_defense_readjustment_tiny_desc:0 "A penalty to the [concept_offense] and [concept_defense] provided by the building due to recent change of secondary [Concept('concept_production_method','$concept_production_methods$')]."

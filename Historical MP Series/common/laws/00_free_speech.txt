@@ -130,6 +130,19 @@ law_right_of_assembly = {
 		}
 	}
 	
+	on_activate = {
+		if = {
+			limit = {
+				country_rank >= rank_value:major_power
+				has_global_variable = global_1848_progress
+			}
+			change_global_variable = {
+				name = global_1848_progress
+				add = 5
+			}
+		}
+	}
+	
 	ai_enact_weight_modifier = { #Petitions
 		value = 0
 		
