@@ -9,6 +9,7 @@ je_springtime_of_the_peoples = {
 	}
 	
 	possible = { #this remains so minor powers can get it
+		is_subject = no
 		OR = {
 			hidden_effect = {
 				has_variable = failed_1848_var
