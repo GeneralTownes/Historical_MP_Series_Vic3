@@ -535,6 +535,12 @@ modifier_pragmatic_sanction = {
 	country_liberty_desire_add = -1
 }
 
+
+modifier_ah_compromise = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	country_liberty_desire_add = -1
+}
+
 modifier_1848_victory = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	country_legitimacy_base_add = 15

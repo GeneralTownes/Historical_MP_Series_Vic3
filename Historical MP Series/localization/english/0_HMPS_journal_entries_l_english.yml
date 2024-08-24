@@ -89,6 +89,11 @@
  je_hungarian_revolt_status:0 "A growing movement influenced by French Jacobinism sought political and social changes despite resistance from conservative forces. Prominent leaders advocated for industrialization, broader democracy, and the abolition of aristocratic privileges. Despite opposition from the government and traditional institutions, the reformers achieved significant victories by the 1840s, including establishing the national language as official and freeing peasants from feudal obligations."
  je_hungarian_revolt_reason:0 "Unless democratic reforms are enacted before the #variable Springtime of Nations #! begins, Jacobin groups will install a republic in our nation. This will automatically cause a revolt against our [concept_overlord]."
  
+ je_dual_monarchy:0 "The Dual Monarchy"
+ je_dual_monarchy_status:0 "Following the Hungarian Revolution, direct control over the Hungarian provinces has been assumed. However, this situation is not sustainable forever."
+ je_dual_monarchy_reason:0 "Before we can answer the matter with Hungary, the German Question must be answered."
+ je_dual_monarchy.t1:0 "The Hungarian Revolt has been defeated"
+ 
  #Potato Blight
  je_potato_famine:0 "The Hungry Forties"
  je_potato_famine_status:0 "As the blight ravages our land, a Political Crisis sprouts. We must stop it before it matures. There is no way to know how long this blight will last."

@@ -85,6 +85,7 @@
  modifier_springtime_je:0 "People's Springtime"
  modifier_hun_post_rev:0 "Hungarian Revolution Lost"
  modifier_aus_post_rev:0 "Hungarian Revolution Won"
+ modifier_ah_compromise:0 "Austro-Hungarian Compromise"
  
  pm_offense_defense_readjustment_tiny:0 "Tertiary Equipment Adjustment"
  pm_offense_defense_readjustment_tiny_desc:0 "A penalty to the [concept_offense] and [concept_defense] provided by the building due to recent change of secondary [Concept('concept_production_method','$concept_production_methods$')]."
