@@ -40,6 +40,7 @@ je_napoleons_legacy = {
 	possible = {
 		#happens for all european majors and GPs at beginning of game
 		country_rank >= rank_value:major_power
+		is_subject = no
 		custom_tooltip = {
 			text = je_napoleons_legacy_t2
 			NOT = { has_global_variable = peoples_springtime_happening }
@@ -117,17 +118,15 @@ je_napoleons_legacy = {
 	
 	complete = {
 		NOR = {
-			has_law = law_type:law_autocracy
-			has_law = law_type:law_oligarchy
-			has_law = law_type:law_technocracy
-			has_law = law_type:law_landed_voting
+			has_law = law_type:law_traditionalism
+			has_law = law_type:law_serfdom
+			has_law = law_type:law_censorship
+			has_law = law_type:law_outlawed_dissent
+			has_law = law_type:law_secret_police
+			has_law = law_type:law_militarized_police
+			has_law = law_type:law_no_legislature
 		}
-		has_law = law_type:law_right_of_assembly
-		NOT = { has_law = law_type:law_secret_police }
-		NOT = { has_law = law_type:law_militarized_police }
-		NOT = { has_law = law_type:law_serfdom }
-		NOT = { has_law = law_type:law_traditionalism }
-		NOT = { has_journal_entry = je_divided_monarchists } #MAKE THIS SEPARATE je lATER
+		NOT = { has_journal_entry = je_divided_monarchists } #MAKE THIS SEPARATE JE LATER
 	}
 	
 	on_complete = {
