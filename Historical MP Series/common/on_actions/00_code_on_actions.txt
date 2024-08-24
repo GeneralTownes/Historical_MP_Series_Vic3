@@ -1658,9 +1658,6 @@ on_diplomatic_pact_third_party_auto_break = {
 # Root = Releasing Country
 # scope:target = Released Country
 on_country_released_as_independent = {
-	on_actions = {
-		HMPS_1848_Subject
-	}
 	effect = {
 		if = {
 			limit = {
@@ -1736,9 +1733,6 @@ on_country_released_as_independent = {
 # Root = Releasing Country
 # scope:target = Released Country
 on_country_released_as_own_subject = {
-	on_actions = {
-		HMPS_1848_Subject
-	}
 	effect = {
 		if = {
 			limit = {
@@ -1885,9 +1879,6 @@ on_country_released_as_own_subject = {
 # Root = Releasing Country
 # scope:target = Released Country
 on_country_released_as_overlord_subject = {
-	on_actions = {
-		HMPS_1848_Subject
-	}
 	effect = {
 		if = {
 			limit = {
