@@ -33,7 +33,7 @@
 					}
 				}
 				set_ig_trait = ig_trait:ig_trait_social_criticism
-				set_ig_trait = ig_trait:ig_trait_avant_garde
+				set_ig_trait = ig_trait:ite_ig_trait_imperial_examinations
 				set_ig_trait = ig_trait:ig_trait_restoration
 			}
 			else_if = {
@@ -151,6 +151,21 @@
 				add_ideology = ideology_american_republicanism
 				add_ideology = ideology_american_liberalism
 				add_ideology = ideology_american_intelligentsia
+			}
+		}
+		
+		# Literati
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						country_has_primary_culture = cu:han
+						country_has_primary_culture = cu:manchu
+					}
+				}
+			}
+			ig:ig_intelligentsia = { 
+				set_interest_group_name = ig_literati
 			}
 		}
 	}

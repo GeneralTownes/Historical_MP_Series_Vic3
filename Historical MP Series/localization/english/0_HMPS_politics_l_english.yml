@@ -89,6 +89,9 @@
  gov_anarchy:0 "Anarchy"
  gov_anarchy_desc:0 "This is a [concept_government] form where the power rests completely with the people."
  
+ gov_governorate:0 "Governorate"
+ gov_governorate_desc:0 ""This is a [concept_government] form where the power rests completely with the [Concept('concept_ruler','$RULER_TITLE_GOVERNOR$')] appointed by their overlord or local electorate."
+ 
  gov_chiefdom:0 "Tribal Chiefdom"
  gov_pol_monarchy_rus:0 "Absolute Monarchy"
  gov_pol_monarchy_rus_desc:0 "This is a [concept_government] form where the power rests completely with the [Concept('concept_ruler','$RULER_TITLE_EMPEROR$')] or [Concept('concept_ruler','$RULER_TITLE_EMPRESS$')]."
@@ -169,6 +172,8 @@
  law_industry_banned_desc:0 "A colonial economic policy from which wealth, resources, money and labor can be extracted."
  law_state_capitalism:0 "State Capitalism"
  law_state_capitalism_desc:0 "A form of capitalism with intense direction of the economy by the central state. The state can take direct control of our most valuable industries to seize greater profits."
+ law_the_company: "The Company"
+ law_the_company_desc: "A colonial policy of economic exploitation in which the East India Company extracts wealth, resources, money, and labor to provide for their masters."
  
  # Poll Taxation
  lawgroup_poll_tax:0 "Poll Taxation"
@@ -292,6 +297,18 @@
  country_institution_environmental_regulations_max_investment_add: "Max $institution_environmental_regulations$ [concept_institution] Investment"
  country_institution_environmental_regulations_max_investment_add_desc: "A bonus or penalty to the maximum investment level of the $institution_environmental_regulations$ [concept_institution]"
  
+ country_institution_cost_institution_schools_mult: "@bur![Nbsp][concept_bureaucracy] Cost of [GetInstitutionType('institution_schools').GetName]"
+ country_institution_cost_institution_schools_mult_desc: "An increase or reduction to the @bur![Nbsp][concept_bureaucracy] cost of bringing [GetInstitutionType('institution_schools').GetName] to the citizens"
+ country_institution_cost_institution_health_system_mult: "@bur![Nbsp][concept_bureaucracy] Cost of [GetInstitutionType('institution_health_system').GetName]"
+ country_institution_cost_institution_health_system_mult_desc: "An increase or reduction to the @bur![Nbsp][concept_bureaucracy] cost of bringing [GetInstitutionType('institution_health_system').GetName] to the citizens"
+ country_institution_cost_institution_army_model_mult: "@bur![Nbsp][concept_bureaucracy] Cost of [GetInstitutionType('institution_army_model').GetName]"
+ country_institution_cost_institution_army_model_mult_desc: "An increase or reduction to the @bur![Nbsp][concept_bureaucracy] cost of providing [GetInstitutionType('institution_army_model').GetName] to the government"
+ 
+ country_institution_size_change_speed_institution_army_model_mult: "Institution Size Change Speed for [GetInstitutionType('institution_army_model').GetName]"
+ country_institution_size_change_speed_institution_army_model_mult_desc: "How fast you change the size of [GetInstitutionType('institution_army_model').GetName]"
+ country_institution_size_change_speed_institution_environmental_regulations_mult: "Institution Size Change Speed for [GetInstitutionType('institution_environmental_regulations').GetName]"
+ country_institution_size_change_speed_institution_environmental_regulations_mult_desc: "How fast you change the size of [GetInstitutionType('institution_environmental_regulations').GetName]"
+ 
  # Ideologies
  ideology_reactionary:0 "Supremacist"
  ideology_reactionary_desc:0 "#lore This group supports very limited political reforms to enfranchise themselves and adores a uniform society.#!"
@@ -325,10 +342,17 @@
  ideology_laissez_faire_desc:0 "The powers of government should be used to ensure stable commerce, and to facilitate their wealth accumulation. They wish to reap what they did not sow."
  ideology_anti_migration:0 "Anti-Migration"
  ideology_anti_migration_desc:0 "This group sees unfettered migration as a threat to the value of their labour, and will seek to restrict it."
+ ideology_christian_democrat:0 "Christian Democrat"
+ ideology_christian_democrat_desc:0 "This group firmly believes in Christian values and opposes autocratic forms of government."
+ ideology_american_meritocracy:0 "American Meritocracy"
+ ideology_american_meritocracy_desc:0 "#lore This group believes success is earned and that those who have achieved it deserve the accompanying responsibility and wealth.#!"
+ ideology_local_elites: "Local Elites"
+ ideology_local_elites_desc:0 "The colonial administration governs through the local rule of various local elites, from influential magistrates and clan leaders, to Princes and Peshwas. Their local autonomy grants them vast sway over their domains."
  
  # Custom IG names
  ig_towarzystwo_rolnicze:0 "Towarzystwo Rolnicze"
  ig_german_aristocracy:0 "German Aristocracy"
+ ig_local_elites:0 "Local Elites"
  
  # Ideology Attraction Reasons
  IG_HAS_RIVAL:0 "Number of Rivals"
@@ -369,8 +393,6 @@
  russia_lit_tracka:0 "Education Level"
  junker_victory:0 "Junker Victory"
  constitutional_crisis:0 "Constitutional Crisis"
- the_bear_wakes:0 "The Bear Wakes"
- the_bear_coma:0 "National Slumber"
  decembrist_suppression_failure:0 "Decembrist Survival"
  decembrist_suppression_success:0 "Decembrists Suppressed"
  southern_planter_victory:0 "Victory Of The Southern Planters"

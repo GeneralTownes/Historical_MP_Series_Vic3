@@ -17,17 +17,28 @@
             modifier = {
                 add = 90000
                 scope:character ?= {
-                    OR = {
-                        has_role = agitator
-                        has_template = fra_delescluze_character_template # Never ever give Louis Delescluze a hat, any hat. His forehead is too powerful.
-                        has_template = BRZ_getulio_vargas_character_template # Vargas is forbidden from wearing hats.
-                    }
-                    is_historical = yes
-                    NOR = {
-                        has_template = rus_lenin_character_template
-                        has_template = gbr_pankhurst_character_template
-                        has_template = agitator_emiliano_zapata
-                    }
+					OR = {
+						AND = {
+							OR = {
+								has_role = agitator
+								has_template = fra_delescluze_character_template # Never ever give Louis Delescluze a hat, any hat. His forehead is too powerful.
+								has_template = BRZ_getulio_vargas_character_template # Vargas is forbidden from wearing hats.
+							}
+							is_historical = yes
+							NOR = {
+								has_template = rus_lenin_character_template
+								has_template = gbr_pankhurst_character_template
+								has_template = agitator_emiliano_zapata
+							}
+						}
+						AND = {
+							modern_china_clothes_trigger = yes
+							OR = {
+								has_role = general
+								has_role = admiral
+							}
+						}
+					}
                 }
             }
         }
@@ -2589,49 +2600,6 @@
                     african_diaspora_pop_clothes_trigger = yes
                 }
                 slavic_clothes_pop_trigger = no
-            }
-        }
-        weight = {
-            base = 0
-            modifier = {
-                add = 90000
-                OR = {
-                    european_clothes_trigger = yes
-                    african_diaspora_clothes_trigger = yes
-                }
-                ruler_clothes_trigger = yes
-                scope:character ?= {
-                    OR = {
-                        AND = {
-                            has_trait = erudite
-                            owner ?= {
-                                is_in_power_bloc = yes
-                                power_bloc ?= {
-                                    has_principle = principle:principle_advanced_research_1
-                                }
-                            }
-                        }
-                        AND = {
-                            OR = {
-                                has_trait = erudite
-                                has_trait = literary
-                                has_trait = master_bureaucrat
-                            }
-                            owner ?= {
-                                is_in_power_bloc = yes
-                                power_bloc ?= {
-                                    has_principle = principle:principle_advanced_research_2
-                                }
-                            }
-                        }
-                        owner ?= {
-                            is_in_power_bloc = yes
-                            power_bloc ?= {
-                                has_principle = principle:principle_advanced_research_3
-                            }
-                        }
-                    }
-                }
             }
         }
     }

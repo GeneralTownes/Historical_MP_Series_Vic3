@@ -513,18 +513,6 @@ SPC = {
 	}
 }
 
-UBD = {
-	flag_definition = {
-		coa = UBD_subject_RUS
-		allow_overlord_canton = no		
-		subject_canton = UBD
-		priority = 50
-		trigger = { 
-			coa_def_russian_ensign_trigger = yes
-		}
-	}
-}
-
 GER = { # Germany
 	flag_definition = {
 		coa = GER_modern
@@ -548,12 +536,13 @@ GER = { # Germany
 		}
 	}
 	flag_definition = {
-		coa = GER_communist
+		coa = GER_ddr
+		subject_canton = GER_ddr
 		priority = 1500
 		trigger = { 
 			coa_def_communist_flag_trigger = yes
 		}
-	}	
+	}
 	flag_definition = {
 		coa = GER_fascist
 		subject_canton = GER_fascist

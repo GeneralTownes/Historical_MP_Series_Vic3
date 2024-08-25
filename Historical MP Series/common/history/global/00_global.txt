@@ -22,6 +22,47 @@ GLOBAL = {
 		ig:ig_armed_forces = { add_ideology = ideology_monarchist }
 	}
 	
+	every_country = {
+		limit = {
+			has_law = law_type:law_republic
+			NOT = {
+				any_interest_group = {
+					has_ideology = ideology:ideology_republican_paternalistic
+				}
+			}
+			NOT = {
+				any_interest_group = {
+					has_ideology = ideology:ideology_civic_religion
+				}
+			}
+			NOT = {
+				any_interest_group = {
+					has_ideology = ideology:ideology_local_elites
+				}
+			}
+		}
+		ig:ig_landowners = {
+			remove_ideology = ideology_paternalistic
+			add_ideology = ideology_republican_paternalistic
+		}
+	}
+	
+	every_country = {
+		limit = {
+			OR = {
+				country_is_in_north_america = yes
+				country_is_in_central_america = yes
+				country_is_in_south_america = yes
+			}
+			NOT = { country_has_primary_culture = cu:anglo_canadian }
+			NOT = { country_has_primary_culture = cu:franco_canadian }
+		}
+		ig:ig_petty_bourgeoisie = {
+			remove_ideology = ideology_meritocratic
+			add_ideology = ideology_american_meritocracy
+		}
+	}
+	
 	# Jack the ripper, prevents the event from happening every game
 
 	every_country = {
@@ -74,6 +115,37 @@ GLOBAL = {
 	}
 
 	c:CHI ?= {
+		every_scope_state = {
+			limit = {
+                state_region = {
+					is_homeland = cu:han
+				}
+            }
+			create_pop = {
+				culture = han
+				size = 7000000
+			}
+			create_building = {
+				building = building_government_administration
+				level = 5
+			}
+		}
+		every_scope_state = {
+			limit = {
+				has_building = building_subsistence_farms
+			}
+			state_region = {
+				add_arable_land = 250
+			}
+		}
+		every_scope_state = {
+			limit = {
+				has_building = building_subsistence_rice_paddies
+			}
+			state_region = {
+				add_arable_land = 125
+			}
+		}
 		every_scope_state = {
 			limit = {
                 OR = {
@@ -459,6 +531,13 @@ GLOBAL = {
 		trigger_event = {
 			id = garibaldi_events.1
 			days = 6
+		}
+	}
+	
+	c:USA = {
+        create_bidirectional_truce = {
+			country = c:SEQ
+			months = 240
 		}
 	}
 	

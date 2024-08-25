@@ -131,8 +131,10 @@
 		}
 		if = {
 			limit = {
-				c:USA ?= this
-				c:CSA ?= this
+				OR = {
+					c:USA ?= this
+					c:CSA ?= this
+				}
 			}
 			ig:ig_armed_forces = { 
 				add_ideology = ideology_american_republicanism
@@ -148,6 +150,17 @@
 				remove_ideology = ideology_monarchist
 				remove_ideology = ideology_cultural_chauvinism
 				add_ideology = ideology_heavenly_kingdom_theocratic
+			}
+		}
+		
+		# HMPS Austrian Hegemonists
+		if = {
+			limit = {
+				c:AUS ?= this
+			}
+			ig:ig_armed_forces = {
+				add_ideology = ideology_austrian_hegemony
+				remove_ideology = ideology_cultural_chauvinism
 			}
 		}
 	}

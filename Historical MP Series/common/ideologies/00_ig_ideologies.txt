@@ -16,7 +16,7 @@
 	}
 	
 	lawgroup_distribution_of_power = {
-		law_landed_voting = strongly_approve
+		law_landed_voting = approve
 		law_autocracy = strongly_approve
 		law_oligarchy = approve
 		law_wealth_voting = neutral
@@ -424,6 +424,33 @@ ideology_moralist = {
 	
 	lawgroup_distribution_of_power = {
 		law_clerical_voting = approve
+	}
+
+	lawgroup_citizenship = {
+		law_ethnostate = neutral
+		law_national_supremacy = approve
+		law_racial_segregation = neutral
+		law_language_discrimination = neutral
+		law_cultural_exclusion = disapprove
+		law_multicultural = strongly_disapprove	
+	}
+}
+
+ideology_christian_democrat = {
+	icon = "gfx/interface/icons/ideology_icons/christian_democrat.dds"
+
+	lawgroup_church_and_state = {
+		law_state_religion = strongly_approve
+		law_freedom_of_conscience = strongly_approve
+		law_total_separation = neutral
+		law_state_atheism = strongly_disapprove
+	}
+	
+	lawgroup_distribution_of_power = {
+		law_oligarchy = disapprove
+		law_autocracy = strongly_disapprove
+		law_vanguardism = strongly_disapprove
+		law_technocracy = disapprove
 	}
 
 	lawgroup_citizenship = {
@@ -909,10 +936,10 @@ ideology_reactionary = {
 	}
 	
 	lawgroup_cameralism = {
-		law_no_legislature = approve
-		law_unicameralism = strongly_disapprove
-		law_asymmetric_bicameralism = disapprove
-		law_symmetric_bicameralism = neutral
+		law_no_legislature = disapprove
+		law_unicameralism = neutral
+		law_asymmetric_bicameralism = neutral
+		law_symmetric_bicameralism = approve
 	}
 
 	lawgroup_citizenship = {
@@ -1061,10 +1088,6 @@ ideology_pro_slavery = {
 
 ideology_corporatist = {
 	icon = "gfx/interface/icons/ideology_icons/corporatist.dds"
-	
-	lawgroup_economic_system = {
-		#law_state_capitalism = approve
-	}
 
 	lawgroup_health_system = {
 		law_charitable_health_system = approve

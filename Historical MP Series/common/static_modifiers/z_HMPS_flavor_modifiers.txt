@@ -7,20 +7,6 @@ slave_state_migration_debuff = {
 	state_migration_pull_mult = -0.40
 }
 
-the_bear_wakes = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-	interest_group_approval_add = 5
-	interest_group_ig_industrialists_pol_str_mult = 0.25
-	state_capitalists_investment_pool_efficiency_mult = 0.25
-}
-the_bear_coma = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	interest_group_ig_landowners_pol_str_mult = 0.50
-	interest_group_ig_devout_pol_str_mult = 0.50
-	state_birth_rate_mult = 0.05
-	state_capitalists_investment_pool_efficiency_mult = -0.5
-	state_aristocrats_investment_pool_efficiency_mult = -0.25
-}
 decembrist_suppression_failure = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
 	interest_group_ig_landowners_approval_add = -10
@@ -50,12 +36,12 @@ party_exploit_fixer = {
 
 france_baby_bust = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	state_birth_rate_mult  = -0.25
+	state_birth_rate_mult  = -0.20
 }
 
 france_early_game_birth_fix = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-	state_birth_rate_mult  = 0.10
+	state_birth_rate_mult  = 0.15
 }
 
 southern_planter_victory = {
@@ -81,8 +67,8 @@ pol_internal_focus = {
 
 chinese_opium_addiction = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-	state_standard_of_living_add = -4
-	state_mortality_mult = 0.025
+	state_standard_of_living_add = -5
+	state_mortality_mult = 0.04
 	unit_offense_mult = -0.25
 	unit_defense_mult = -0.25
 	unit_morale_loss_mult = 0.75
@@ -99,26 +85,31 @@ chinese_economic_stagnation = {
 	state_market_access_price_impact = -0.15
 	state_capitalists_investment_pool_efficiency_mult = -0.75
 	state_shopkeepers_investment_pool_efficiency_mult = -0.75
+	country_government_dividends_efficiency_add = -0.10
 }
 eight_banners = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_negative.dds
 	building_training_rate_mult = -0.9
 	state_loyalists_from_sol_change_mult = 0.25
 }
-modifier_agricultural_econ_mining_debuff = {
+modifier_agricultural_econ_agri_debuff = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
 	state_market_access_price_impact = -0.15
+	building_group_bg_plantations_throughput_add = -0.25
+}
+modifier_china_subsistence_agri = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
+	state_aristocrats_investment_pool_contribution_add = -0.20
+	state_clergymen_investment_pool_contribution_add = -0.20
+	state_farmers_investment_pool_contribution_add = -0.05
+	country_government_dividends_efficiency_add = -0.10
 }
 modifier_inward_china = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_negative.dds
-	state_aristocrats_investment_pool_contribution_add = -0.15
-	state_clergymen_investment_pool_contribution_add = -0.10
 	country_tech_research_speed_mult = -0.15
 	country_tech_spread_mult = -0.30
 	country_trade_route_competitiveness_mult = -0.5
 	interest_group_ig_devout_approval_add = 3
-	
-	country_government_dividends_efficiency_add = -0.25
 }
 taiping_tech = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
@@ -136,7 +127,7 @@ han_power_increase = {
 }
 qing_delegate_levies = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_rifle_positive.dds
-	building_training_rate_mult = 0.2
+	building_training_rate_mult = 0.1
 }
 qing_provincial_political_power_increase = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
@@ -155,20 +146,32 @@ disorganized_chinese_conscription = {
 }
 modifier_taiping_reconstruction = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
-	state_turmoil_effects_mult = 0.25
-	state_tax_waste_add = 0.1
+	state_turmoil_effects_mult = 0.1
+	state_mortality_turmoil_mult = 0.02
+	state_tax_waste_add = 0.05
+	country_legitimacy_base_add = -10
+	country_authority_mult = -0.1
+}
+modifier_post_taiping_mortality = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_standard_of_living_add = -2
+	state_mortality_mult = 0.25
+	state_birth_rate_mult = -0.25
 }
 anti_bandit_edict = {
 	icon = gfx\interface\icons\timed_modifier_icons\modifier_fist_positive.dds
+	state_turmoil_effects_mult = -0.2
 	state_mortality_turmoil_mult = 0.02
 	state_radicals_from_sol_change_mult = -0.25
-	country_authority_mult = -0.1
+	country_authority_mult = -0.2
+	state_tax_capacity_mult = 0.25
+	state_tax_capacity_add = 100
 }
 state_anti_bandit_edict = {
 	icon = gfx\interface\icons\timed_modifier_icons\modifier_fist_positive.dds
 	state_mortality_turmoil_mult = 0.02
 	state_loyalists_from_sol_change_mult = 0.5
-	state_tax_waste_add = 0.05
+	state_tax_waste_add = 0.01
 }
 warlords_westernisation = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
@@ -178,10 +181,7 @@ warlords_westernisation = {
 early_warlords_collapse = {
 	icon = gfx\interface\icons\timed_modifier_icons\modifier_fist_negative.dds
 	country_loan_interest_rate_mult = 0.01
-	state_construction_mult = -0.01
 	state_turmoil_effects_mult = 0.01
-	country_tech_research_speed_mult = -0.01
-	building_throughput_add = -0.01
 	state_radicals_from_sol_change_mult = 0.01
 	state_loyalists_from_sol_change_mult = -0.01
 	country_legitimacy_ideological_incoherence_mult = 0.01
@@ -370,12 +370,13 @@ usa_notoriety = {
 
 overvalued_railroads_building = {
 	icon = gfx\interface\icons\timed_modifier_icons\modifier_coins_positive.dds
-	building_railway_throughput_add = 0.1		# Max = 200%
+	building_railway_throughput_add = 0.05		# Max = 200%
+	goods_input_engines_add = -3
 }
 
 overvalued_railroads_state = {
 	icon = gfx\interface\icons\timed_modifier_icons\modifier_coins_positive.dds
-	state_construction_mult = 0.025				# Max = 50%
+	state_construction_mult = 0.0125			# Max = 50%
 }
 
 railroad_bubble = {
@@ -587,4 +588,41 @@ counter_revolutionary_fervor = {
 1848_popular_radical = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
 	character_popularity_add = 100
+}
+#Kulturkampf
+modifier_kulturkampf = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
+	interest_group_ig_devout_approval_add = -5
+	interest_group_ig_devout_pol_str_mult = 0.5
+}
+modifier_kulturkampf_polish_opression = {
+	icon = gfx\interface\icons\timed_modifier_icons\modifier_fist_negative.dds
+	state_assimilation_mult = -0.25
+	state_migration_pull_mult = 0.1
+	state_radicals_from_discrimination_mult = 0.25
+}
+modifier_kulturkampf_chauvinist = {
+	icon = gfx\interface\icons\timed_modifier_icons\modifier_fist_positive.dds
+	interest_group_approval_add = 5
+}
+modifier_kulturkampf_clergy_registry = {
+	icon = gfx\interface\icons\timed_modifier_icons\modifier_fist_negative.dds
+	interest_group_ig_devout_approval_add = -10
+}
+
+eastern_settlement = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	state_accepted_birth_rate_mult = 0.05
+	state_migration_pull_mult = 0.25
+	state_radicals_from_discrimination_mult = 0.10
+}
+
+### The Matter of Ireland JE
+modifier_irish_independence = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	country_liberty_desire_add = 0.25
+}
+modifier_enraged_colonisers = {
+	icon = gfx\interface\icons\timed_modifier_icons\modifier_fist_negative.dds
+	interest_group_approval_add = -10
 }

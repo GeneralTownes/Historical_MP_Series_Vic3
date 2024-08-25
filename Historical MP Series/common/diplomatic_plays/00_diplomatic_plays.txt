@@ -339,7 +339,25 @@ dp_make_tributary = {
 	texture = "gfx/interface/icons/war_goals/make_tributary.dds"
 	
 	possible = {
-		aggressive_diplomatic_plays_permitted = yes	
+		aggressive_diplomatic_plays_permitted = yes
+		NOT = {
+			AND = {
+				has_journal_entry = je_warlord_china
+				scope:target_country = {
+					OR = {
+						country_has_primary_culture = cu:han
+						country_has_primary_culture = cu:manchu
+						country_has_primary_culture = cu:hakka
+						country_has_primary_culture = cu:min
+						country_has_primary_culture = cu:yue
+						country_has_primary_culture = cu:miao
+						country_has_primary_culture = cu:zhuang
+						country_has_primary_culture = cu:yi
+					}
+					NOT = { c:LAN ?= this }
+				}
+			}
+		}
 	}
 	
 	ai_acceptance_max = 90
@@ -357,7 +375,25 @@ dp_make_protectorate = {
 	texture = "gfx/interface/icons/war_goals/make_protectorate.dds"
 	
 	possible = {	
-		aggressive_diplomatic_plays_permitted = yes				
+		aggressive_diplomatic_plays_permitted = yes
+		NOT = {
+			AND = {
+				has_journal_entry = je_warlord_china
+				scope:target_country = {
+					OR = {
+						country_has_primary_culture = cu:han
+						country_has_primary_culture = cu:manchu
+						country_has_primary_culture = cu:hakka
+						country_has_primary_culture = cu:min
+						country_has_primary_culture = cu:yue
+						country_has_primary_culture = cu:miao
+						country_has_primary_culture = cu:zhuang
+						country_has_primary_culture = cu:yi
+					}
+					NOT = { c:LAN ?= this }
+				}
+			}
+		}
 	}
 	
 	ai_acceptance_max = 90
@@ -960,42 +996,42 @@ dp_unify_arabia = {
 	on_war_end = {}
 }
 
-dp_unify_india = {
-	war_goal = annex_country
-	mirror_war_goal = yes
-	add_infamy_for_starting_initiator_wargoals = no
-	
-	texture = "gfx/interface/icons/war_goals/annex_country.dds"
-	
-	selectable_in_lens = {
-		can_form_nation = BHT
-	}
-	
-	possible = {
-		NOT = { exists = c:BHT }
-		NOT = { is_country_type = decentralized }
-		has_technology_researched = pan-nationalism
-		is_subject = no 
-		aggressive_diplomatic_plays_permitted = yes
-		custom_tooltip = {
-			text = BHT_tt
-			can_form_nation = BHT
-		}
-		scope:target_country = {
-			NOT = { is_country_type = decentralized }
-			custom_tooltip = {
-				text = BHT_tt
-				can_form_nation = BHT
-			}
-		}
-	}
-	
-	on_weekly_pulse = {}
-	
-	on_war_begins = {}
-
-	on_war_end = {}
-}
+#dp_unify_india = {
+#	war_goal = annex_country
+#	mirror_war_goal = yes
+#	#add_infamy_for_starting_initiator_wargoals = no
+#	
+#	texture = "gfx/interface/icons/war_goals/annex_country.dds"
+#	
+#	selectable_in_lens = {
+#		can_form_nation = BHT
+#	}
+#	
+#	possible = {
+#		NOT = { exists = c:BHT }
+#		NOT = { is_country_type = decentralized }
+#		has_technology_researched = pan-nationalism
+#		is_subject = no 
+#		aggressive_diplomatic_plays_permitted = yes
+#		custom_tooltip = {
+#			text = BHT_tt
+#			can_form_nation = BHT
+#		}
+#		scope:target_country = {
+#			NOT = { is_country_type = decentralized }
+#			custom_tooltip = {
+#				text = BHT_tt
+#				can_form_nation = BHT
+#			}
+#		}
+#	}
+#	
+#	on_weekly_pulse = {}
+#	
+#	on_war_begins = {}
+#
+#	on_war_end = {}
+#}
 
 dp_unify_indonesia = {
 	war_goal = annex_country

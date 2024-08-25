@@ -18,6 +18,8 @@ building_port = {
 
 	terrain_manipulator = urban_port
 	
+	ownership_type = self
+	
 	possible = {
 		is_coastal = yes
 	}
@@ -48,6 +50,10 @@ building_government_administration = {
 		pmg_base_building_government_administration
 		pmg_government_administration_bureaucrat_professionalism
 		pmg_government_administration_religious_administration
+	}
+	
+	possible = {
+		is_incorporated = yes
 	}
 
 	texture = "gfx/interface/icons/building_icons/building_government_administration.dds"

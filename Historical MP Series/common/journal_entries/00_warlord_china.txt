@@ -1,5 +1,5 @@
 ﻿je_warlord_china = {
-	icon = "gfx/interface/icons/event_icons/event_fire.dds"
+	icon = "gfx/interface/icons/event_icons/five_races_flag_fire.dds"
 	
 	group = je_group_historical_content
 	
@@ -30,10 +30,7 @@
 					has_law = law_type:law_theocracy
 				}
 				has_technology_researched = pan-nationalism
-				has_technology_researched = mass_propaganda
-				radical_fraction = {
-					value <= 0.2
-				}
+				has_technology_researched = political_agitation
 				NOT = {
 					any_civil_war = {
 						civil_war_progress > 0.5
@@ -43,7 +40,7 @@
 		}
 		gdp_ownership_ratio = {
 			target = ROOT
-			value >= 0.75
+			value >= 0.50
 		}
 	}
 
@@ -111,14 +108,20 @@
 			name = china_warlord_explosion
 			value = 0
 		}
-		every_state = {
-			limit = {
-                has_modifier = eight_banners
-            }
-			remove_modifier = eight_banners
-		}
 		
 		hidden_effect = {
+			if = {
+				limit = {
+					has_modifier = han_power_increase
+				}
+				remove_modifier = han_power_increase
+			}
+			every_state = {
+				limit = {
+					has_modifier = eight_banners
+				}
+				remove_modifier = eight_banners
+			}
 			every_country = {
 				limit = {
 					NOT = { c:LAN ?= this }
@@ -171,7 +174,7 @@
 	}
 
 	goal_add_value = {
-		value = 5
+		value = 100
 	}
 	
 	progressbar = yes
@@ -257,17 +260,6 @@
 				set_global_variable = china_warlord_civil_war_progress
 				chi_add_1_fracture = yes
 			}
-			if = {
-				limit = {
-					gdp_ownership_ratio = {
-						target = ROOT
-						value < 0.75
-					}
-					NOT = { has_global_variable = china_warlord_foreign_investment_progress }
-				}
-				set_global_variable = china_warlord_foreign_investment_progress
-				chi_add_1_fracture = yes
-			}
 			
 			### Remove Fracture
 			if = {
@@ -316,7 +308,7 @@
 				}
 				change_global_variable = {
 					name = china_warlord_explosion
-					add = 0.01
+					add = 0.2
 				}
 			}
 			if = {
@@ -325,7 +317,7 @@
 				}
 				change_global_variable = {
 					name = china_warlord_explosion
-					add = 0.01
+					add = 0.2
 				}
 			}			
 			if = {
@@ -334,7 +326,7 @@
 				}
 				change_global_variable = {
 					name = china_warlord_explosion
-					add = 0.01
+					add = 0.2
 				}
 			}			
 			if = {
@@ -343,7 +335,20 @@
 				}
 				change_global_variable = {
 					name = china_warlord_explosion
-					add = 0.01
+					add = 0.2
+				}
+			}
+			
+			if = {
+				limit = {
+					gdp_ownership_ratio = {
+						target = ROOT
+						value < 0.75
+					}
+				}
+				change_global_variable = {
+					name = china_warlord_explosion
+					add = 0.1
 				}
 			}
 			
@@ -354,7 +359,7 @@
 				}
 				change_global_variable = {
 					name = china_warlord_explosion
-					add = -0.01
+					add = -0.2
 				}
 			}
 			if = {
@@ -363,7 +368,7 @@
 				}
 				change_global_variable = {
 					name = china_warlord_explosion
-					add = -0.01
+					add = -0.2
 				}
 			}
 			if = {
@@ -372,7 +377,7 @@
 				}
 				change_global_variable = {
 					name = china_warlord_explosion
-					add = -0.01
+					add = -0.2
 				}
 			}
 		}

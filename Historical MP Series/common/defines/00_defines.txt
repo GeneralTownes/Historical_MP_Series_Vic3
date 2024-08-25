@@ -259,7 +259,7 @@ NEconomy = {
 	COUNTRY_GDP_MODIFIER_DIVISOR = 1000					# Scale the country_gdp static modifier by this divisor
 	COUNTRY_GDP_MODIFIER_MAX_MULTIPLIER = 200000		# The country_gdp modifier multiplier cannot be higher than this
 	
-	ECONOMY_OF_SCALE_START_LEVEL = 5					# Level at which buildings start getting economy of scale bonuses. Levels lower than this value provide no bonus [>=1]
+	ECONOMY_OF_SCALE_START_LEVEL = 20					# Level at which buildings start getting economy of scale bonuses. Levels lower than this value provide no bonus [>=1]
 	ECONOMY_OF_SCALE_NATIONALIZED_FRACTION_MULT = 0.5	# Non-government building economy of scale modifier if multiplied by (1 - the fraction of nationalized levels * this)
 	
 	IN_DEFAULT_MINIMUM_PENALTY_SCALE = 0.1				# This amount of the 'in default' throughput penalty is applied right away
@@ -473,7 +473,7 @@ NEconomy = {
 
 	CUSTOMS_UNION_CONTROLLER_MINIMUM_TARIFFS_SPLIT = 0.25	# Minimum amount of tariffs that the senior partner of a customs union gets. The rest will be split among the junior partners, according to their GDP contribution (between 0 and 1)
 	
-	REINVESTMENT_EFFICIENCY_MAX = 3.0					# Maximum conversion of reinvestment to investment pool
+	REINVESTMENT_EFFICIENCY_MAX = 1.0					# Maximum conversion of reinvestment to investment pool
 	REINVESTMENT_BASE_EFFICIENCY_THRESHOLD = 10000000	# Below this amount of GDP, increase reinvestment multiplier on a linear scale up to REINVESTMENT_EFFICIENCY_MAX at 0
 	
 	COMPANY_COMPETITION_DIVISOR = 0.33					# For each company over one associated with the same building type, the total throughput bonus for the building is divided by ( 1 + number of companies over one * this )
@@ -592,7 +592,7 @@ NMilitary = {
 	MILITARY_FORMATION_ORGANIZATION_MIN = 25				# The minimum amount of Organization a Military Formation will always retain despite exceeding their Command Limit 
 	MILITARY_FORMATION_DAILY_ORGANIZATION_GAIN_MIN = 0.1	# The minimum amount of Organization a Military Formation can gain in a day
 	MOBILIZATION_OPTION_DIFFERENCE_ORGANIZATION_IMPACT = 20 # The penalty to Organization gained for each difference by merging units between Formations with different Mobilization Options
-	FLEET_PRESENCE_GAIN_PER_DAY = 0.02						# The amount of Presence a Fleet gains per day while stationary in a Sea Node
+	FLEET_PRESENCE_GAIN_PER_DAY = 1						# The amount of Presence a Fleet gains per day while stationary in a Sea Node
 	
 	MILITARY_FORMATION_WEEKLY_MAX_UNIT_UPGRADES_ARMY = 0.1		# Each week a mobilized army can upgrade this (0.0-1.0) fraction of its total number of units.
 	MILITARY_FORMATION_WEEKLY_MAX_UNIT_UPGRADES_FLEET = 0.05	# Each week a mobilized fleet can upgrade this (0.0-1.0) fraction of its total number of units.
@@ -776,7 +776,7 @@ NDiplomacy = {
 	WAR_GOAL_INFAMY_FORCE_NATIONALIZATION = 0.5
 	WAR_GOAL_INFAMY_FOREIGN_INVESTMENT_RIGHTS = 0.25
 	
-	WAR_GOAL_INFAMY_DIPLO_PLAY_BACK_DOWN_REFUND = -0.75 # Refund of infamy for war goals that are dropped due to one side backing down in a diplo play (applied to initiator/target)
+	WAR_GOAL_INFAMY_DIPLO_PLAY_BACK_DOWN_REFUND = -0.5	# Refund of infamy for war goals that are dropped due to one side backing down in a diplo play (applied to initiator/target)
 	WAR_GOAL_INFAMY_DIPLO_PLAY_BACKER_REFUND = -1.00 	# Refund of infamy for war goals that are dropped for backers in a diplo play (due to play not escalating to war or backer switching sides)
 	WAR_GOAL_INFAMY_PEACE_REFUND = -0.5 				# Refund of infamy for war goals that are dropped due to a country capitulating or negotating peace without enforcing their wargoal
 	WAR_GOAL_INFAMY_REDUCTION_FOR_TARGET = -0.5 		# This much of a war goal's infamy value is removed from the target when target has it enforced on them
@@ -1186,13 +1186,13 @@ NPops = {
 
 ## SoL Thresholds
 @pop_growth_equilibrium_sol = 5		# Equilibrium is pops stop starving and where growth first becomes positive
-@pop_growth_transition_sol = 10     # Transition determines how long birthrate "lags" behind mortality before starting to drop. Setting to same as equilibrium leads to no "lag" (only matters for birthrate)
-@pop_growth_max_sol = 20			# Growth Max is where net growth generally is at it's highest (only matters for mortality)
-@pop_growth_stable_sol = 30			# Stable is where birthrate and mortality stop changing and hit their minimum values
+@pop_growth_transition_sol = 10		# Transition determines how long birthrate "lags" behind mortality before starting to drop. Setting to same as equilibrium leads to no "lag" (only matters for birthrate)
+@pop_growth_max_sol = 15			# Growth Max is where net growth generally is at it's highest (only matters for mortality)
+@pop_growth_stable_sol = 25			# Stable is where birthrate and mortality stop changing and hit their minimum values
 
 ## Others
-@transition_birthrate_mult = 1 		# If you want the birthrate "lag" to go to a higher or lower value than max_birthrate. (you can also just change it directly below)
-@max_growth_mortality_mult = 0.35	# What proportion of birthrate_at_growth_max mortality should be at. Higher means lower growth
+@transition_birthrate_mult = 0.95 	# If you want the birthrate "lag" to go to a higher or lower value than max_birthrate. (you can also just change it directly below)
+@max_growth_mortality_mult = 0.40	# What proportion of birthrate_at_growth_max mortality should be at. Higher means lower growth
 
 ### Pop Growth Derived values
 # Generally, for each one of these derived values below we're really just doing one of three operations (or combination of them):

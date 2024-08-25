@@ -79,7 +79,12 @@
 		ig:ig_industrialists = {
 			if = {
 				limit = {
-					owner = { c:CHI ?= this }
+					owner = {
+						OR = {
+							country_has_primary_culture = cu:han
+							country_has_primary_culture = cu:manchu
+						}
+					}
 				}
 				set_ig_trait = ig_trait:ig_trait_tax_avoidance
 				set_ig_trait = ig_trait:ig_trait_treaty_relations

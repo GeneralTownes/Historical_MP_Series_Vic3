@@ -50,6 +50,10 @@ law_religious_schools = {
 		law_total_separation
 		law_state_atheism
 	}
+	
+	modifier = {
+		country_institution_cost_institution_schools_mult = -0.15
+	}
 
 	institution = institution_schools
 	institution_modifier = {
@@ -143,6 +147,10 @@ law_private_schools = {
 		law_serfdom
 	}
 	
+	modifier = {
+		country_institution_cost_institution_schools_mult = -0.30
+	}
+	
 	institution = institution_schools
 	institution_modifier = {
 		state_education_access_add = 0.015
@@ -218,6 +226,7 @@ law_public_schools = {
 	disallowing_laws = {
 		law_serfdom
 		law_industry_banned
+		law_the_company
 	}
 	
 	institution = institution_schools
