@@ -29,7 +29,7 @@ je_hungarian_revolt = {
 	immediate = {
 		overlord = {
 			trigger_event = {
-				id = dual_monarchy.1
+				id = dual_monarchy.6
 				days = 14
 			}
 		}
@@ -37,21 +37,35 @@ je_hungarian_revolt = {
 	
 	complete = {
 		#reform bad laws
-		NOR = {
-			has_law = law_type:law_traditionalism
-			has_law = law_type:law_serfdom
-			has_law = law_type:law_censorship
-			has_law = law_type:law_outlawed_dissent
-			has_law = law_type:law_no_legislature
+		OR = {
+			overlord = {
+				OR = {
+					has_modifier = modifier_1848_victory
+					AND = {
+						custom_tooltip = {
+							text = je_hungarian_revolt.t1
+							NOT = { has_variable = failed_1848_var }
+							NOT = { has_journal_entry = je_napoleons_legacy }
+						}
+					}
+				}
+			}
+			NOR = {
+				has_law = law_type:law_traditionalism
+				has_law = law_type:law_serfdom
+				has_law = law_type:law_censorship
+				has_law = law_type:law_outlawed_dissent
+				has_law = law_type:law_no_legislature
+			}
 		}
 	}
 	
 	on_complete = {
-		#hungarian revolt
-		#skip directly to austria hungary?
+		change_subject_type = subject_type_protectorate
+		remove_modifier = modifier_pragmatic_sanction
 	}
 	
-	invalidate = {
+	invalid = {
 		OR = {
 			is_subject = no
 			NOT = { is_subject_type = subject_type_personal_union }
@@ -63,6 +77,11 @@ je_hungarian_revolt = {
 		#has springtime of peoples
 		overlord = {
 			has_journal_entry = je_springtime_of_the_peoples
+			capital = {
+				radical_fraction = {
+					value > 0.25
+				}
+			}
 		}
 	}
 	
@@ -73,13 +92,15 @@ je_hungarian_revolt = {
 		change_subject_type = subject_type_protectorate
 		add_liberty_desire = 100
 		activate_law = law_type:law_republic
-		trigger_event = {
-			id = dual_monarchy.2
-			days = 30
+		c:AUS = {
+			trigger_event = {
+				id = dual_monarchy.2
+				days = 30
+			}
 		}
-	}
-	add_modifier = {
-		name = hungarian_revolution_modifier
+		#add_modifier = {
+		#	name = hungarian_revolution_modifier
+		#}
 	}
 }
 

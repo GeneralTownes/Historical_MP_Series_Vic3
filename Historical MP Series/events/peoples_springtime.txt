@@ -372,6 +372,11 @@ peoples_springtime.4 = {
 
 	option = {
 		name = peoples_springtime.4.b
+		capital = {
+			add_radicals_in_state = {
+				value = small_radicals
+			}
+		}
 		every_interest_group = {
 			limit = {
 				leader = { has_ideology = ideology:ideology_radical }
@@ -379,7 +384,7 @@ peoples_springtime.4 = {
 			add_modifier = {
 				name = constrained_the_revolution
 				months = short_modifier_time
-				multiplier = 2
+				multiplier = 4
 			}
 		}
 		default_option = yes
@@ -473,6 +478,7 @@ peoples_springtime.6 = {
 			}
 		}
 		NOT = { has_variable = pp_stringtime_gone }
+		game_date > 1890.1.1 #wtf is this stupid ass event
 	}
 
 	duration = 3
@@ -511,7 +517,7 @@ peoples_springtime.6 = {
 }
 
 # The Revolution Victorious
-peoples_springtime.7 = { #events removed because they're bad for like 5000000000 reasons paradox flavor is bad!!!!
+peoples_springtime.7 = { #event effects removed because they're bad for like 5000000000 reasons paradox flavor is bad!!!!
 	type = country_event
 
 	event_image = {

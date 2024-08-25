@@ -30,6 +30,7 @@
 		
 		add_modifier = {
 			name = modifier_pragmatic_sanction
+			years = 50
 		}
 	}
 }

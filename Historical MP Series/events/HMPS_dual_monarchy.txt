@@ -1,8 +1,6 @@
 ﻿namespace = dual_monarchy
 
 # Dual Monarchy event #happens when JE is completed, probably not needed
-
-
 dual_monarchy.1 = {
 	type = country_event
 
@@ -93,7 +91,7 @@ dual_monarchy.2 = {
 				}
 				set_variable = hun_state_var
 			}
-			change_subject_type = subject_type_protectorate
+			#change_subject_type = subject_type_protectorate
 			add_liberty_desire = 100
 		}
 	}
@@ -105,7 +103,7 @@ dual_monarchy.2 = {
 			set_variable = hun_fighting_war_var
 			create_diplomatic_play = {
 				target_country = c:AUS
-				escalation = 75
+				escalation = 80
 				type = dp_independence
 				
 				target_state = scope:hun_capital_scope
@@ -116,43 +114,14 @@ dual_monarchy.2 = {
 					target_country = c:HUN
 				}
 			}
-			trigger_event = {
-				id = dual_monarchy.3
-				days = 1
-				popup = yes
-			}
 		}
 		hidden_effect = {
 			if = {
 				limit = {
-					OR = {
-						has_state_in_state_region = STATE_LOMBARDY
-						has_state_in_state_region = STATE_VENETIA
-						AND = {
-							exists = c:VEN
-							c:VEN = {
-								is_subject_of = c:AUS
-								OR = {
-									has_state_in_state_region = STATE_LOMBARDY
-									has_state_in_state_region = STATE_VENETIA
-								}
-							}
-						}
-						AND = {
-							exists = c:LOM
-							c:LOM = {
-								is_subject_of = c:AUS
-								OR = {
-									has_state_in_state_region = STATE_LOMBARDY
-									has_state_in_state_region = STATE_VENETIA
-								}
-							}
-						}
-					}
 				}
 				trigger_event = {
-					id = dual_monarchy.5
-					days = 35
+					id = dual_monarchy.3
+					days = 20
 				}
 			}
 		}
@@ -185,7 +154,31 @@ dual_monarchy.3 = {
 	icon = "gfx/interface/icons/event_icons/event_military.dds"
 	
 	trigger = {
-		#triggered by event 1
+		c:AUS ?= this
+		OR = {
+			has_state_in_state_region = STATE_LOMBARDY
+			has_state_in_state_region = STATE_VENETIA
+			AND = {
+				exists = c:VEN
+				c:VEN ?= {
+					is_subject_of = c:AUS
+					OR = {
+						has_state_in_state_region = STATE_LOMBARDY
+						has_state_in_state_region = STATE_VENETIA
+					}
+				}
+			}
+			AND = {
+				exists = c:LOM
+				c:LOM ?= {
+					is_subject_of = c:AUS
+					OR = {
+						has_state_in_state_region = STATE_LOMBARDY
+						has_state_in_state_region = STATE_VENETIA
+					}
+				}
+			}
+		}
 	}
 	
 	cancellation_trigger = {
@@ -236,7 +229,6 @@ dual_monarchy.3 = {
 			create_diplomatic_play = {
 				target_country = c:AUS
 				type = dp_independence
-				escalation = 50
 				
 				target_state = scope:rsm_capital_scope
 		
@@ -287,47 +279,6 @@ dual_monarchy.3 = {
 	}
 }
 
-#hungarian event
-#dual_monarchy.3 = {
-#	type = country_event
-#
-#	title = dual_monarchy.3.t
-#	desc = dual_monarchy.3.d
-#	flavor = dual_monarchy.3.f
-#
-#	event_image = {
-#		video = "unspecific_ruler_speaking_to_people"
-#	}
-#
-#	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
-#
-#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-#
-#	duration = 3
-#	
-#	trigger = {
-#		#triggered by above event
-#		#c:HUN = {
-#		#	has_variable = hun_fighting_war_var
-#		#	is_subject_type = subject_type_dominion
-#		#}
-#	}
-#	
-#	option = {
-#		name = dual_monarchy.3.a
-#		activate_law = law_type:law_republic
-#	}
-#	
-#	#option = { what was I thinking with this
-#	#	trigger = {
-#	#		is_player = no
-#	#	}
-#	#	name = dual_monarchy.3.a
-#	#	#thirteen points? 
-#	#	activate_law = law_type:law_republic
-#	#}
-#}
-
 #military occupation event
 dual_monarchy.4 = {
 	type = country_event
@@ -347,11 +298,15 @@ dual_monarchy.4 = {
 	duration = 3
 	
 	trigger = {
+		exists = c:AUS
+		c:AUS ?= this
 		exists = c:HUN
 		c:HUN = {
 			has_variable = hun_fighting_war_var
 			is_subject_type = subject_type_dominion
+			is_at_war = no
 		}
+		NOT = { has_variable = hungary_defeated_var }
 	}
 	
 	immediate = {
@@ -367,7 +322,7 @@ dual_monarchy.4 = {
 		name = dual_monarchy.4.a
 		default_option = yes
 		custom_tooltip = {
-			text = dual_monarchy.4.t1
+			text = dual_monarchy.4.a.t1
 			c:HUN = {
 				every_scope_state = {
 					set_state_owner = ROOT
@@ -396,6 +351,7 @@ dual_monarchy.4 = {
 				months = 241
 			}
 			activate_law = law_type:law_monarchy
+			add_liberty_desire = -100
 		}
 		
 		#modifier for austria
@@ -478,7 +434,7 @@ dual_monarchy.6 = {
 	}
 	
 	option = {
-		name = dual_monarchy.6.f
+		name = dual_monarchy.6.a
 		default_option = yes
 	}
 }

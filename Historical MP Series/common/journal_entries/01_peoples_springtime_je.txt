@@ -11,7 +11,7 @@ je_springtime_of_the_peoples = {
 	possible = { #this remains so minor powers can get it
 		is_subject = no
 		OR = {
-			hidden_effect = {
+			hidden_trigger = {
 				has_variable = failed_1848_var
 			}
 			AND = {
@@ -128,7 +128,7 @@ je_springtime_of_the_peoples = {
 		trigger_event = { id = peoples_springtime.7 }
 		add_modifier = {
 			name = modifier_1848_loss
-			years = 15
+			years = 20	
 			is_decaying = yes
 		}
 		#add_modifier = {
@@ -158,11 +158,16 @@ je_springtime_of_the_peoples = {
 			10 = peoples_springtime.3
 			10 = peoples_springtime.4
 			10 = peoples_springtime.5
+			10 = austria_monarchy.1
+			20 = dual_monarchy.3
 		}
 	}
 
 	invalid = {
-		has_global_variable = peoples_springtime_happened
+		custom_tooltip = {
+			text = je_springtime_of_the_peoples.t2
+			has_global_variable = peoples_springtime_happened
+		}
 	}
 
 	weight = 10000

@@ -232,10 +232,11 @@
  dual_monarchy.4.d:0 "With [SCOPE.sCountry('scope_hungary').GetName] defeated, their fate can now decided."
  dual_monarchy.4.f:0 "Militarily occupying [SCOPE.sCountry('scope_hungary').GetName] is a necessary measure to restore order and suppress the rebellious forces following the Hungarian Revolution. By reasserting control over the region, the Empire will maintain the integrity of the empire and prevent the spread of revolutionary sentiments that threatens stability.
  dual_monarchy.4.a:0 "Declare Martial Law throughout [SCOPE.sCountry('scope_hungary').GetName]"
+ dual_monarchy.4.a.t1:0 "Annex and incorporate all of Hungary"
  dual_monarchy.4.b:0 "Create a new [concept_dominion] of [SCOPE.sCountry('scope_hungary').GetName]"
  dual_monarchy.6.t:0 "The Matter of Hungary"
- dual_monarchy.6.d:0 "A movement influenced by Western liberalism will push for political and social changes in [SCOPE.sCountry('scope_hungary').GetName], including industrialization and the abolition of aristocratic privileges, grasping for significant democratic reforms despite conservative forces. Their success will spell disaster for the empire."
- dual_monarchy.6.f:0 "[SCOPE.sCountry('scope_hungary').GetName] must have a parliament and must not have traditionalism, serfdom, censorship, or outlawed dissent."
+ dual_monarchy.6.d:0 "A movement influenced by Western liberalism will push for political and social changes in [SCOPE.sCountry('scope_hungary').GetName], including industrialization and the abolition of aristocratic privileges, grasping for significant democratic reforms."
+ dual_monarchy.6.f:0 "Before #variable Springtime of the Peoples#!, [SCOPE.sCountry('scope_hungary').GetName] must not have any of the following:\n• [GetLawType('law_traditionalism').GetName]\n• [GetLawType('law_serfdom').GetName]\n• [GetLawType('law_censorship').GetName]\n• [GetLawType('law_outlawed_dissent').GetName]\n• [GetLawType('law_no_legislature').GetName]\nFailing to ensure this will reuslt in a #bold Hungarian Revolt#! if our [concept_capital_state] has [concept_turmoil]."
  dual_monarchy.6.a:0 "Revolution must be prevented from fomenting in Europe."
  
  

@@ -60,13 +60,23 @@ je_napoleons_legacy = {
 	#scripted button to reduce it at the cost of 500 authority?
 	
 	immediate = {
-		set_global_variable = {
-			name = global_1848_progress_var
-			value = 0
+		if = {
+			limit = {
+				NOT = { has_global_variable = global_1848_progress }
+			}
+			set_global_variable = {
+				name = global_1848_progress
+				value = 0
+			}
 		}
-		set_global_variable = {
-			name = 1848_radical_leader_mult_var
-			value = 1
+		if = {
+			limit = {
+				NOT = { has_global_variable = global_1848_progress }
+			}
+			set_global_variable = {
+				name = 1848_radical_leader_mult_var
+				value = 1
+			}
 		}
 		set_variable = 1848_country_var
 		add_modifier = {
@@ -76,7 +86,7 @@ je_napoleons_legacy = {
 	}
 
 	current_value = {
-		value = global_var:global_1848_progress_var
+		value = global_var:global_1848_progress
 	}
 
 	goal_add_value = {
@@ -98,23 +108,23 @@ je_napoleons_legacy = {
 		#releasing a subject (+5) 
 		
 		
-	on_monthly_pulse = {
-		set_global_variable = {
-			name = 1848_radical_leader_mult_var
-			value = global_var:global_1848_progress_var
-		}
-		change_global_variable = {
-			name = 1848_radical_leader_mult_var
-			multiply = 4
-		}
-		every_country = {
-			limit = {
-				NOT = { has_journal_entry = je_napoleons_legacy }
-				has_modifier = modifier_napoleon_announce
-			}
-			remove_modifier = modifier_napoleon_announce
-		}
-	}
+	#on_monthly_pulse = {
+	#	set_global_variable = {
+	#		name = 1848_radical_leader_mult_var
+	#		value = global_var:global_1848_progress
+	#	}
+	#	change_global_variable = {
+	#		name = 1848_radical_leader_mult_var
+	#		multiply = 4
+	#	}
+	#	every_country = {
+	#		limit = {
+	#			NOT = { has_journal_entry = je_napoleons_legacy }
+	#			has_modifier = modifier_napoleon_announce
+	#		}
+	#		remove_modifier = modifier_napoleon_announce
+	#	}
+	#}
 	
 	complete = {
 		NOR = {
@@ -125,6 +135,7 @@ je_napoleons_legacy = {
 			has_law = law_type:law_secret_police
 			has_law = law_type:law_militarized_police
 			has_law = law_type:law_no_legislature
+			has_law = law_type:law_landed_voting
 		}
 		NOT = { has_journal_entry = je_divided_monarchists } #MAKE THIS SEPARATE JE LATER
 	}
@@ -190,7 +201,7 @@ je_napoleons_legacy = {
 		custom_tooltip = je_napoleons_legacy_t1
 		show_as_tooltip = {
 			add_radicals = {
-				value = very_large_radicals
+				value = large_radicals
 			}
 		}
 		hidden_effect = {

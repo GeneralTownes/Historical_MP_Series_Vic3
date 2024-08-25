@@ -550,7 +550,10 @@ modifier_1848_victory = {
 
 modifier_1848_loss = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-	country_legitimacy_base_add = -25
+	state_radicals_from_sol_change_mult = 0.15
+	state_radicals_from_discrimination_mult = 0.15
+	political_movement_radicalism_mult = 0.25
+	political_movement_support_mult = 0.25
 	country_prestige_mult = -0.25
 	country_influence_mult = -0.25
 }
@@ -572,7 +575,7 @@ modifier_springtime_je = {
 }
 
 modifier_napoleon_announce = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 }
 
 counter_revolutionary_fervor = {

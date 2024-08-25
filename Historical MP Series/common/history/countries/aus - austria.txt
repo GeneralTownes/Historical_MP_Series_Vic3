@@ -36,10 +36,7 @@
 		add_modifier = {
 			name = german_confederation_leader
 		}
-
-		add_journal_entry = {
-			type = je_dual_monarchy
-		}
+		
 		set_variable = {
 			name = austria_monarchy
 		}

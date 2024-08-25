@@ -1,7 +1,7 @@
 ﻿# Austria-Hungary Formation
 
 je_dual_monarchy = {
-	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	icon = "gfx/interface/icons/event_icons/austria_hungary.dds"
 	
 	group = je_group_internal_affairs
 	
@@ -9,7 +9,7 @@ je_dual_monarchy = {
 		exists = c:AUS
 		c:AUS = THIS
 		OR = {
-			c:HUN = {
+			c:HUN ?= {
 				is_subject_of = root
 				NOT = { is_subject_type = subject_type_personal_union }
 			}
@@ -19,14 +19,17 @@ je_dual_monarchy = {
 	
 	possible = {
 		custom_tooltip = {
-			text = je_austria_hungary.t1
+			text = je_dual_monarchy.t1
 			has_variable = hungary_defeated_var
 		}
 	}
 	
 	complete = {
-		exists = c:GER
-		NOT = { c:GER ?= this }
+		custom_tooltip = {
+			text = je_dual_monarchy.t2
+			exists = c:GER
+			NOT = { c:GER ?= this }
+		}
 	}
 
 	on_complete = {
@@ -36,11 +39,11 @@ je_dual_monarchy = {
 		}
 		if = {
 			limit = {
+				exists = c:HUN
 				c:HUN = {
 					is_subject_of = ROOT
 					OR = {
 						is_subject_type = subject_type_dominion
-						is_subject_type = subject_type_protectorate
 					}
 				}
 			}
@@ -51,11 +54,31 @@ je_dual_monarchy = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				exists = c:HUN
+				c:HUN = {
+					is_subject_of = ROOT
+					OR = {
+						is_subject_type = subject_type_protectorate
+					}
+				}
+			}
+			c:HUN = {
+				change_subject_type = subject_type_dominion
+				add_modifier = {
+					name = modifier_ah_compromise
+				}
+			}
+		}
 	}
 	
 	fail = {
-		exists = c:GER
-		c:GER ?= this
+		custom_tooltip = {
+			text = je_dual_monarchy.t3
+			exists = c:GER
+			c:GER ?= this
+		}
 	}
 	
 	on_fail = {
@@ -64,9 +87,6 @@ je_dual_monarchy = {
 			name = dual_monarchy_compromise_rejected
 			is_decaying = yes
 			years = 10
-		}
-		trigger_event = {
-			id = dual_monarchy.1
 		}
 	}
 
