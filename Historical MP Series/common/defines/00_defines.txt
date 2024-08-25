@@ -178,7 +178,7 @@ NPolitics = {
 	TURMOIL_STATE_EFFECTS_THRESHOLD = 0.25				# How much turmoil a state needs to have before it gets any state-wide effects
 	TURMOIL_STATE_HIGH_EFFECTS_THRESHOLD = 0.50			# Above this turmoil, add a harsher modifier
 	TURMOIL_STATE_EXTREME_EFFECTS_THRESHOLD = 0.75		# Above this turmoil, add the harshest modifier
-	SECESSION_TURMOIL_CUTOFF = 0.5						# Turmoil requires for cultures to start secession
+	SECESSION_TURMOIL_CUTOFF = 0.7						# Turmoil requires for cultures to start secession
 	SECESSION_WEEKLY_BASE_CHANCE = 0.001				# weekly base chance for culture to start secession movement
 	SECESSION_WEEKLY_CHANCE_EXCESS_DIV = 100			# Excess turmoil is divided by this and used to increase chance for secession movements
 	MIN_POP_SIZE_TO_SECEDE = 100000						# Num pops (including dependents) needed for a secession movement to start
@@ -772,7 +772,7 @@ NDiplomacy = {
 	WAR_GOAL_INFAMY_REDUCE_AUTONOMY = 5.0
 	WAR_GOAL_INFAMY_TRANSFER_SUBJECT = 6.0	
 	WAR_GOAL_INFAMY_ANNEX_COUNTRY = 8.0
-	WAR_GOAL_INFAMY_REGIME_CHANGE = 2
+	WAR_GOAL_INFAMY_REGIME_CHANGE = 4
 	WAR_GOAL_INFAMY_FORCE_NATIONALIZATION = 0.5
 	WAR_GOAL_INFAMY_FOREIGN_INVESTMENT_RIGHTS = 0.25
 	
