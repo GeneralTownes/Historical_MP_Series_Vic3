@@ -243,6 +243,10 @@ je_german_unification_idea = {
 		hidden_effect = { set_variable = je_german_unification_idea }
 		trigger_event = { id = german_unification.5 } # German National Identity
 	}
+	
+	invalid = {
+		exists = c:GER
+	}
 
 	status_desc = {
 		first_valid = {
