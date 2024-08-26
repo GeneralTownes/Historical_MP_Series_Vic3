@@ -6,7 +6,7 @@
 	unification_play = dp_unify_germany
 	leadership_play = dp_leadership_germany
 
-	required_states_fraction = 0.82
+	required_states_fraction = 0.75
 	
 	ai_will_do = { has_technology_researched = nationalism }
 
@@ -52,7 +52,7 @@ ITA = {
 				}
 			}
 			has_technology_researched = nationalism	
-			percent >= 0.1
+			percent >= 0.25
 		}
 	}
 }
