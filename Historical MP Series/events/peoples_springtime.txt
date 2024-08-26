@@ -368,15 +368,15 @@ peoples_springtime.4 = {
 				}
 			}
 		}
-	}
-
-	option = {
-		name = peoples_springtime.4.b
 		capital = {
 			add_radicals_in_state = {
 				value = small_radicals
 			}
 		}
+	}
+
+	option = {
+		name = peoples_springtime.4.b
 		every_interest_group = {
 			limit = {
 				leader = { has_ideology = ideology:ideology_radical }
@@ -384,7 +384,7 @@ peoples_springtime.4 = {
 			add_modifier = {
 				name = constrained_the_revolution
 				months = short_modifier_time
-				multiplier = 4
+				multiplier = 2
 			}
 		}
 		default_option = yes
